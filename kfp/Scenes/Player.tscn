@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://nordr0py2gyx"]
+
+[ext_resource type="Script" uid="uid://c51w83bg6qlqh" path="res://Scripts/Player.cs" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://dvddxeim30hv3" path="res://icon.svg" id="2_gntrk"]
+
+[node name="Player" type="Node2D" unique_id=502233483]
+position = Vector2(580, 283)
+script = ExtResource("1_kyqiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1079919328]
+position = Vector2(-4, 2)
+texture = ExtResource("2_gntrk")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=154466543]
+position = Vector2(116, 2)

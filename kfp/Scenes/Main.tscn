@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://jkhv6nu2xdh1"]
+
+[ext_resource type="PackedScene" uid="uid://nordr0py2gyx" path="res://Scenes/Player.tscn" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://dsc3yb65qp2r7" path="res://Scenes/Projectile.tscn" id="2_idj7w"]
+
+[node name="Main" type="Node2D" unique_id=1129610287]
+
+[node name="Player" parent="." unique_id=502233483 instance=ExtResource("1_r150o")]
+ProjectileScene = ExtResource("2_idj7w")
