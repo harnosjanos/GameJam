@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://vi3jq07o8138"]
+
+[ext_resource type="Texture2D" uid="uid://b0pginlsx3vfj" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/SkyBackground.png" id="1_30qgy"]
+[ext_resource type="Texture2D" uid="uid://clcsmbqxlixt0" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/BackgroundClouds.png" id="2_iiykg"]
+[ext_resource type="Texture2D" uid="uid://b3bwplo064n4l" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/Mountain.png" id="3_d3nxb"]
+[ext_resource type="Texture2D" uid="uid://djytf5fdiojr8" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/Nest.png" id="4_tqhgd"]
+
+[node name="Olympos" type="Node2D" unique_id=1939047653]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=126851179]
+texture = ExtResource("1_30qgy")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=717396347]
+position = Vector2(0, 209)
+texture = ExtResource("2_iiykg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1430579484]
+position = Vector2(-20, 193)
+texture = ExtResource("3_d3nxb")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1814023098]
+position = Vector2(8, 131)
+texture = ExtResource("4_tqhgd")

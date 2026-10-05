@@ -65,7 +65,7 @@ public partial class Player : Node2D
         Visible = false;
 
         await ToSignal(
-            GetTree().CreateTimer(3.0),
+            GetTree().CreateTimer(2.0),
             SceneTreeTimer.SignalName.Timeout
         );
 
