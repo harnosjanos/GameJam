@@ -1,80 +1,31 @@
 using Godot;
-using System;
 
 public partial class Player : Node2D
 {
     [Export]
     public PackedScene ProjectileScene;
 
-    private int maxMana = 10;
-    private int mana = 10;
+    protected Sprite2D head;
 
-    private bool reloading = false;
+    protected int maxMana = 10;
+    protected int mana = 10;
+
+    protected bool reloading = false;
+
+    protected bool charging = false;
+    protected float chargeTime = 0f;
 
     public override void _Ready()
     {
         mana = maxMana;
+
+        head = GetNode<Sprite2D>("Head");
     }
 
     public override void _Process(double delta)
     {
-        if (!reloading)
-        {
-            LookAt(GetGlobalMousePosition());
-        }
+        UpdateHead();
 
-        if (Input.IsActionJustPressed("shoot"))
-        {
-            Shoot();
-        }
-    }
-
-    private void Shoot()
-    {
-        if (reloading)
-            return;
-
-        if (mana <= 0)
-            return;
-
-        Projectile projectile =
-            ProjectileScene.Instantiate<Projectile>();
-
-        projectile.GlobalPosition = GlobalPosition;
-
-        projectile.Direction =
-            (GetGlobalMousePosition() - GlobalPosition)
-            .Normalized();
-
-        GetTree().CurrentScene.AddChild(projectile);
-
-        mana--;
-
-        GD.Print("Mana: " + mana + "/" + maxMana);
-
-        if (mana <= 0)
-        {
-            Reload();
-        }
-    }
-
-    private async void Reload()
-    {
-        reloading = true;
-
-        Visible = false;
-
-        await ToSignal(
-            GetTree().CreateTimer(2.0),
-            SceneTreeTimer.SignalName.Timeout
-        );
-
-        mana = maxMana;
-
-        Visible = true;
-
-        reloading = false;
-
-        GD.Print("Mana refilled!");
+        HandleAttackInput(delta);
     }
 }

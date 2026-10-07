@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck2dg1qoitw5y"
-path="res://.godot/imported/1791214025348.png-1b0feb9802095e2266d376c2466207da.ctex"
+path="res://.godot/imported/Feather.png-ffca8778d2c228b10a9dda9140f09b4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Kepek/1791214025348.png"
-dest_files=["res://.godot/imported/1791214025348.png-1b0feb9802095e2266d376c2466207da.ctex"]
+source_file="res://Kepek/Feather.png"
+dest_files=["res://.godot/imported/Feather.png-ffca8778d2c228b10a9dda9140f09b4c.ctex"]
 
 [params]
 

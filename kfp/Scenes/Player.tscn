@@ -8,14 +8,22 @@
 position = Vector2(580, 283)
 script = ExtResource("1_kyqiw")
 
-[node name="test" type="Sprite2D" parent="." unique_id=1230602478]
+[node name="Body" type="Sprite2D" parent="." unique_id=1230602478]
 position = Vector2(-5, 35)
 texture = ExtResource("2_gntrk")
 
-[node name="fej" type="Sprite2D" parent="." unique_id=1079919328]
+[node name="Head" type="Sprite2D" parent="." unique_id=1079919328]
 position = Vector2(-7, 8)
 texture = ExtResource("2_kyqiw")
 flip_h = true
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=154466543]
 position = Vector2(116, 2)
+
+[node name="manaBar" type="ProgressBar" parent="." unique_id=1291760320]
+visible = false
+offset_left = -58.0
+offset_top = 86.0
+offset_right = 37.0
+offset_bottom = 113.0
+fill_mode = 1
