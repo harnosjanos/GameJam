@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bklpbw6rsw8mt" path="res://Kepek/PhoenixBody.png" id="2_gntrk"]
 [ext_resource type="Texture2D" uid="uid://dftymblsorfa5" path="res://Kepek/PhoenixHead.png" id="2_kyqiw"]
 
-[node name="Player" type="Node2D" unique_id=502233483]
+[sub_resource type="Theme" id="Theme_gntrk"]
+
+[node name="Player" type="Node2D" unique_id=502233483 groups=["player"]]
 position = Vector2(580, 283)
 script = ExtResource("1_kyqiw")
 
@@ -20,10 +22,17 @@ flip_h = true
 [node name="Marker2D" type="Marker2D" parent="." unique_id=154466543]
 position = Vector2(116, 2)
 
-[node name="manaBar" type="ProgressBar" parent="." unique_id=1291760320]
-visible = false
-offset_left = -58.0
-offset_top = 86.0
-offset_right = 37.0
-offset_bottom = 113.0
-fill_mode = 1
+[node name="ManaBar" type="ProgressBar" parent="." unique_id=1291760320]
+modulate = Color(0.6205544, 0.7483719, 1, 1)
+self_modulate = Color(1.0396242e-05, 0.90403116, 0.90403116, 1)
+offset_left = -59.0
+offset_top = 83.0
+offset_right = 36.0
+offset_bottom = 93.0
+theme = SubResource("Theme_gntrk")
+theme_override_colors/font_color = Color(0.33595756, 0.41583112, 0.7422103, 1)
+theme_override_colors/font_outline_color = Color(0.17030135, 0.40273145, 1, 1)
+theme_override_font_sizes/font_size = 1
+exp_edit = true
+rounded = true
+show_percentage = false

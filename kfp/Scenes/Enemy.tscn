@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b5qkf81f6aeds"]
+
+[ext_resource type="Script" uid="uid://bjhaa8vgoq7v2" path="res://Scripts/Enemy.cs" id="1_wovta"]
+[ext_resource type="Texture2D" uid="uid://dvddxeim30hv3" path="res://icon.svg" id="2_xeo28"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpiv"]
+size = Vector2(127.5, 128.5)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1198995511]
+script = ExtResource("1_wovta")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1852354631]
+position = Vector2(1, 0)
+texture = ExtResource("2_xeo28")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1372367545]
+position = Vector2(2.25, 0.75)
+shape = SubResource("RectangleShape2D_nbpiv")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1595912528 groups=["enemy"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox" unique_id=1417234088]
+position = Vector2(2.25, 0.75)
+shape = SubResource("RectangleShape2D_nbpiv")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1792743071]
+modulate = Color(0.99999994, 0.18482906, 0.109751694, 1)
+self_modulate = Color(0.87657166, 0, 0.057856396, 1)
+offset_left = -45.0
+offset_top = -93.0
+offset_right = 51.0
+offset_bottom = -66.0
+theme_override_font_sizes/font_size = 1
+show_percentage = false

@@ -2,6 +2,24 @@ using Godot;
 
 public partial class Player
 {
+    private void InitializeMana()
+    {
+        mana = maxMana;
+
+        manaBar = GetNode<ProgressBar>("ManaBar");
+
+        manaBar.MaxValue = maxMana;
+        manaBar.Value = mana;
+    }
+
+    private void UpdateManaBar()
+    {
+        if (manaBar != null)
+        {
+            manaBar.Value = mana;
+        }
+    }
+
     private async void Reload()
     {
         reloading = true;
@@ -18,5 +36,7 @@ public partial class Player
         Visible = true;
 
         reloading = false;
+
+        GD.Print("Mana refilled!");
     }
 }

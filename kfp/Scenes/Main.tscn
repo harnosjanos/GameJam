@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://vi3jq07o8138" path="res://Scenes/Olympos.tscn" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://nordr0py2gyx" path="res://Scenes/Player.tscn" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://dsc3yb65qp2r7" path="res://Scenes/Projectile.tscn" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://b5qkf81f6aeds" path="res://Scenes/Enemy.tscn" id="4_rgh2o"]
 
 [node name="Main" type="Node2D" unique_id=1129610287]
 
@@ -12,3 +13,5 @@ position = Vector2(480, 270)
 [node name="Player" parent="." unique_id=502233483 instance=ExtResource("1_r150o")]
 position = Vector2(488, 315)
 ProjectileScene = ExtResource("2_idj7w")
+
+[node name="Enemy" parent="." unique_id=1442314006 instance=ExtResource("4_rgh2o")]

@@ -10,16 +10,24 @@ public partial class Player : Node2D
     protected int maxMana = 10;
     protected int mana = 10;
 
+    protected ProgressBar manaBar;
+
     protected bool reloading = false;
 
     protected bool charging = false;
     protected float chargeTime = 0f;
 
+    protected int maxHealth = 10;
+    protected int health = 10;
+
+    protected ProgressBar healthBar;
+
     public override void _Ready()
     {
-        mana = maxMana;
-
         head = GetNode<Sprite2D>("Head");
+
+        InitializeMana();
+        InitializeHealth();
     }
 
     public override void _Process(double delta)
@@ -27,5 +35,8 @@ public partial class Player : Node2D
         UpdateHead();
 
         HandleAttackInput(delta);
+
+        UpdateManaBar();
+        UpdateHealthBar();
     }
 }
