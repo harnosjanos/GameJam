@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://1gut5o4siady"]
+
+[ext_resource type="Script" uid="uid://d3hqy6qrnsei4" path="res://Scripts/MenuActions.cs" id="1_c4tk2"]
+
+[node name="Menu" type="CanvasLayer" unique_id=869715182]
+
+[node name="Control" type="Control" parent="." unique_id=684185413]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control" unique_id=38307128]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 56.0
+offset_right = 100.0
+offset_bottom = 156.0
+grow_horizontal = 2
+text = "Start"
+script = ExtResource("1_c4tk2")
+
+[node name="Button2" type="Button" parent="Control" unique_id=194049075]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Beállítás"
+
+[node name="Button3" type="Button" parent="Control" unique_id=1682314468]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -152.0
+offset_right = 100.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Kilépés"
+script = ExtResource("1_c4tk2")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
+[connection signal="pressed" from="Control/Button3" to="Control/Button" method="_on_exit_button_pressed"]
