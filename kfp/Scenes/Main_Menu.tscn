@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://1gut5o4siady"]
 
 [ext_resource type="Script" uid="uid://d3hqy6qrnsei4" path="res://Scripts/MenuActions.cs" id="1_c4tk2"]
+[ext_resource type="AudioStream" uid="uid://p5smi38ewhjh" path="res://Zene/Menu.mp3" id="2_rmbjf"]
 
 [node name="Menu" type="CanvasLayer" unique_id=869715182]
 
@@ -38,7 +39,7 @@ offset_right = 100.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Beállítás"
+text = "Beállítás	"
 
 [node name="Button3" type="Button" parent="Control" unique_id=1682314468]
 layout_mode = 1
@@ -56,6 +57,10 @@ grow_vertical = 0
 text = "Kilépés"
 script = ExtResource("1_c4tk2")
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1884919955]
+stream = ExtResource("2_rmbjf")
+autoplay = true
 
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
 [connection signal="pressed" from="Control/Button3" to="Control/Button" method="_on_exit_button_pressed"]

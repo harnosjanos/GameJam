@@ -25,14 +25,26 @@ position = Vector2(116, 2)
 [node name="ManaBar" type="ProgressBar" parent="." unique_id=1291760320]
 modulate = Color(0.6205544, 0.7483719, 1, 1)
 self_modulate = Color(1.0396242e-05, 0.90403116, 0.90403116, 1)
-offset_left = -59.0
-offset_top = 83.0
-offset_right = 36.0
-offset_bottom = 93.0
+offset_left = -40.0
+offset_top = 171.0
+offset_right = 25.0
+offset_bottom = 199.0
 theme = SubResource("Theme_gntrk")
 theme_override_colors/font_color = Color(0.33595756, 0.41583112, 0.7422103, 1)
 theme_override_colors/font_outline_color = Color(0.17030135, 0.40273145, 1, 1)
 theme_override_font_sizes/font_size = 1
+step = 0.0
 exp_edit = true
 rounded = true
+show_percentage = false
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=552962579]
+modulate = Color(1, 0.12941177, 0, 1)
+self_modulate = Color(0.9882353, 0.07058824, 0, 1)
+offset_left = -71.0
+offset_top = 127.0
+offset_right = 57.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(0.9490196, 0.15686275, 0.13725491, 1)
+theme_override_colors/font_outline_color = Color(0.94509804, 0, 0, 1)
 show_percentage = false

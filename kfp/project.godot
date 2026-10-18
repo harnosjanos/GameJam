@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="KFP"
-run/main_scene="uid://jkhv6nu2xdh1"
+run/main_scene="uid://1gut5o4siady"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
