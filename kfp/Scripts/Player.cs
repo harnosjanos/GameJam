@@ -39,4 +39,5 @@ public partial class Player : Node2D
         UpdateManaBar();
         UpdateHealthBar();
     }
+    public int Health { get => health; }
 }

@@ -45,7 +45,7 @@ public partial class Enemy : CharacterBody2D
 
         if (healthBar != null)
         {
-            healthBar.Value = Health;   
+            healthBar.Value = Health;
         }
     }
 
