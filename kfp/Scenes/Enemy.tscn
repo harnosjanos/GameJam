@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://b5qkf81f6aeds"]
 
 [ext_resource type="Script" uid="uid://bjhaa8vgoq7v2" path="res://Scripts/Enemy.cs" id="1_wovta"]
-[ext_resource type="Texture2D" uid="uid://dvddxeim30hv3" path="res://icon.svg" id="2_xeo28"]
+[ext_resource type="Texture2D" uid="uid://dduwgtwlk00qb" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (1).png" id="2_wovta"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpiv"]
-size = Vector2(127.5, 128.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_es6n3"]
+radius = 44.5
+height = 93.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1198995511]
 script = ExtResource("1_wovta")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1852354631]
-position = Vector2(1, 0)
-texture = ExtResource("2_xeo28")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1843423540]
+texture = ExtResource("2_wovta")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1595912528 groups=["enemy"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox" unique_id=1417234088]
-position = Vector2(2.25, 0.75)
-shape = SubResource("RectangleShape2D_nbpiv")
+position = Vector2(1.5, 0.5)
+shape = SubResource("CapsuleShape2D_es6n3")
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=1792743071]
 modulate = Color(0.99999994, 0.18482906, 0.109751694, 1)
