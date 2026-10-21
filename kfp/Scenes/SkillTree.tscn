@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bwhitr0ptl7nw"]
+
+[node name="SkillTree" type="Node2D" unique_id=708553265]
+
+[node name="Button" type="Button" parent="." unique_id=585564293]
+offset_left = 249.0
+offset_top = 508.0
+offset_right = 391.0
+offset_bottom = 526.0
+text = "Folytat"
+
+[node name="Button2" type="Button" parent="." unique_id=229223911]
+offset_left = 485.0
+offset_top = 508.0
+offset_right = 627.0
+offset_bottom = 539.0
+text = "Menü"

@@ -45,7 +45,7 @@ text = "Beállítások"
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.88125
-anchor_top = 1.175926
+anchor_top = 1.0703703
 anchor_right = 0.88125
 anchor_bottom = 1.0703703
 offset_left = -100.0
@@ -76,6 +76,7 @@ text = "Tutorial"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1884919955]
 stream = ExtResource("2_rmbjf")
+volume_db = 24.0
 autoplay = true
 
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
