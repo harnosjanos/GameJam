@@ -55,6 +55,8 @@ public partial class Player
 
         mana--;
 
+        GD.Print("Mana: " + mana + "/" + maxMana);
+
         if (mana <= 0)
         {
             Reload();
@@ -87,15 +89,20 @@ public partial class Player
             Projectile projectile =
                 ProjectileScene.Instantiate<Projectile>();
 
-            projectile.GlobalPosition = GlobalPosition;
+            projectile.GlobalPosition =
+                GlobalPosition;
 
-            projectile.Direction = direction;
+            projectile.Direction =
+                direction.Normalized();
 
             projectile.Rotation =
                 direction.Angle();
 
             GetTree().CurrentScene.AddChild(projectile);
         }
+
+        GD.Print("Charged Attack!");
+        GD.Print("Mana: " + mana + "/" + maxMana);
 
         if (mana <= 0)
         {
