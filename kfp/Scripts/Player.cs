@@ -26,6 +26,14 @@ public partial class Player : Node2D
     {
         head = GetNode<Sprite2D>("Head");
 
+        // HP fejlesztés
+        maxHealth = 10 + (SkillManager.Instance.HpLevel * 2);
+        health = maxHealth;
+
+        // Mana fejlesztés
+        maxMana = 10 + (SkillManager.Instance.ManaLevel * 2);
+        mana = maxMana;
+
         InitializeMana();
         InitializeHealth();
     }

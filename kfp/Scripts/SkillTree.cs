@@ -12,46 +12,75 @@ public partial class SkillTree : Node2D
         descLabel = GetNode<Label>("DESC");
         pointsLabel = GetNode<Label>("PONTOK");
 
+        GetNode<Button>("HP").Pressed += OnHpPressed;
+        GetNode<Button>("FEJLESZT").Pressed += OnFejlesztPressed;
+        GetNode<Button>("FOLYTAT").Pressed += OnFolytatPressed;
+        GetNode<Button>("MENU").Pressed += OnMenuPressed;
+
         UpdateUI();
     }
 
     private void UpdateUI()
     {
         pointsLabel.Text =
-            $"Pontok: {SkillManager.Instance.AvailablePoints}";
+            "Pontok: " + SkillManager.Instance.AvailablePoints;
+
+        if (selectedSkill == 0)
+        {
+            if (SkillManager.Instance.HpLevel < 5)
+            {
+                descLabel.Text =
+                    "+2 HP\n" +
+                    "Jelenlegi szint: " +
+                    SkillManager.Instance.HpLevel +
+                    "/5";
+            }
+            else
+            {
+                descLabel.Text =
+                    "HP ULTIMATE\n" +
+                    "Charged Attack közben pajzs";
+            }
+        }
+        else
+        {
+            descLabel.Text =
+                "Válassz fejlesztési ágat";
+        }
     }
 
-    public void OnHpPressed()
+    private void OnHpPressed()
     {
         selectedSkill = 0;
-
-        descLabel.Text =
-            $"+2 HP\nJelenlegi szint: {SkillManager.Instance.HpLevel}";
+        UpdateUI();
     }
 
-    public void OnFejlesztPressed()
+    private void OnFejlesztPressed()
     {
         if (SkillManager.Instance.AvailablePoints <= 0)
             return;
 
         if (selectedSkill == 0)
         {
-            SkillManager.Instance.HpLevel++;
-            SkillManager.Instance.AvailablePoints--;
+            if (SkillManager.Instance.HpLevel < 6)
+            {
+                SkillManager.Instance.HpLevel++;
 
-            OnHpPressed();
-            UpdateUI();
+                SkillManager.Instance.AvailablePoints--;
+
+                UpdateUI();
+            }
         }
     }
 
-    public void OnFolytatPressed()
+    private void OnFolytatPressed()
     {
         GetTree().ChangeSceneToFile(
             "res://Scenes/Main.tscn"
         );
     }
 
-    public void OnMenuPressed()
+    private void OnMenuPressed()
     {
         SkillManager.Instance.ResetSkills();
 

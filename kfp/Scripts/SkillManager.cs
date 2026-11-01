@@ -2,7 +2,7 @@ using Godot;
 
 public partial class SkillManager : Node
 {
-    public static SkillManager Instance;
+    public static SkillManager Instance { get; private set; }
 
     public int AvailablePoints = 5;
 
