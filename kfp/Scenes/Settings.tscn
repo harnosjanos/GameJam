@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://df1aowbtnp7yj"]
+
+[ext_resource type="Script" uid="uid://dvprmrrmilldv" path="res://Scripts/Settings.cs" id="1_4hxq3"]
+[ext_resource type="Script" uid="uid://d3hqy6qrnsei4" path="res://Scripts/MenuActions.cs" id="2_flfri"]
+
+[node name="Settings" type="Node2D" unique_id=900518175]
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1961329703]
+offset_left = 35.0
+offset_top = 1.0
+offset_right = 255.0
+offset_bottom = 441.0
+script = ExtResource("1_4hxq3")
+
+[node name="Button" type="Button" parent="." unique_id=949078549]
+offset_left = 91.0
+offset_top = 100.0
+offset_right = 172.0
+offset_bottom = 149.0
+text = "Vissza"
+script = ExtResource("2_flfri")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_back_to_menu_button_pressed"]

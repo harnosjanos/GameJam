@@ -20,6 +20,16 @@ public partial class MenuActions : Node
 		GetTree().ChangeSceneToFile("res://Scenes//Tutorial.tscn");
 	}
 
+	private void _on_settings_button_pressed()
+	{
+		GetTree().ChangeSceneToFile("res://Scenes//Settings.tscn");
+	}
+
+	private void _on_back_to_menu_button_pressed()
+	{
+		GetTree().ChangeSceneToFile("res://Scenes/Main_Menu.tscn");
+	}
+
 	private void _on_exit_button_pressed()
 	{
 		GetTree().Quit();
