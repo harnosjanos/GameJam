@@ -32,4 +32,4 @@ public partial class Player
             GetTree().ChangeSceneToFile("res://Scenes//SkillTree.tscn");
         }
     }
-}   
+}

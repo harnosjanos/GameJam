@@ -3,12 +3,16 @@
 [ext_resource type="Script" uid="uid://c51w83bg6qlqh" path="res://Scripts/Player.cs" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bklpbw6rsw8mt" path="res://Kepek/PhoenixBody.png" id="2_gntrk"]
 [ext_resource type="Texture2D" uid="uid://dftymblsorfa5" path="res://Kepek/PhoenixHead.png" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://csw4h7u07ee1e" path="res://Scripts/PlayerMana.cs" id="4_5ixxa"]
+[ext_resource type="Script" uid="uid://b3dyd7gwt51cy" path="res://Scripts/PlayerHealth.cs" id="5_nn08x"]
 
 [sub_resource type="Theme" id="Theme_gntrk"]
 
-[node name="Player" type="Node2D" unique_id=502233483 groups=["player"]]
+[node name="Player" type="Node2D" unique_id=502233483 node_paths=PackedStringArray("manaText", "healthText") groups=["player"]]
 position = Vector2(580, 283)
 script = ExtResource("1_kyqiw")
+manaText = NodePath("ManaBar/ManaText")
+healthText = NodePath("HealthBar/HealthText")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1230602478]
 position = Vector2(-5, 35)
@@ -38,6 +42,15 @@ exp_edit = true
 rounded = true
 show_percentage = false
 
+[node name="ManaText" type="Label" parent="ManaBar" unique_id=362086807]
+layout_mode = 0
+offset_right = 65.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_5ixxa")
+
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=552962579]
 modulate = Color(0.9764706, 0.24705882, 0.20392157, 1)
 self_modulate = Color(0.9764706, 0.24705882, 0.20392157, 1)
@@ -48,3 +61,13 @@ offset_bottom = 199.0
 theme_override_colors/font_color = Color(0.9756351, 0.24879533, 0.20435452, 1)
 theme_override_colors/font_outline_color = Color(0.9764706, 0.24705882, 0.20392157, 1)
 show_percentage = false
+
+[node name="HealthText" type="Label" parent="HealthBar" unique_id=1039712533]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_nn08x")

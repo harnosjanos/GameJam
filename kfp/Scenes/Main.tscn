@@ -17,5 +17,19 @@ ProjectileScene = ExtResource("2_idj7w")
 
 [node name="EnemySpawner" type="Node" parent="." unique_id=693148689]
 script = ExtResource("4_pbw6q")
+radius = 300.0
 enemy = ExtResource("4_rgh2o")
 SpawnInterval = 3.0
+
+[node name="Label" type="Label" parent="." unique_id=1483801615]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 710.0
+offset_top = 491.0
+offset_right = 960.0
+offset_bottom = 540.0
+text = "Left Button Click - Shoot feather
+Left Button Hold - Charge Attack"
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=771499035]
+offset_right = 8.0
+offset_bottom = 8.0

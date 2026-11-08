@@ -9,6 +9,7 @@ public partial class Player : Node2D
 
     protected int maxMana = 10;
     protected int mana = 10;
+    [Export] protected Label manaText;
 
     protected ProgressBar manaBar;
 
@@ -19,6 +20,7 @@ public partial class Player : Node2D
 
     protected int maxHealth = 10;
     protected int health = 10;
+    [Export] protected Label healthText;
 
     protected ProgressBar healthBar;
 
@@ -29,10 +31,12 @@ public partial class Player : Node2D
         // HP fejlesztés
         maxHealth = 10 + (SkillManager.Instance.HpLevel * 2);
         health = maxHealth;
+        healthText.Text = $"{health}/{maxHealth}";
 
         // Mana fejlesztés
         maxMana = 10 + (SkillManager.Instance.ManaLevel * 2);
         mana = maxMana;
+        manaText.Text = $"{mana}/{maxMana}";
 
         InitializeMana();
         InitializeHealth();
@@ -46,6 +50,8 @@ public partial class Player : Node2D
 
         UpdateManaBar();
         UpdateHealthBar();
+        manaText.Text = $"{mana}/{maxMana}";
+        healthText.Text = $"{health}/{maxHealth}";
     }
     public int Health { get => health; }
 }

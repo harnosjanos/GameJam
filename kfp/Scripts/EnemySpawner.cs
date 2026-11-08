@@ -36,7 +36,6 @@ public partial class EnemySpawner : Node
 			if (playerSpawnX - radius < x && x < playerSpawnX + radius)
 			{
 				x = rand.Next(0, 1000);
-				GD.Print($"x nem megfelelő {x}");
 			}
 			else
 			{
@@ -46,7 +45,6 @@ public partial class EnemySpawner : Node
 			if (playerSpawnY - radius < y && y < playerSpawnY - radius && 400 < y)
 			{
 				y = rand.Next(0, 500);
-				GD.Print("y nem megfelelő");
 			}
 			else
 			{

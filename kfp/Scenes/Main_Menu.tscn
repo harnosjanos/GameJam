@@ -73,6 +73,7 @@ offset_top = 40.0
 offset_right = 397.0
 offset_bottom = 109.0
 text = "Tutorial"
+script = ExtResource("1_c4tk2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1884919955]
 stream = ExtResource("2_rmbjf")
@@ -81,3 +82,4 @@ autoplay = true
 
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
 [connection signal="pressed" from="Control/Button3" to="Control/Button" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Control/Button5" to="Control/Button" method="_on_tutorial_button_pressed"]
