@@ -57,6 +57,8 @@ public partial class Enemy : CharacterBody2D
 
         if (Health <= 0)
         {
+            SkillManager.Instance.AddKill();
+
             QueueFree();
         }
     }

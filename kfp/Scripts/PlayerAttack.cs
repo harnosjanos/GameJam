@@ -39,19 +39,33 @@ public partial class Player
         if (mana <= 0)
             return;
 
-        Projectile projectile =
-            ProjectileScene.Instantiate<Projectile>();
-
-        projectile.GlobalPosition = GlobalPosition;
-
-        projectile.Direction =
+        Vector2 baseDirection =
             (GetGlobalMousePosition() - GlobalPosition)
             .Normalized();
 
-        projectile.Rotation =
-            projectile.Direction.Angle();
+        int projectileCount = 1;
 
-        GetTree().CurrentScene.AddChild(projectile);
+        if (SkillManager.Instance.AttackLevel >= 2)
+            projectileCount++;
+
+        if (SkillManager.Instance.AttackLevel >= 4)
+            projectileCount++;
+
+        if (projectileCount == 1)
+        {
+            SpawnProjectile(baseDirection);
+        }
+        else if (projectileCount == 2)
+        {
+            SpawnProjectile(baseDirection.Rotated(-0.15f));
+            SpawnProjectile(baseDirection.Rotated(0.15f));
+        }
+        else if (projectileCount == 3)
+        {
+            SpawnProjectile(baseDirection);
+            SpawnProjectile(baseDirection.Rotated(-0.25f));
+            SpawnProjectile(baseDirection.Rotated(0.25f));
+        }
 
         mana--;
 
@@ -61,6 +75,21 @@ public partial class Player
         {
             Reload();
         }
+    }
+
+    private void SpawnProjectile(Vector2 direction)
+    {
+        Projectile projectile =
+            ProjectileScene.Instantiate<Projectile>();
+
+        projectile.GlobalPosition = GlobalPosition;
+
+        projectile.Direction = direction;
+
+        projectile.Rotation =
+            direction.Angle();
+
+        GetTree().CurrentScene.AddChild(projectile);
     }
 
     private void ChargedAttack()
@@ -73,7 +102,7 @@ public partial class Player
 
         mana -= 5;
 
-        int projectileCount = 10;
+        int projectileCount = 10 + (SkillManager.Instance.ChargeLevel / 2);
 
         for (int i = 0; i < projectileCount; i++)
         {

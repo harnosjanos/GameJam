@@ -13,6 +13,9 @@ public partial class SkillTree : Node2D
         pointsLabel = GetNode<Label>("PONTOK");
 
         GetNode<Button>("HP").Pressed += OnHpPressed;
+        GetNode<Button>("MANA").Pressed += OnManaPressed;
+        GetNode<Button>("CHARGE").Pressed += OnChargePressed;
+        GetNode<Button>("ATTACK").Pressed += OnAttackPressed;
         GetNode<Button>("FEJLESZT").Pressed += OnFejlesztPressed;
         GetNode<Button>("FOLYTAT").Pressed += OnFolytatPressed;
         GetNode<Button>("MENU").Pressed += OnMenuPressed;
@@ -23,7 +26,10 @@ public partial class SkillTree : Node2D
     private void UpdateUI()
     {
         pointsLabel.Text =
-            "Pontok: " + SkillManager.Instance.AvailablePoints;
+            "Kill: " +
+            SkillManager.Instance.KillCount +
+            "\nPontok: " +
+            SkillManager.Instance.AvailablePoints;
 
         if (selectedSkill == 0)
         {
@@ -42,6 +48,71 @@ public partial class SkillTree : Node2D
                     "Charged Attack közben pajzs";
             }
         }
+
+        else if (selectedSkill == 1)
+        {
+            if (SkillManager.Instance.ManaLevel < 5)
+            {
+                descLabel.Text =
+                    "+2 Mana\n" +
+                    "Jelenlegi szint: " +
+                    SkillManager.Instance.ManaLevel +
+                    "/5";
+            }
+            else
+            {
+                descLabel.Text =
+                    "MANA ULTIMATE\n" +
+                    "Mana elfogyásakor automatikus Charged Attack";
+            }
+        }
+
+        else if (selectedSkill == 2)
+        {
+            if (SkillManager.Instance.ChargeLevel < 5)
+            {
+                if (SkillManager.Instance.ChargeLevel % 2 == 0)
+                {
+                    descLabel.Text =
+                        "+1 Charged Damage";
+                }
+                else
+                {
+                    descLabel.Text =
+                        "+1 Charged Projectile";
+                }
+            }
+            else
+            {
+                descLabel.Text =
+                    "CHARGED ULTIMATE\n" +
+                    "Charged Attack Pierce";
+            }
+        }
+
+        else if (selectedSkill == 3)
+        {
+            if (SkillManager.Instance.AttackLevel < 5)
+            {
+                if (SkillManager.Instance.AttackLevel % 2 == 0)
+                {
+                    descLabel.Text =
+                        "+1 Attack Damage";
+                }
+                else
+                {
+                    descLabel.Text =
+                        "+1 Projectile";
+                }
+            }
+            else
+            {
+                descLabel.Text =
+                    "ATTACK ULTIMATE\n" +
+                    "Bounce";
+            }
+        }
+
         else
         {
             descLabel.Text =
@@ -52,6 +123,26 @@ public partial class SkillTree : Node2D
     private void OnHpPressed()
     {
         selectedSkill = 0;
+        UpdateUI();
+    }
+
+    private void OnManaPressed()
+    {
+        selectedSkill = 1;
+        UpdateUI();
+    }
+
+    private void OnChargePressed()
+    {
+        GD.Print("CHARGE");
+        selectedSkill = 2;
+        UpdateUI();
+    }
+
+    private void OnAttackPressed()
+    {
+        GD.Print("ATTACK");
+        selectedSkill = 3;
         UpdateUI();
     }
 
@@ -68,6 +159,38 @@ public partial class SkillTree : Node2D
 
                 SkillManager.Instance.AvailablePoints--;
 
+                UpdateUI();
+            }
+        }
+
+        else if (selectedSkill == 1)
+        {
+            if (SkillManager.Instance.ManaLevel < 6)
+            {
+                SkillManager.Instance.ManaLevel++;
+
+                SkillManager.Instance.AvailablePoints--;
+
+                UpdateUI();
+            }
+        }
+
+        else if (selectedSkill == 2)
+        {
+            if (SkillManager.Instance.ChargeLevel < 6)
+            {
+                SkillManager.Instance.ChargeLevel++;
+                SkillManager.Instance.AvailablePoints--;
+                UpdateUI();
+            }
+        }
+
+        else if (selectedSkill == 3)
+        {
+            if (SkillManager.Instance.AttackLevel < 6)
+            {
+                SkillManager.Instance.AttackLevel++;
+                SkillManager.Instance.AvailablePoints--;
                 UpdateUI();
             }
         }

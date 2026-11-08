@@ -5,6 +5,7 @@ public partial class SkillManager : Node
     public static SkillManager Instance { get; private set; }
 
     public int AvailablePoints = 5;
+    public int KillCount = 0;
 
     public int HpLevel = 0;
     public int ManaLevel = 0;
@@ -24,5 +25,10 @@ public partial class SkillManager : Node
         ManaLevel = 0;
         AttackLevel = 0;
         ChargeLevel = 0;
+    }
+
+    public void AddKill()
+    {
+        KillCount++;
     }
 }
