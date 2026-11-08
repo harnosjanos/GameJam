@@ -18,7 +18,7 @@ public partial class Tutorial_ChildPhoneix : Node2D
 
 	private void UpdateHead()
 	{
-		Vector2 direction = GetGlobalMousePosition() - _head.GlobalPosition;
+		Vector2 direction = (GetGlobalMousePosition() - _head.GlobalPosition) * -1;
 
 		_head.GlobalRotation = direction.Angle() - _frontMarker.Rotation;
 		_head.FlipV = direction.X < 0;
