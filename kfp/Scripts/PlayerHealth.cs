@@ -22,6 +22,15 @@ public partial class Player
 
     public void TakeDamage(int damage)
     {
+        if (
+            SkillManager.Instance.HpLevel >= 6
+            &&
+            charging
+        )
+        {
+            damage = (int)Mathf.Floor(damage / 2);
+        }
+
         health -= damage;
 
         GD.Print("Player HP: " + health);
@@ -29,7 +38,7 @@ public partial class Player
         if (health <= 0)
         {
             GD.Print("GAME OVER");
-            GetTree().ChangeSceneToFile("res://Scenes//SkillTree.tscn");
+            GetTree().ChangeSceneToFile("res://Scenes/SkillTree.tscn");
         }
     }
 }

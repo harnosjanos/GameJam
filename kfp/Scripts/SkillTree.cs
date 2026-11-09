@@ -26,10 +26,9 @@ public partial class SkillTree : Node2D
     private void UpdateUI()
     {
         pointsLabel.Text =
-            "Kill: " +
-            SkillManager.Instance.KillCount +
-            "\nPontok: " +
-            SkillManager.Instance.AvailablePoints;
+            "Kill: " + SkillManager.Instance.KillCount +
+            "\nPontok: " + SkillManager.Instance.AvailablePoints +
+            "\nKövetkező pont: " + SkillManager.Instance.NextPointAt;
 
         if (selectedSkill == 0)
         {

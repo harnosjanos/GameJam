@@ -73,6 +73,11 @@ public partial class Player
 
         if (mana <= 0)
         {
+            if (SkillManager.Instance.ManaLevel >= 6)
+            {
+                TriggerManaUltimate();
+            }
+
             Reload();
         }
     }
@@ -117,6 +122,9 @@ public partial class Player
 
             Projectile projectile =
                 ProjectileScene.Instantiate<Projectile>();
+            
+            projectile.Pierce =
+                SkillManager.Instance.ChargeLevel >= 6;
 
             projectile.GlobalPosition =
                 GlobalPosition;
@@ -135,7 +143,57 @@ public partial class Player
 
         if (mana <= 0)
         {
+            if (SkillManager.Instance.ManaLevel >= 6)
+            {
+                TriggerManaUltimate();
+            }
+
             Reload();
         }
+    }
+
+    private void UltimateChargedAttack()
+    {
+        int projectileCount = 10 +
+            (SkillManager.Instance.ChargeLevel / 2);
+
+        for (int i = 0; i < projectileCount; i++)
+        {
+            float angle =
+                Mathf.Tau * i / projectileCount;
+
+            Vector2 direction =
+                new Vector2(
+                    Mathf.Cos(angle),
+                    Mathf.Sin(angle)
+                );
+
+            Projectile projectile =
+                ProjectileScene.Instantiate<Projectile>();
+
+            projectile.GlobalPosition =
+                GlobalPosition;
+
+            projectile.Direction =
+                direction.Normalized();
+
+            projectile.Rotation =
+                direction.Angle();
+
+            projectile.Pierce =
+                SkillManager.Instance.ChargeLevel >= 6;
+
+            GetTree().CurrentScene.AddChild(projectile);
+        }
+    }
+
+    private async void TriggerManaUltimate()
+    {
+        await ToSignal(
+            GetTree().CreateTimer(0.1),
+            SceneTreeTimer.SignalName.Timeout
+        );
+
+        UltimateChargedAttack();
     }
 }

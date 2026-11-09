@@ -4,8 +4,9 @@ public partial class SkillManager : Node
 {
     public static SkillManager Instance { get; private set; }
 
-    public int AvailablePoints = 5;
+    public int AvailablePoints = 20;
     public int KillCount = 0;
+    public int NextPointAt = 5;
 
     public int HpLevel = 0;
     public int ManaLevel = 0;
@@ -30,5 +31,14 @@ public partial class SkillManager : Node
     public void AddKill()
     {
         KillCount++;
+
+        if (KillCount >= NextPointAt)
+        {
+            AvailablePoints++;
+
+            NextPointAt =
+                NextPointAt * 2 +
+                (NextPointAt / 2);
+        }
     }
 }

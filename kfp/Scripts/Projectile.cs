@@ -4,6 +4,8 @@ public partial class Projectile : Area2D
 {
     public Vector2 Direction;
 
+    public bool Pierce = false;
+
     public float Speed = 600f;
 
     public int Damage = 1;
@@ -29,7 +31,10 @@ public partial class Projectile : Area2D
                 enemy.TakeDamage(Damage);
             }
 
-            QueueFree();
+            if (!Pierce)
+            {
+                QueueFree();
+            }
         }
     }
 }
