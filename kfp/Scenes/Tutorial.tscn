@@ -1,12 +1,45 @@
 [gd_scene format=3 uid="uid://b0vl2ov1w4ckx"]
 
-[ext_resource type="Texture2D" uid="uid://dpd2uvyj5k8so" path="res://Kepek/tutorial/TutorialMapSKetch.png" id="1_7bloo"]
+[ext_resource type="Texture2D" uid="uid://lnecla1v7tjr" path="res://Kepek/tutorial/(Tutorial)Background.png" id="1_vv0ms"]
+[ext_resource type="Texture2D" uid="uid://b5i6nutbavfux" path="res://Kepek/tutorial/(Tutorial)Cloud1.png" id="2_brn58"]
 [ext_resource type="Texture2D" uid="uid://qf1c4u73q7ec" path="res://Kepek/tutorial/mother_phoneix/idle_mother/PhoenixMomIdle0000.png" id="2_rlm2d"]
 [ext_resource type="Texture2D" uid="uid://bkuqwcv66daax" path="res://Kepek/tutorial/mother_phoneix/idle_mother/PhoenixMomIdle0015.png" id="3_3j26a"]
+[ext_resource type="Texture2D" uid="uid://ba6hylifcurx0" path="res://Kepek/tutorial/(Tutorial)Cloud3.png" id="3_fx2vl"]
+[ext_resource type="Texture2D" uid="uid://bimttoyc3jvgj" path="res://Kepek/tutorial/(Tutorial)Cloud2.png" id="4_mqud2"]
 [ext_resource type="Texture2D" uid="uid://bw8a5mhvioksj" path="res://Kepek/tutorial/mother_phoneix/idle_mother/PhoenixMomIdle0030.png" id="4_x7a1n"]
 [ext_resource type="Texture2D" uid="uid://dar8lqpela88g" path="res://Kepek/tutorial/baby_phoneix/BabyPhoenixBody.png" id="5_3j26a"]
+[ext_resource type="Texture2D" uid="uid://cce7ttyrhpbgl" path="res://Kepek/tutorial/(Tutorial)Hill.png" id="5_sswaw"]
 [ext_resource type="Script" uid="uid://cn81v4nk6o6b7" path="res://Scripts/Tutorial_ChildPhoneix.cs" id="5_x7a1n"]
+[ext_resource type="Texture2D" uid="uid://0sxasqnvi41a" path="res://Kepek/tutorial/(Tutorial)Hill_Ground.png" id="6_kpk71"]
 [ext_resource type="Texture2D" uid="uid://dejwchhli0whl" path="res://Kepek/tutorial/baby_phoneix/BabyPhoenixHead.png" id="6_x7a1n"]
+[ext_resource type="Texture2D" uid="uid://cwb8hhlkm6suv" path="res://Kepek/tutorial/TreeBlink/TreeBlink1.png" id="7_mqud2"]
+[ext_resource type="Texture2D" uid="uid://bqgun7a7he3an" path="res://Kepek/tutorial/TreeBlink/TreeBlink2.png" id="8_sswaw"]
+[ext_resource type="Texture2D" uid="uid://dkxsl76vq3ct" path="res://Kepek/tutorial/TreeBlink/TreeBlink3.png" id="9_kpk71"]
+[ext_resource type="Texture2D" uid="uid://ci7uboesmaw8i" path="res://Kepek/tutorial/(Tutorial)Nest_Inside.png" id="11_orlbv"]
+[ext_resource type="Texture2D" uid="uid://8ad3wq0nuisa" path="res://Kepek/tutorial/(Tutorial)Nest_Outside.png" id="15_m8quk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o1rwj"]
+animations = [{
+"frames": [{
+"duration": 15.0,
+"texture": ExtResource("7_mqud2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sswaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kpk71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sswaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mqud2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yqegr"]
 animations = [{
@@ -22,10 +55,61 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 1.5
 }]
 
 [node name="Node2D" type="Node2D" unique_id=672353944]
+texture_filter = 3
+
+[node name="Hatching" type="Node2D" parent="." unique_id=155046685]
+
+[node name="TutorialBackground" type="TextureRect" parent="." unique_id=1854716081]
+texture_filter = 3
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("1_vv0ms")
+
+[node name="Cloud1" type="TextureRect" parent="." unique_id=1972494037]
+offset_left = 59.0
+offset_top = 53.0
+offset_right = 267.0
+offset_bottom = 232.0
+texture = ExtResource("2_brn58")
+
+[node name="Cloud2" type="TextureRect" parent="." unique_id=392460134]
+offset_left = 171.0
+offset_top = 145.0
+offset_right = 639.0
+offset_bottom = 334.81116
+texture = ExtResource("3_fx2vl")
+
+[node name="Cloud3" type="TextureRect" parent="." unique_id=206955438]
+offset_left = 251.0
+offset_top = -1.0
+offset_right = 553.1958
+offset_bottom = 147.0
+texture = ExtResource("4_mqud2")
+
+[node name="Hill" type="TextureRect" parent="." unique_id=1686434953]
+offset_left = 415.0
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("5_sswaw")
+
+[node name="HillGround" type="TextureRect" parent="." unique_id=966111069]
+offset_left = 225.0
+offset_top = 230.0
+offset_right = 959.629
+offset_bottom = 540.0
+texture = ExtResource("6_kpk71")
+
+[node name="Tree" type="AnimatedSprite2D" parent="." unique_id=1978826821]
+position = Vector2(-7.1054274e-15, 0)
+scale = Vector2(5.0000005, 5)
+sprite_frames = SubResource("SpriteFrames_o1rwj")
+autoplay = "default"
+frame_progress = 0.8474671
+centered = false
 
 [node name="Label" type="Label" parent="." unique_id=1592704808]
 anchors_preset = 8
@@ -33,45 +117,56 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 959.0
-offset_bottom = 539.0
+offset_left = 75.0
+offset_top = 51.0
+offset_right = 1034.0
+offset_bottom = 590.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Tutorial"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1751122102]
-texture_filter = 1
-offset_right = 961.0
-offset_bottom = 544.0
-texture = ExtResource("1_7bloo")
-
 [node name="Mother_Phoneix" type="Node2D" parent="." unique_id=66079362]
 texture_filter = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mother_Phoneix" unique_id=1921304767]
-position = Vector2(239.00002, 195)
-scale = Vector2(2.84375, 2.84375)
+position = Vector2(269.25, 164.75)
+scale = Vector2(3.473958, 3.473958)
 sprite_frames = SubResource("SpriteFrames_yqegr")
 autoplay = "default"
-frame_progress = 0.2932455
+frame = 1
+frame_progress = 0.61239153
+
+[node name="NestInside" type="TextureRect" parent="." unique_id=1130092238]
+offset_left = 480.0
+offset_top = 302.0
+offset_right = 745.0
+offset_bottom = 448.0
+texture = ExtResource("11_orlbv")
 
 [node name="Child_Phoneix" type="Node2D" parent="." unique_id=165082317]
 script = ExtResource("5_x7a1n")
 
 [node name="Body" type="Sprite2D" parent="Child_Phoneix" unique_id=170580231]
 texture_filter = 1
-position = Vector2(620, 337)
+position = Vector2(614.61, 379.5)
 scale = Vector2(2.74, 2.74)
 texture = ExtResource("5_3j26a")
 
 [node name="Head" type="Sprite2D" parent="Child_Phoneix" unique_id=82946813]
 texture_filter = 1
-position = Vector2(616.99994, 283)
+position = Vector2(611.6099, 325.5)
 scale = Vector2(2.2187505, 2.21875)
 texture = ExtResource("6_x7a1n")
 
 [node name="Marker2D" type="Marker2D" parent="Child_Phoneix/Head" unique_id=424536858]
 position = Vector2(-16.676018, 8.112677)
 scale = Vector2(0.45070413, 0.45070422)
+
+[node name="NestOutside" type="TextureRect" parent="." unique_id=1606726679]
+offset_left = 440.0
+offset_top = 312.0
+offset_right = 784.0
+offset_bottom = 502.0
+texture = ExtResource("15_m8quk")
