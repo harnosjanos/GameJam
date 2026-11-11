@@ -1,79 +1,67 @@
 [gd_scene format=3 uid="uid://bwhitr0ptl7nw"]
 
 [ext_resource type="Script" uid="uid://c46rhrsk18m5p" path="res://Scripts/SkillTree.cs" id="1_3mp7v"]
-[ext_resource type="Texture2D" uid="uid://dg6fnmpokndb6" path="res://Kepek/skillTree/NoUpgradeSkillTree.png" id="1_t13jq"]
 [ext_resource type="AudioStream" uid="uid://cs4ajyafosktx" path="res://Zene/SkillTreeZaj.mp3" id="2_o3ipy"]
+[ext_resource type="Texture2D" uid="uid://8vvv80j16gqv" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/HP/LessDMG_Taken.png" id="4_kdu6y"]
+[ext_resource type="Texture2D" uid="uid://cn7dnnauirx3p" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/HP/hpTREE.png" id="4_n648w"]
+[ext_resource type="Texture2D" uid="uid://c30e8ajmj2kl0" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/HP/HP_Default.png" id="5_h226r"]
+[ext_resource type="Texture2D" uid="uid://bbarg0qokurig" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/HP/HP_upgraded.png" id="6_jf1u3"]
+[ext_resource type="Texture2D" uid="uid://ow4tvi1lnihx" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/HP/MoreHP.png" id="7_dlyut"]
+[ext_resource type="Texture2D" uid="uid://bj8wwfy6odbnq" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/Mana/manaTREE.png" id="8_j6g2i"]
+[ext_resource type="Texture2D" uid="uid://ynrbo28ynwn4" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/Mana/ManaDefault.png" id="9_0du7f"]
+[ext_resource type="Texture2D" uid="uid://b5hfgmnillueu" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/Mana/MANA_upgrade.png" id="10_osvg7"]
+[ext_resource type="Texture2D" uid="uid://d3spk3113385u" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/Mana/MoreMana.png" id="11_abodq"]
+[ext_resource type="Texture2D" uid="uid://c5ks3fv667qyy" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/Mana/AOE_AfterRevive.png" id="12_0bypg"]
+[ext_resource type="Texture2D" uid="uid://bhynayxyjkg8r" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/ChargedAttack/caTREE.png" id="13_kn5jo"]
+[ext_resource type="Texture2D" uid="uid://t51xqxxfja6x" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/ChargedAttack/CA_Default.png" id="14_kxtgn"]
+[ext_resource type="Texture2D" uid="uid://bypnpp1101jnm" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/ChargedAttack/CA_upgrade.png" id="15_eyd4w"]
+[ext_resource type="Texture2D" uid="uid://dugn51m4xhdka" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/ChargedAttack/MoreATK.png" id="16_3iorm"]
+[ext_resource type="Texture2D" uid="uid://qac044xkysic" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/ChargedAttack/MoreFeathers.png" id="17_y4m2b"]
+[ext_resource type="Texture2D" uid="uid://p7e6gssij1yy" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/ChargedAttack/PiercingATK.png" id="18_s6mtc"]
+[ext_resource type="Texture2D" uid="uid://53nvt0a3xqvq" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/NormalAttack/naTREE.png" id="19_dctan"]
+[ext_resource type="Texture2D" uid="uid://c4b2rkf2i3x1e" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/NormalAttack/NA_Default.png" id="20_qigoo"]
+[ext_resource type="Texture2D" uid="uid://ctumlfc7ya2hs" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/NormalAttack/NA_upgrade.png" id="21_j2m1j"]
+[ext_resource type="Texture2D" uid="uid://bf1kwdcd3fbtr" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/NormalAttack/MoreATK.png" id="22_owaxu"]
+[ext_resource type="Texture2D" uid="uid://dsxrdhes2fbn3" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/NormalAttack/OneExtraFeather.png" id="23_ore2i"]
+[ext_resource type="Texture2D" uid="uid://cf62lh6nhyipf" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/NormalAttack/BouncingFeather.png" id="24_invat"]
 
 [node name="SkillTree" type="Node2D" unique_id=708553265]
 script = ExtResource("1_3mp7v")
 
 [node name="FOLYTAT" type="Button" parent="." unique_id=585564293]
-offset_left = 758.0
-offset_top = 504.0
-offset_right = 900.0
-offset_bottom = 535.0
+offset_left = 777.0
+offset_top = 490.0
+offset_right = 919.0
+offset_bottom = 521.0
 text = "Folytat"
 
 [node name="MENU" type="Button" parent="." unique_id=229223911]
-offset_left = 413.0
-offset_top = 504.0
-offset_right = 555.0
-offset_bottom = 535.0
+offset_left = 582.0
+offset_top = 490.0
+offset_right = 724.0
+offset_bottom = 521.0
 text = "Menü"
 
-[node name="NoUpgradeSkillTree" type="Sprite2D" parent="." unique_id=317529104]
-position = Vector2(144, 212.99998)
-scale = Vector2(1.4887501, 1.4887501)
-texture = ExtResource("1_t13jq")
-
-[node name="HP" type="Button" parent="." unique_id=245254291]
-offset_left = 10.0
-offset_top = 500.0
-offset_right = 52.0
-offset_bottom = 531.0
-text = "UPG"
-
-[node name="MANA" type="Button" parent="." unique_id=628097191]
-offset_left = 87.0
-offset_top = 500.0
-offset_right = 129.0
-offset_bottom = 531.0
-text = "UPG"
-
-[node name="CHARGE" type="Button" parent="." unique_id=807405782]
-offset_left = 162.0
-offset_top = 500.0
-offset_right = 204.0
-offset_bottom = 531.0
-text = "UPG"
-
-[node name="ATTACK" type="Button" parent="." unique_id=1790590589]
-offset_left = 235.0
-offset_top = 500.0
-offset_right = 277.0
-offset_bottom = 531.0
-text = "UPG"
-
 [node name="FEJLESZT" type="Button" parent="." unique_id=1923136910]
-offset_left = 592.0
-offset_top = 318.0
-offset_right = 707.0
-offset_bottom = 360.9518
+offset_left = 688.0
+offset_top = 307.0
+offset_right = 803.0
+offset_bottom = 349.9518
 text = "Fejlesztés"
 
 [node name="DESC" type="Label" parent="." unique_id=1933773952]
-offset_left = 535.0
-offset_top = 192.0
-offset_right = 756.0
-offset_bottom = 304.0
+offset_left = 635.0
+offset_top = 182.0
+offset_right = 856.0
+offset_bottom = 294.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PONTOK" type="Label" parent="." unique_id=1862954664]
-offset_left = 701.0
-offset_top = 28.0
-offset_right = 922.0
-offset_bottom = 140.0
+offset_left = 729.0
+offset_top = 8.0
+offset_right = 950.0
+offset_bottom = 120.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -81,10 +69,510 @@ vertical_alignment = 1
 stream = ExtResource("2_o3ipy")
 autoplay = true
 
+[node name="Hp ág" type="Node" parent="." unique_id=870011899]
+
+[node name="HpTree" type="Sprite2D" parent="Hp ág" unique_id=1536311327]
+position = Vector2(41, 277.00003)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("4_n648w")
+
+[node name="LessDmgTaken" type="Sprite2D" parent="Hp ág" unique_id=288444549]
+position = Vector2(36, 31.000008)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("4_kdu6y")
+
+[node name="HpUpgraded6" type="Sprite2D" parent="Hp ág" unique_id=179222694]
+position = Vector2(37, 72.00001)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("6_jf1u3")
+
+[node name="MoreHp5" type="Sprite2D" parent="Hp ág" unique_id=468458917]
+position = Vector2(36, 111)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("7_dlyut")
+
+[node name="HpUpgraded5" type="Sprite2D" parent="Hp ág" unique_id=118592759]
+position = Vector2(37, 151)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("6_jf1u3")
+
+[node name="MoreHp4" type="Sprite2D" parent="Hp ág" unique_id=1566072538]
+position = Vector2(36, 192)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("7_dlyut")
+
+[node name="HpUpgraded4" type="Sprite2D" parent="Hp ág" unique_id=334413181]
+position = Vector2(37, 232)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("6_jf1u3")
+
+[node name="MoreHp3" type="Sprite2D" parent="Hp ág" unique_id=57460067]
+position = Vector2(36, 272)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("7_dlyut")
+
+[node name="HpUpgraded3" type="Sprite2D" parent="Hp ág" unique_id=661672845]
+position = Vector2(37, 311.00003)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("6_jf1u3")
+
+[node name="MoreHp2" type="Sprite2D" parent="Hp ág" unique_id=1068630873]
+position = Vector2(36, 351)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("7_dlyut")
+
+[node name="HpUpgraded2" type="Sprite2D" parent="Hp ág" unique_id=530518943]
+position = Vector2(37, 391)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("6_jf1u3")
+
+[node name="MoreHp1" type="Sprite2D" parent="Hp ág" unique_id=1257647808]
+position = Vector2(36, 432)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("7_dlyut")
+
+[node name="HpUpgraded1" type="Sprite2D" parent="Hp ág" unique_id=1586050723]
+position = Vector2(37, 472)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("6_jf1u3")
+
+[node name="HpDefault" type="Sprite2D" parent="Hp ág" unique_id=2125570191]
+position = Vector2(35.999996, 512)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("5_h226r")
+
+[node name="HP1" type="Button" parent="Hp ág" unique_id=245254291]
+offset_left = 13.0
+offset_top = 409.0
+offset_right = 59.0
+offset_bottom = 454.0
+flat = true
+
+[node name="HP2" type="Button" parent="Hp ág" unique_id=2009695266]
+offset_left = 13.0
+offset_top = 329.0
+offset_right = 59.0
+offset_bottom = 374.0
+flat = true
+
+[node name="HP3" type="Button" parent="Hp ág" unique_id=1991175166]
+offset_left = 14.0
+offset_top = 249.0
+offset_right = 60.0
+offset_bottom = 294.0
+flat = true
+
+[node name="HP4" type="Button" parent="Hp ág" unique_id=1806812377]
+offset_left = 14.0
+offset_top = 169.0
+offset_right = 60.0
+offset_bottom = 214.0
+flat = true
+
+[node name="HP5" type="Button" parent="Hp ág" unique_id=83396503]
+offset_left = 14.0
+offset_top = 89.0
+offset_right = 60.0
+offset_bottom = 134.0
+flat = true
+
+[node name="HP6" type="Button" parent="Hp ág" unique_id=1716830670]
+offset_left = 14.0
+offset_top = 9.0
+offset_right = 60.0
+offset_bottom = 54.0
+flat = true
+
+[node name="Mana ág" type="Node" parent="." unique_id=913459595]
+
+[node name="ManaTree" type="Sprite2D" parent="Mana ág" unique_id=388745089]
+position = Vector2(184.8, 277)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("8_j6g2i")
+
+[node name="ManaDefault" type="Sprite2D" parent="Mana ág" unique_id=1109410254]
+position = Vector2(184, 511.99997)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("9_0du7f")
+
+[node name="ManaUpgrade1" type="Sprite2D" parent="Mana ág" unique_id=527331587]
+position = Vector2(185, 472.99997)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("10_osvg7")
+
+[node name="MoreMana1" type="Sprite2D" parent="Mana ág" unique_id=1123662655]
+position = Vector2(184, 431.99997)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("11_abodq")
+
+[node name="ManaUpgrade2" type="Sprite2D" parent="Mana ág" unique_id=935477681]
+position = Vector2(185, 392)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("10_osvg7")
+
+[node name="ManaUpgrade3" type="Sprite2D" parent="Mana ág" unique_id=869445947]
+position = Vector2(185, 312)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("10_osvg7")
+
+[node name="ManaUpgrade4" type="Sprite2D" parent="Mana ág" unique_id=341686529]
+position = Vector2(185, 232)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("10_osvg7")
+
+[node name="ManaUpgrade5" type="Sprite2D" parent="Mana ág" unique_id=1563588714]
+position = Vector2(185, 152)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("10_osvg7")
+
+[node name="ManaUpgrade6" type="Sprite2D" parent="Mana ág" unique_id=568303989]
+position = Vector2(185, 72)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("10_osvg7")
+
+[node name="MoreMana2" type="Sprite2D" parent="Mana ág" unique_id=1023792349]
+position = Vector2(184, 352)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("11_abodq")
+
+[node name="MoreMana3" type="Sprite2D" parent="Mana ág" unique_id=498779054]
+position = Vector2(184, 272)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("11_abodq")
+
+[node name="MoreMana4" type="Sprite2D" parent="Mana ág" unique_id=2051568611]
+position = Vector2(184, 192)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("11_abodq")
+
+[node name="MoreMana5" type="Sprite2D" parent="Mana ág" unique_id=1358184422]
+position = Vector2(184, 112)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("11_abodq")
+
+[node name="AoeAfterRevive" type="Sprite2D" parent="Mana ág" unique_id=1892596863]
+position = Vector2(184, 32)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("12_0bypg")
+
+[node name="MANA1" type="Button" parent="Mana ág" unique_id=628097191]
+offset_left = 162.0
+offset_top = 409.0
+offset_right = 207.0
+offset_bottom = 454.0
+text = "
+"
+flat = true
+
+[node name="MANA2" type="Button" parent="Mana ág" unique_id=1633160309]
+offset_left = 162.0
+offset_top = 330.0
+offset_right = 207.0
+offset_bottom = 375.0
+text = "
+"
+flat = true
+
+[node name="MANA3" type="Button" parent="Mana ág" unique_id=1842005190]
+offset_left = 162.0
+offset_top = 249.0
+offset_right = 207.0
+offset_bottom = 294.0
+text = "
+"
+flat = true
+
+[node name="MANA4" type="Button" parent="Mana ág" unique_id=2007685075]
+offset_left = 162.0
+offset_top = 170.0
+offset_right = 207.0
+offset_bottom = 215.0
+text = "
+"
+flat = true
+
+[node name="MANA5" type="Button" parent="Mana ág" unique_id=552837915]
+offset_left = 162.0
+offset_top = 89.0
+offset_right = 207.0
+offset_bottom = 134.0
+text = "
+"
+flat = true
+
+[node name="MANA6" type="Button" parent="Mana ág" unique_id=365752064]
+offset_left = 162.0
+offset_top = 10.0
+offset_right = 207.0
+offset_bottom = 55.0
+text = "
+"
+flat = true
+
+[node name="Charge ág" type="Node" parent="." unique_id=1871577495]
+
+[node name="CaTree" type="Sprite2D" parent="Charge ág" unique_id=1871526327]
+position = Vector2(335.6, 265.2)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("13_kn5jo")
+
+[node name="CaDefault" type="Sprite2D" parent="Charge ág" unique_id=1285719032]
+position = Vector2(332.6, 510.2)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("14_kxtgn")
+
+[node name="CaUpgrade1" type="Sprite2D" parent="Charge ág" unique_id=1478249870]
+position = Vector2(333.6, 470.2)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("15_eyd4w")
+
+[node name="CaUpgrade2" type="Sprite2D" parent="Charge ág" unique_id=1628358]
+position = Vector2(333.6, 391.2)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("15_eyd4w")
+
+[node name="MoreAtk1" type="Sprite2D" parent="Charge ág" unique_id=1295877693]
+position = Vector2(332.6, 431.2)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("16_3iorm")
+
+[node name="MoreFeathers1" type="Sprite2D" parent="Charge ág" unique_id=226133306]
+position = Vector2(332.6, 351.2)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("17_y4m2b")
+
+[node name="CaUpgrade3" type="Sprite2D" parent="Charge ág" unique_id=189654156]
+position = Vector2(333.2, 311.2)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("15_eyd4w")
+
+[node name="CaUpgrade4" type="Sprite2D" parent="Charge ág" unique_id=1717081840]
+position = Vector2(333.2, 232.20001)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("15_eyd4w")
+
+[node name="CaUpgrade5" type="Sprite2D" parent="Charge ág" unique_id=1420673818]
+position = Vector2(333.6, 150.20001)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("15_eyd4w")
+
+[node name="CaUpgrade6" type="Sprite2D" parent="Charge ág" unique_id=1751868123]
+position = Vector2(333.6, 70.20002)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("15_eyd4w")
+
+[node name="MoreAtk2" type="Sprite2D" parent="Charge ág" unique_id=1251386269]
+position = Vector2(332.6, 271.2)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("16_3iorm")
+
+[node name="MoreAtk3" type="Sprite2D" parent="Charge ág" unique_id=997038787]
+position = Vector2(332.6, 110.20003)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("16_3iorm")
+
+[node name="MoreFeathers2" type="Sprite2D" parent="Charge ág" unique_id=440863821]
+position = Vector2(332.6, 190.20001)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("17_y4m2b")
+
+[node name="PiercingAtk" type="Sprite2D" parent="Charge ág" unique_id=1305338981]
+position = Vector2(332.6, 31.200027)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("18_s6mtc")
+
+[node name="CHARGE1" type="Button" parent="Charge ág" unique_id=807405782]
+offset_left = 310.0
+offset_top = 409.0
+offset_right = 355.0
+offset_bottom = 453.0
+text = "
+"
+flat = true
+
+[node name="CHARGE2" type="Button" parent="Charge ág" unique_id=2033127331]
+offset_left = 310.0
+offset_top = 329.0
+offset_right = 355.0
+offset_bottom = 373.0
+text = "
+"
+flat = true
+
+[node name="CHARGE3" type="Button" parent="Charge ág" unique_id=851342985]
+offset_left = 310.0
+offset_top = 248.0
+offset_right = 355.0
+offset_bottom = 292.0
+text = "
+"
+flat = true
+
+[node name="CHARGE4" type="Button" parent="Charge ág" unique_id=1619080133]
+offset_left = 310.0
+offset_top = 168.0
+offset_right = 355.0
+offset_bottom = 212.0
+text = "
+"
+flat = true
+
+[node name="CHARGE5" type="Button" parent="Charge ág" unique_id=692606270]
+offset_left = 310.0
+offset_top = 89.0
+offset_right = 355.0
+offset_bottom = 133.0
+text = "
+"
+flat = true
+
+[node name="CHARGE6" type="Button" parent="Charge ág" unique_id=1534258645]
+offset_left = 310.0
+offset_top = 9.0
+offset_right = 355.0
+offset_bottom = 53.0
+text = "
+"
+flat = true
+
+[node name="Attack ág" type="Node" parent="." unique_id=1909096847]
+
+[node name="NaTree" type="Sprite2D" parent="Attack ág" unique_id=1092714309]
+position = Vector2(484.8, 274.6)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("19_dctan")
+
+[node name="NaDefault" type="Sprite2D" parent="Attack ág" unique_id=1601053604]
+position = Vector2(485.8, 510.6)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("20_qigoo")
+
+[node name="NaUpgrade1" type="Sprite2D" parent="Attack ág" unique_id=860689775]
+position = Vector2(485.8, 469.6)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("21_j2m1j")
+
+[node name="NaUpgrade2" type="Sprite2D" parent="Attack ág" unique_id=1978190501]
+position = Vector2(485.8, 389.6)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("21_j2m1j")
+
+[node name="MoreAtk1" type="Sprite2D" parent="Attack ág" unique_id=1188147351]
+position = Vector2(485.8, 431.6)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("22_owaxu")
+
+[node name="OneExtraFeather1" type="Sprite2D" parent="Attack ág" unique_id=217888644]
+position = Vector2(485.8, 351.6)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("23_ore2i")
+
+[node name="NaUpgrade3" type="Sprite2D" parent="Attack ág" unique_id=2075254092]
+position = Vector2(485.8, 310.6)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("21_j2m1j")
+
+[node name="NaUpgrade4" type="Sprite2D" parent="Attack ág" unique_id=2122785589]
+position = Vector2(485.8, 231.6)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("21_j2m1j")
+
+[node name="MoreAtk2" type="Sprite2D" parent="Attack ág" unique_id=991909881]
+position = Vector2(485.8, 271.6)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("22_owaxu")
+
+[node name="NaUpgrade5" type="Sprite2D" parent="Attack ág" unique_id=1920798298]
+position = Vector2(485.8, 150.60002)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("21_j2m1j")
+
+[node name="NaUpgrade6" type="Sprite2D" parent="Attack ág" unique_id=1483612072]
+position = Vector2(485.8, 70.600006)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("21_j2m1j")
+
+[node name="MoreAtk3" type="Sprite2D" parent="Attack ág" unique_id=1004479077]
+position = Vector2(485.8, 111.600006)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("22_owaxu")
+
+[node name="OneExtraFeather2" type="Sprite2D" parent="Attack ág" unique_id=1306825056]
+position = Vector2(485.8, 191.6)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("23_ore2i")
+
+[node name="ExplodingFeather" type="Sprite2D" parent="Attack ág" unique_id=2063012108]
+position = Vector2(485.8, 31.600006)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("24_invat")
+
+[node name="ATTACK1" type="Button" parent="Attack ág" unique_id=1790590589]
+offset_left = 464.0
+offset_top = 409.0
+offset_right = 509.0
+offset_bottom = 454.0
+flat = true
+
+[node name="ATTACK2" type="Button" parent="Attack ág" unique_id=12817970]
+offset_left = 463.0
+offset_top = 329.0
+offset_right = 508.0
+offset_bottom = 374.0
+flat = true
+
+[node name="ATTACK3" type="Button" parent="Attack ág" unique_id=566088873]
+offset_left = 464.0
+offset_top = 249.0
+offset_right = 509.0
+offset_bottom = 294.0
+flat = true
+
+[node name="ATTACK4" type="Button" parent="Attack ág" unique_id=2072056047]
+offset_left = 463.0
+offset_top = 169.0
+offset_right = 508.0
+offset_bottom = 214.0
+flat = true
+
+[node name="ATTACK5" type="Button" parent="Attack ág" unique_id=2011188903]
+offset_left = 463.0
+offset_top = 89.0
+offset_right = 508.0
+offset_bottom = 134.0
+flat = true
+
+[node name="ATTACK6" type="Button" parent="Attack ág" unique_id=2101276792]
+offset_left = 464.0
+offset_top = 9.0
+offset_right = 509.0
+offset_bottom = 54.0
+flat = true
+
 [connection signal="pressed" from="FOLYTAT" to="." method="_on_folytat_pressed"]
 [connection signal="pressed" from="MENU" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="HP" to="." method="_on_hp_pressed"]
-[connection signal="pressed" from="MANA" to="." method="_on_mana_pressed"]
-[connection signal="pressed" from="CHARGE" to="." method="_on_charge_pressed"]
-[connection signal="pressed" from="ATTACK" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="FEJLESZT" to="." method="_on_fejleszt_pressed"]
+[connection signal="pressed" from="Hp ág/HP1" to="." method="_on_hp_pressed"]
+[connection signal="pressed" from="Hp ág/HP2" to="." method="_on_hp_pressed"]
+[connection signal="pressed" from="Hp ág/HP3" to="." method="_on_hp_pressed"]
+[connection signal="pressed" from="Hp ág/HP4" to="." method="_on_hp_pressed"]
+[connection signal="pressed" from="Hp ág/HP5" to="." method="_on_hp_pressed"]
+[connection signal="pressed" from="Hp ág/HP6" to="." method="_on_hp_pressed"]
+[connection signal="pressed" from="Mana ág/MANA1" to="." method="_on_mana_pressed"]
+[connection signal="pressed" from="Mana ág/MANA2" to="." method="_on_mana_pressed"]
+[connection signal="pressed" from="Mana ág/MANA3" to="." method="_on_mana_pressed"]
+[connection signal="pressed" from="Mana ág/MANA4" to="." method="_on_mana_pressed"]
+[connection signal="pressed" from="Mana ág/MANA5" to="." method="_on_mana_pressed"]
+[connection signal="pressed" from="Mana ág/MANA6" to="." method="_on_mana_pressed"]
+[connection signal="pressed" from="Charge ág/CHARGE1" to="." method="_on_charge_pressed"]
+[connection signal="pressed" from="Charge ág/CHARGE2" to="." method="_on_charge_pressed"]
+[connection signal="pressed" from="Charge ág/CHARGE3" to="." method="_on_charge_pressed"]
+[connection signal="pressed" from="Charge ág/CHARGE4" to="." method="_on_charge_pressed"]
+[connection signal="pressed" from="Charge ág/CHARGE5" to="." method="_on_charge_pressed"]
+[connection signal="pressed" from="Charge ág/CHARGE6" to="." method="_on_charge_pressed"]
+[connection signal="pressed" from="Attack ág/ATTACK1" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="Attack ág/ATTACK2" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="Attack ág/ATTACK3" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="Attack ág/ATTACK4" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="Attack ág/ATTACK5" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="Attack ág/ATTACK6" to="." method="_on_attack_pressed"]

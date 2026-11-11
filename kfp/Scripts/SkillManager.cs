@@ -4,7 +4,7 @@ public partial class SkillManager : Node
 {
     public static SkillManager Instance { get; private set; }
 
-    public int AvailablePoints = 20;
+    public int AvailablePoints = 30;
     public int KillCount = 0;
     public int NextPointAt = 5;
 
