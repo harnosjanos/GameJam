@@ -111,22 +111,6 @@ autoplay = "default"
 frame_progress = 0.8474671
 centered = false
 
-[node name="Label" type="Label" parent="." unique_id=1592704808]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 75.0
-offset_top = 51.0
-offset_right = 1034.0
-offset_bottom = 590.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Tutorial"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Mother_Phoneix" type="Node2D" parent="." unique_id=66079362]
 texture_filter = 1
 
