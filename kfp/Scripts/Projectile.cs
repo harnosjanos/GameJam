@@ -1,4 +1,3 @@
-
 using Godot;
 
 public partial class Projectile : Area2D
@@ -7,13 +6,13 @@ public partial class Projectile : Area2D
 
     public bool Pierce = false;
 
-    public bool CanExplode = true;
+    public bool IsChargedProjectile = false;
 
     public float Speed = 600f;
 
     public int Damage = 1;
 
-    public float ExplosionRadius = 150f;
+    public ulong IgnoredEnemyId = 0;
 
     private bool exploded = false;
 
@@ -37,19 +36,34 @@ public partial class Projectile : Area2D
         if (enemy == null)
             return;
 
-        // Alap sebzés az eltalált ellenfélnek
-        enemy.TakeDamage(Damage);
-
-        // Robbanás csak akkor, ha engedélyezve van
         if (
-            CanExplode &&
-            SkillManager.Instance.AttackLevel >= 6 &&
-            !exploded
+            IgnoredEnemyId != 0 &&
+            enemy.GetInstanceId() == IgnoredEnemyId
+        )
+            return;
+
+        Vector2 hitPosition = enemy.GlobalPosition;
+        ulong hitEnemyId = enemy.GetInstanceId();
+
+        if (
+        SkillManager.Instance.AttackLevel >= 6 &&
+        !IsChargedProjectile &&
+        !exploded &&
+        !enemy.ChargedNovaTriggered
         )
         {
+            enemy.ChargedNovaTriggered = true;
+
             exploded = true;
-            Explode(enemy);
+
+            CallDeferred(
+                nameof(SpawnChargedNova),
+                hitPosition,
+                hitEnemyId
+            );
         }
+
+        enemy.TakeDamage(Damage);
 
         if (!Pierce)
         {
@@ -57,38 +71,56 @@ public partial class Projectile : Area2D
         }
     }
 
-    private void Explode(Enemy originalEnemy)
+    private void SpawnChargedNova(
+        Vector2 position,
+        ulong ignoredEnemyId
+    )
     {
-        // Robbanási effekt létrehozása
-        ExplosionEffect effect = new ExplosionEffect();
-
-        effect.MaxRadius = ExplosionRadius;
-        effect.Duration = 0.3f;
-        effect.PixelSize = 8f;
-
-        GetTree().CurrentScene.AddChild(effect);
-
-        effect.GlobalPosition = GlobalPosition;
-
-        // Körön belüli ellenfelek sebzése
-        foreach (Node node in GetTree().GetNodesInGroup("enemy"))
-        {
-            Enemy otherEnemy = node.GetParent<Enemy>();
-
-            if (otherEnemy == null)
-                continue;
-
-            if (otherEnemy == originalEnemy)
-                continue;
-
-            float distance = GlobalPosition.DistanceTo(
-                otherEnemy.GlobalPosition
+        PackedScene projectileScene =
+            GD.Load<PackedScene>(
+                "res://Scenes/Projectile.tscn"
             );
 
-            if (distance <= ExplosionRadius)
-            {
-                otherEnemy.TakeDamage(Damage);
-            }
+        int projectileCount =
+            10 + (SkillManager.Instance.ChargeLevel / 2);
+
+        for (int i = 0; i < projectileCount; i++)
+        {
+            float angle =
+                Mathf.Tau * i / projectileCount;
+
+            Vector2 direction =
+                new Vector2(
+                    Mathf.Cos(angle),
+                    Mathf.Sin(angle)
+                );
+
+            Projectile projectile =
+                projectileScene.Instantiate<Projectile>();
+
+            projectile.IsChargedProjectile = true;
+
+            projectile.IgnoredEnemyId =
+                ignoredEnemyId;
+
+            projectile.Pierce =
+                SkillManager.Instance.ChargeLevel >= 6;
+
+            projectile.GlobalPosition =
+                position;
+
+            projectile.Direction =
+                direction.Normalized();
+
+            projectile.Rotation =
+                direction.Angle();
+
+            GetTree()
+                .CurrentScene
+                .CallDeferred(
+                    Node.MethodName.AddChild,
+                    projectile
+                );
         }
     }
 }

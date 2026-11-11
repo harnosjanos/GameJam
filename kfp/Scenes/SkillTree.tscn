@@ -70,10 +70,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PONTOK" type="Label" parent="." unique_id=1862954664]
-offset_left = 751.0
-offset_top = -27.0
-offset_right = 972.0
-offset_bottom = 85.0
+offset_left = 701.0
+offset_top = 28.0
+offset_right = 922.0
+offset_bottom = 140.0
 horizontal_alignment = 1
 vertical_alignment = 1
 

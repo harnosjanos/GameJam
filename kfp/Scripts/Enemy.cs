@@ -8,6 +8,8 @@ public partial class Enemy : CharacterBody2D
     [Export]
     public int Health = 3;
 
+    public bool ChargedNovaTriggered = false;
+
     private ProgressBar healthBar;
 
     private Player player;
@@ -47,6 +49,8 @@ public partial class Enemy : CharacterBody2D
         {
             healthBar.Value = Health;
         }
+
+        ChargedNovaTriggered = false;
     }
 
     public void TakeDamage(int damage)

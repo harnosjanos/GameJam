@@ -86,7 +86,8 @@ public partial class Player
     {
         Projectile projectile =
             ProjectileScene.Instantiate<Projectile>();
-
+        
+        projectile.IsChargedProjectile = false;
         projectile.GlobalPosition = GlobalPosition;
 
         projectile.Direction = direction;
@@ -122,6 +123,8 @@ public partial class Player
 
             Projectile projectile =
                 ProjectileScene.Instantiate<Projectile>();
+            
+            projectile.IsChargedProjectile = true;
             
             projectile.Pierce =
                 SkillManager.Instance.ChargeLevel >= 6;
