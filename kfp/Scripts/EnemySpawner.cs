@@ -4,7 +4,6 @@ using System;
 public partial class EnemySpawner : Node
 {
 	[Export] float radius = 150;
-	[Export] PackedScene enemy;
 	[Export] double SpawnInterval { get; set; } = 2.0;
 	Player player;
 	float playerSpawnX;
@@ -22,7 +21,19 @@ public partial class EnemySpawner : Node
 
 	public void EnemySpawn()
 	{
-		Enemy enemyCopy = enemy.Instantiate<Enemy>();
+		Random random = new();
+		Enemy enemyCopy;
+		switch (random.Next(2))
+		{
+			case 0:
+				enemyCopy = GD.Load<PackedScene>("res://Scenes/Harpy.tscn").Instantiate<Enemy>();
+				GD.Print("harpy 0");
+				break;
+			default:
+				enemyCopy = GD.Load<PackedScene>("res://Scenes/Harpy.tscn").Instantiate<Enemy>();
+				GD.Print("harpy default");
+				break;
+		}
 		GetTree().CurrentScene.AddChild(enemyCopy);
 
 		Random rand = new Random();
@@ -57,6 +68,8 @@ public partial class EnemySpawner : Node
 			}
 		}
 
+		AnimatedSprite2D enemySprite = enemyCopy.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		enemySprite.FlipH = playerSpawnX < x;
 		enemyCopy.GlobalPosition = new Vector2(x, y);
 	}
 

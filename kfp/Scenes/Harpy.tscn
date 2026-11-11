@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://b5qkf81f6aeds"]
+
+[ext_resource type="Script" uid="uid://bjhaa8vgoq7v2" path="res://Scripts/Enemy.cs" id="1_7aihx"]
+[ext_resource type="Texture2D" uid="uid://dduwgtwlk00qb" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (1).png" id="2_m76lx"]
+[ext_resource type="Texture2D" uid="uid://b4rwow8hvpfvs" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (2).png" id="3_6oaqm"]
+[ext_resource type="Texture2D" uid="uid://ducood0ppnre3" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (3).png" id="4_vmiil"]
+[ext_resource type="Texture2D" uid="uid://dbveywnit60f5" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (4).png" id="5_ni0sv"]
+[ext_resource type="Texture2D" uid="uid://cli4uleiwng4b" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (5).png" id="6_o15mg"]
+[ext_resource type="Texture2D" uid="uid://bxe2inuq2uqu5" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (6).png" id="7_xaq3e"]
+[ext_resource type="Texture2D" uid="uid://cmvqscnr1hlo4" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (7).png" id="8_23slk"]
+[ext_resource type="Texture2D" uid="uid://b6x8rkn1cxrd4" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (8).png" id="9_lsj12"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0edf"]
+animations = [{
+"frames": [{
+"duration": 0.01,
+"texture": ExtResource("2_m76lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6oaqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vmiil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ni0sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o15mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xaq3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_23slk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lsj12")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_es6n3"]
+radius = 44.5
+height = 93.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1198995511]
+script = ExtResource("1_7aihx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=44247913]
+sprite_frames = SubResource("SpriteFrames_q0edf")
+autoplay = "default"
+frame = 5
+frame_progress = 0.5403115
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1595912528 groups=["enemy"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox" unique_id=1417234088]
+position = Vector2(1.5, 0.5)
+shape = SubResource("CapsuleShape2D_es6n3")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1792743071]
+modulate = Color(0.99999994, 0.18482906, 0.109751694, 1)
+self_modulate = Color(0.87657166, 0, 0.057856396, 1)
+offset_left = -45.0
+offset_top = -93.0
+offset_right = 51.0
+offset_bottom = -66.0
+theme_override_font_sizes/font_size = 1
+show_percentage = false
