@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://0x3i84dn6m6q"]
+
+[ext_resource type="Texture2D" uid="uid://dt627omurbv4p" path="res://Kepek/MobSeahorse/sh_01.png" id="1_3y12f"]
+[ext_resource type="Script" uid="uid://b2j6250r6kvme" path="res://Scripts/SeahorseEnemy.cs" id="1_77pp0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nbpiv"]
+radius = 25.495098
+
+[node name="SeahorseEnemy" type="CharacterBody2D" unique_id=21542865]
+script = ExtResource("1_77pp0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=470853658]
+texture = ExtResource("1_3y12f")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1447544754]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=545062925]
+shape = SubResource("CircleShape2D_nbpiv")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1385454237]
+offset_left = -22.0
+offset_top = 32.0
+offset_right = 21.0
+offset_bottom = 59.0

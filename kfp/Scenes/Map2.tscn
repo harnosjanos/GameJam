@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dndmxtqhf52xo"]
+
+[ext_resource type="PackedScene" uid="uid://dnb5ijnf4pp5f" path="res://Scenes/Tenger.tscn" id="1_l8x2o"]
+[ext_resource type="Script" uid="uid://bayg165l6a8jb" path="res://Scripts/Map2.cs" id="1_np7t7"]
+[ext_resource type="PackedScene" uid="uid://nordr0py2gyx" path="res://Scenes/Player.tscn" id="2_j8ect"]
+[ext_resource type="Script" uid="uid://dpjah86e1wjgb" path="res://Scripts/Map2EnemySpawner.cs" id="3_j8ect"]
+[ext_resource type="PackedScene" uid="uid://dsc3yb65qp2r7" path="res://Scenes/Projectile.tscn" id="3_n5m6n"]
+
+[node name="Map2" type="Node2D" unique_id=1911509454]
+script = ExtResource("1_np7t7")
+
+[node name="Tenger" parent="." unique_id=216858625 instance=ExtResource("1_l8x2o")]
+
+[node name="Player" parent="." unique_id=502233483 instance=ExtResource("2_j8ect")]
+position = Vector2(531, 335)
+ProjectileScene = ExtResource("3_n5m6n")
+
+[node name="Map2EnemySpawner" type="Node" parent="." unique_id=197125256]
+script = ExtResource("3_j8ect")
