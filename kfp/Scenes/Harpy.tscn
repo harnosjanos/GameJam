@@ -39,7 +39,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 12.0
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_es6n3"]
@@ -52,8 +52,7 @@ script = ExtResource("1_7aihx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=44247913]
 sprite_frames = SubResource("SpriteFrames_q0edf")
 autoplay = "default"
-frame = 5
-frame_progress = 0.5403115
+frame_progress = 0.4294088
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1595912528 groups=["enemy"]]
 
