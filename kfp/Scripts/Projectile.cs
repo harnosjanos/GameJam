@@ -47,7 +47,6 @@ public partial class Projectile : Area2D
 
         if (
         SkillManager.Instance.AttackLevel >= 6 &&
-        !IsChargedProjectile &&
         !exploded &&
         !enemy.ChargedNovaTriggered
         )

@@ -22,6 +22,9 @@ public partial class SkillManager : Node
     {
         AvailablePoints = 0;
 
+        KillCount = 0;
+        NextPointAt = 5;
+
         HpLevel = 0;
         ManaLevel = 0;
         AttackLevel = 0;

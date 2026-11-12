@@ -288,12 +288,10 @@ public partial class SkillTree : Node2D
                     case 1:
                     case 3:
                     case 4:
-                        return "Nagyobb Charged Attack sebzés.";
-
+                        return "Több Feather a Charged Attackhoz.";
                     case 2:
                     case 5:
-                        return "Több Feather a Charged Attackhoz.";
-
+                        return "Nagyobb Charged Attack sebzés.";
                     case 6:
                         return "ULTIMATE\n\nPiercing Attack.";
                 }
