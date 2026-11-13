@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dnb5ijnf4pp5f"]
+
+[ext_resource type="Texture2D" uid="uid://d3b4wde036kwp" path="res://Kepek/ocean-768x512.jpg" id="1_pqc2t"]
+[ext_resource type="Texture2D" uid="uid://b3bwplo064n4l" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/Mountain.png" id="2_fwg65"]
+[ext_resource type="Texture2D" uid="uid://djytf5fdiojr8" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/Nest.png" id="3_an3yv"]
+
+[node name="Tenger" type="Node2D" unique_id=216858625]
+
+[node name="Ocean768x512" type="Sprite2D" parent="." unique_id=588097865]
+position = Vector2(483.75006, 314.5)
+scale = Vector2(1.2949219, 1.2949219)
+texture = ExtResource("1_pqc2t")
+
+[node name="Mountain" type="Sprite2D" parent="." unique_id=153253982]
+position = Vector2(503, 466)
+texture = ExtResource("2_fwg65")
+
+[node name="Nest" type="Sprite2D" parent="." unique_id=256269044]
+position = Vector2(533, 422)
+texture = ExtResource("3_an3yv")

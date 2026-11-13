@@ -13,6 +13,8 @@ public partial class SkillManager : Node
     public int AttackLevel = 0;
     public int ChargeLevel = 0;
 
+    public int CurrentStage = 1;
+
     public override void _Ready()
     {
         Instance = this;
@@ -21,6 +23,9 @@ public partial class SkillManager : Node
     public void ResetSkills()
     {
         AvailablePoints = 0;
+
+        KillCount = 0;
+        NextPointAt = 5;
 
         HpLevel = 0;
         ManaLevel = 0;
