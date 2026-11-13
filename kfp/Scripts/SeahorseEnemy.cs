@@ -2,6 +2,8 @@ using Godot;
 
 public partial class SeahorseEnemy : CharacterBody2D
 {
+    private Area2D hitbox;
+
     [Export]
     public int Health = 3;
 
@@ -16,10 +18,12 @@ public partial class SeahorseEnemy : CharacterBody2D
 
     [Export]
     public float NoJumpRadius = 200f;
-
+    
     private ProgressBar healthBar;
 
     private Player player;
+
+    public bool ChargedNovaTriggered = false;
 
     private Vector2 startPos;
     private Vector2 targetPos;
@@ -32,12 +36,14 @@ public partial class SeahorseEnemy : CharacterBody2D
 
     private float jumpCooldown;
 
+    public ulong EnemyId => GetInstanceId();
+
     private Sprite2D sprite;
 
     public override void _Ready()
     {
-        GetNode<Area2D>("Hitbox")
-            .AddToGroup("enemy");
+        hitbox =
+            GetNode<Area2D>("Hitbox");
 
         player =
             GetTree()
@@ -141,7 +147,10 @@ public partial class SeahorseEnemy : CharacterBody2D
 
     private void StartJump()
     {
+        ChargedNovaTriggered = false;
         isJumping = true;
+
+        hitbox.AddToGroup("enemy");
 
         jumpTimer = 0f;
 
@@ -199,6 +208,10 @@ public partial class SeahorseEnemy : CharacterBody2D
         int damage
     )
     {
+
+        if (!isJumping)
+            return;
+
         Health -= damage;
 
         if (Health <= 0)

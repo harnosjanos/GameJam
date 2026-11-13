@@ -35,6 +35,13 @@ public partial class Projectile : Area2D
 
         if (parent is Enemy enemy)
         {
+            GD.Print(
+                "Harpy hit | Damage: " +
+                Damage +
+                " | Charged: " +
+                IsChargedProjectile
+            );
+
             if (
                 IgnoredEnemyId != 0 &&
                 enemy.GetInstanceId() == IgnoredEnemyId
@@ -74,10 +81,43 @@ public partial class Projectile : Area2D
 
         if (parent is SeahorseEnemy seahorse)
         {
+
+            if (
+                IgnoredEnemyId != 0 &&
+                seahorse.GetInstanceId() == IgnoredEnemyId
+            )
+                return;
+
+            GD.Print(
+                "Seahorse hit | Damage: " +
+                Damage +
+                " | Charged: " +
+                IsChargedProjectile
+            );
+
+            if (
+                SkillManager.Instance.AttackLevel >= 6 &&
+                !exploded &&
+                !seahorse.ChargedNovaTriggered
+            )
+            {
+                seahorse.ChargedNovaTriggered = true;
+
+                exploded = true;
+
+                CallDeferred(
+                    nameof(SpawnChargedNova),
+                    seahorse.GlobalPosition,
+                    seahorse.EnemyId
+                );
+            }
+
             seahorse.TakeDamage(Damage);
 
             if (!Pierce)
+            {
                 QueueFree();
+            }
 
             return;
         }
