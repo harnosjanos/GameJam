@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dlgjiwu5ummkq"]
+
+[ext_resource type="Script" uid="uid://dpuki1urbj610" path="res://Scripts/Posseidon.cs" id="1_lt4l2"]
+[ext_resource type="Texture2D" uid="uid://dvddxeim30hv3" path="res://icon.svg" id="1_wp3qy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_es6n3"]
+size = Vector2(128, 128)
+
+[node name="Posseidon" type="Node2D" unique_id=949116624]
+script = ExtResource("1_lt4l2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=419228016]
+texture = ExtResource("1_wp3qy")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=2017266888]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1341036498]
+shape = SubResource("RectangleShape2D_es6n3")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=10725435]
+offset_left = -25.0
+offset_top = 71.0
+offset_right = 27.0
+offset_bottom = 98.0
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=776042426]
+wait_time = 7.0
+
+[node name="PhaseTimer" type="Timer" parent="." unique_id=604470429]

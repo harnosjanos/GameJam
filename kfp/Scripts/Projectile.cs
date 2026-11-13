@@ -28,20 +28,16 @@ public partial class Projectile : Area2D
 
     private void OnAreaEntered(Area2D area)
     {
+        GD.Print(area.Name);
+
         if (!area.IsInGroup("enemy"))
             return;
 
         Node parent = area.GetParent();
 
+        // HARPY
         if (parent is Enemy enemy)
         {
-            GD.Print(
-                "Harpy hit | Damage: " +
-                Damage +
-                " | Charged: " +
-                IsChargedProjectile
-            );
-
             if (
                 IgnoredEnemyId != 0 &&
                 enemy.GetInstanceId() == IgnoredEnemyId
@@ -56,6 +52,7 @@ public partial class Projectile : Area2D
 
             if (
                 SkillManager.Instance.AttackLevel >= 6 &&
+                !IsChargedProjectile &&
                 !exploded &&
                 !enemy.ChargedNovaTriggered
             )
@@ -79,24 +76,21 @@ public partial class Projectile : Area2D
             return;
         }
 
+        // SEAHORSE
         if (parent is SeahorseEnemy seahorse)
         {
-
             if (
                 IgnoredEnemyId != 0 &&
                 seahorse.GetInstanceId() == IgnoredEnemyId
             )
                 return;
 
-            GD.Print(
-                "Seahorse hit | Damage: " +
-                Damage +
-                " | Charged: " +
-                IsChargedProjectile
-            );
+            if (!seahorse.IsJumping)
+                return;
 
             if (
                 SkillManager.Instance.AttackLevel >= 6 &&
+                !IsChargedProjectile &&
                 !exploded &&
                 !seahorse.ChargedNovaTriggered
             )
@@ -108,16 +102,36 @@ public partial class Projectile : Area2D
                 CallDeferred(
                     nameof(SpawnChargedNova),
                     seahorse.GlobalPosition,
-                    seahorse.EnemyId
+                    seahorse.GetInstanceId()
                 );
             }
 
             seahorse.TakeDamage(Damage);
 
             if (!Pierce)
-            {
                 QueueFree();
-            }
+
+            return;
+        }
+
+        // POSSEIDON
+        if (parent is Posseidon posseidon)
+        {
+            posseidon.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
+
+            return;
+        }
+
+        // WAVE
+        if (area is WaveAttack wave)
+        {
+            wave.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
 
             return;
         }

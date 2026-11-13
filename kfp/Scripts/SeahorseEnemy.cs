@@ -32,6 +32,8 @@ public partial class SeahorseEnemy : CharacterBody2D
 
     private bool isJumping = false;
 
+    public bool IsJumping => isJumping;
+
     private int swimDirection = 1;
 
     private float jumpCooldown;

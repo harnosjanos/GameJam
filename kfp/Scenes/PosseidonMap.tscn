@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://carpa6rodj5b6"]
+
+[ext_resource type="PackedScene" uid="uid://dnb5ijnf4pp5f" path="res://Scenes/Tenger.tscn" id="1_lg7gu"]
+[ext_resource type="PackedScene" uid="uid://nordr0py2gyx" path="res://Scenes/Player.tscn" id="2_s73u7"]
+[ext_resource type="PackedScene" uid="uid://dlgjiwu5ummkq" path="res://Scenes/Posseidon.tscn" id="3_jp3is"]
+[ext_resource type="PackedScene" uid="uid://dsc3yb65qp2r7" path="res://Scenes/Projectile.tscn" id="3_s73u7"]
+
+[node name="PosseidonMap" type="Node2D" unique_id=1034329588]
+
+[node name="Tenger" parent="." unique_id=216858625 instance=ExtResource("1_lg7gu")]
+
+[node name="Player" parent="." unique_id=502233483 instance=ExtResource("2_s73u7")]
+position = Vector2(528, 336)
+ProjectileScene = ExtResource("3_s73u7")
+
+[node name="Posseidon" parent="." unique_id=1044557396 instance=ExtResource("3_jp3is")]
+position = Vector2(443, 89)
+
+[node name="Center" type="Marker2D" parent="." unique_id=640892920]
+
+[node name="Left" type="Marker2D" parent="." unique_id=1804712551]
+
+[node name="Right" type="Marker2D" parent="." unique_id=686970613]
+
+[node name="LeftWaveSpawn" type="Marker2D" parent="." unique_id=1183770830]
+position = Vector2(0, 428)
+
+[node name="RightWaveSpawn" type="Marker2D" parent="." unique_id=163268709]
+position = Vector2(956, 417)
