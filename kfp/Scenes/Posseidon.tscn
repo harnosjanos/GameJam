@@ -24,6 +24,6 @@ offset_right = 27.0
 offset_bottom = 98.0
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=776042426]
-wait_time = 7.0
+wait_time = 3.0
 
 [node name="PhaseTimer" type="Timer" parent="." unique_id=604470429]

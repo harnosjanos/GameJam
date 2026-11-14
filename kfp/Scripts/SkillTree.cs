@@ -434,6 +434,12 @@ public partial class SkillTree : Node2D
 
                 break;
 
+            case 3:
+                GetTree().ChangeSceneToFile(
+                    "res://Scenes/PosseidonMap.tscn"
+                );
+                break;
+
             default:
 
                 GetTree().ChangeSceneToFile(

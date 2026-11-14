@@ -135,6 +135,17 @@ public partial class Projectile : Area2D
 
             return;
         }
+
+        // RAIN
+        if (area is RainCloud cloud)
+        {
+            cloud.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
+
+            return;
+        }
     }
 
     private void SpawnChargedNova(

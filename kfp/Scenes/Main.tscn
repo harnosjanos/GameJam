@@ -13,7 +13,7 @@ script = ExtResource("1_pbw6q")
 position = Vector2(480, 270)
 
 [node name="Player" parent="." unique_id=502233483 instance=ExtResource("1_r150o")]
-position = Vector2(488, 315)
+position = Vector2(490, 288)
 ProjectileScene = ExtResource("2_idj7w")
 
 [node name="EnemySpawner" type="Node" parent="." unique_id=693148689]
