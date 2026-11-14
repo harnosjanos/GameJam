@@ -17,7 +17,21 @@
 [ext_resource type="Texture2D" uid="uid://dkxsl76vq3ct" path="res://Kepek/tutorial/TreeBlink/TreeBlink3.png" id="9_kpk71"]
 [ext_resource type="Script" uid="uid://btmlegg1gjm0y" path="res://Scripts/Dialog.cs" id="10_sswaw"]
 [ext_resource type="Texture2D" uid="uid://ci7uboesmaw8i" path="res://Kepek/tutorial/(Tutorial)Nest_Inside.png" id="11_orlbv"]
+[ext_resource type="Texture2D" uid="uid://cpta554gq26n1" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttackFeather.png" id="12_anpm4"]
+[ext_resource type="Texture2D" uid="uid://b30j0yokv7mix" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0000.png" id="14_amhwl"]
 [ext_resource type="Texture2D" uid="uid://8ad3wq0nuisa" path="res://Kepek/tutorial/(Tutorial)Nest_Outside.png" id="15_m8quk"]
+[ext_resource type="Texture2D" uid="uid://dtc4p11gcwovk" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0003.png" id="15_v6u8i"]
+[ext_resource type="Texture2D" uid="uid://lxei048i5g5i" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0006.png" id="16_8q58x"]
+[ext_resource type="Texture2D" uid="uid://isr03hcm1g6v" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0009.png" id="17_anpm4"]
+[ext_resource type="Texture2D" uid="uid://duv233y8s14hg" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0011.png" id="18_dut48"]
+[ext_resource type="Texture2D" uid="uid://xnw1t7jl280y" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0013.png" id="19_pvfe1"]
+[ext_resource type="Texture2D" uid="uid://5vqfdxrctsfk" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0015.png" id="20_mceqy"]
+[ext_resource type="Texture2D" uid="uid://bwt5t12fuijoe" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0016.png" id="21_p8xjf"]
+[ext_resource type="Texture2D" uid="uid://61nfn1qnbudy" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0017.png" id="22_fouuw"]
+[ext_resource type="Texture2D" uid="uid://cgjlij2pb4x31" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0020.png" id="23_ppni0"]
+[ext_resource type="Texture2D" uid="uid://c8j1e3qho2858" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0023.png" id="24_1xisj"]
+[ext_resource type="Texture2D" uid="uid://bs2j0yasn5ugg" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0026.png" id="25_ila5h"]
+[ext_resource type="Texture2D" uid="uid://cisnep5yahhmx" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0029.png" id="26_3st2x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o1rwj"]
 animations = [{
@@ -54,6 +68,50 @@ shadow_color = Color(0, 0, 0, 0.70980394)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yqegr"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_amhwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_v6u8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8q58x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_anpm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dut48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_pvfe1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_mceqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_p8xjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_fouuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ppni0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1xisj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ila5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3st2x")
+}],
+"loop": 0,
+"name": &"Attack",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_rlm2d")
@@ -122,7 +180,8 @@ autoplay = "default"
 frame_progress = 0.8474671
 centered = false
 
-[node name="Dialog" type="Label" parent="." unique_id=1592704808]
+[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("MotherPhoenixSprite", "FeatherPosition")]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -141,17 +200,35 @@ label_settings = SubResource("LabelSettings_sswaw")
 horizontal_alignment = 1
 vertical_alignment = 2
 script = ExtResource("10_sswaw")
+MotherPhoenixSprite = NodePath("../Mother_Phoneix/MotherAnimation")
+FeatherPosition = NodePath("../Mother_Phoneix/Marker2D")
 
 [node name="Mother_Phoneix" type="Node2D" parent="." unique_id=66079362]
 texture_filter = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mother_Phoneix" unique_id=1921304767]
+[node name="MotherAnimation" type="AnimatedSprite2D" parent="Mother_Phoneix" unique_id=1921304767]
 position = Vector2(269.25, 164.75)
 scale = Vector2(3.473958, 3.473958)
 sprite_frames = SubResource("SpriteFrames_yqegr")
+animation = &"Attack"
 autoplay = "default"
-frame = 1
-frame_progress = 0.61239153
+frame = 12
+frame_progress = 1.0
+
+[node name="Marker2D" type="Marker2D" parent="Mother_Phoneix" unique_id=535945555]
+position = Vector2(391, 188)
+scale = Vector2(0.45070413, 0.45070422)
+
+[node name="Node2D" type="Node2D" parent="Mother_Phoneix" unique_id=899423613]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="Mother_Phoneix/Node2D" unique_id=1868598007]
+offset_left = 428.0
+offset_top = 164.00002
+offset_right = 494.0
+offset_bottom = 230.00002
+rotation = 1.5830137
+texture = ExtResource("12_anpm4")
 
 [node name="NestInside" type="TextureRect" parent="." unique_id=1130092238]
 offset_left = 480.0
