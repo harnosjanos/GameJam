@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cwb8hhlkm6suv" path="res://Kepek/tutorial/TreeBlink/TreeBlink1.png" id="7_mqud2"]
 [ext_resource type="Texture2D" uid="uid://bqgun7a7he3an" path="res://Kepek/tutorial/TreeBlink/TreeBlink2.png" id="8_sswaw"]
 [ext_resource type="Texture2D" uid="uid://dkxsl76vq3ct" path="res://Kepek/tutorial/TreeBlink/TreeBlink3.png" id="9_kpk71"]
+[ext_resource type="Script" uid="uid://btmlegg1gjm0y" path="res://Scripts/Dialog.cs" id="10_sswaw"]
 [ext_resource type="Texture2D" uid="uid://ci7uboesmaw8i" path="res://Kepek/tutorial/(Tutorial)Nest_Inside.png" id="11_orlbv"]
 [ext_resource type="Texture2D" uid="uid://8ad3wq0nuisa" path="res://Kepek/tutorial/(Tutorial)Nest_Outside.png" id="15_m8quk"]
 
@@ -40,6 +41,16 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sswaw"]
+bg_color = Color(0.75686276, 0.32156864, 0.43137255, 0.62352943)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sswaw"]
+font_size = 24
+outline_size = 3
+outline_color = Color(0.22190201, 0.22190201, 0.22190201, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.70980394)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yqegr"]
 animations = [{
@@ -111,22 +122,25 @@ autoplay = "default"
 frame_progress = 0.8474671
 centered = false
 
-[node name="Label" type="Label" parent="." unique_id=1592704808]
-visible = false
+[node name="Dialog" type="Label" parent="." unique_id=1592704808]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 75.0
-offset_top = 51.0
-offset_right = 1034.0
-offset_bottom = 590.0
+offset_left = 1.5258789e-05
+offset_top = 480.0
+offset_right = 992.93994
+offset_bottom = 545.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Tutorial"
+scale = Vector2(0.96682584, 0.9141176)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sswaw")
+text = "Td"
+label_settings = SubResource("LabelSettings_sswaw")
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
+script = ExtResource("10_sswaw")
 
 [node name="Mother_Phoneix" type="Node2D" parent="." unique_id=66079362]
 texture_filter = 1

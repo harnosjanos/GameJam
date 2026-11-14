@@ -12,4 +12,18 @@ texture = ExtResource("1_30qgy")
 position = Vector2(0, 209)
 texture = ExtResource("2_iiykg")
 
+<<<<<<< Updated upstream
+=======
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1430579484]
+texture_filter = 1
+position = Vector2(-20, 193)
+texture = ExtResource("3_d3nxb")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1814023098]
+texture_filter = 1
+position = Vector2(8, 131)
+texture = ExtResource("4_tqhgd")
+
+>>>>>>> Stashed changes
 [node name="Sprite2D5" type="Sprite2D" parent="." unique_id=369909175]
+texture_filter = 1
