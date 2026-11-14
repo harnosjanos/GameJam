@@ -18,7 +18,7 @@ public partial class SeahorseEnemy : CharacterBody2D
 
     [Export]
     public float NoJumpRadius = 200f;
-    
+
     private ProgressBar healthBar;
 
     private Player player;
@@ -40,7 +40,7 @@ public partial class SeahorseEnemy : CharacterBody2D
 
     public ulong EnemyId => GetInstanceId();
 
-    private Sprite2D sprite;
+    private AnimatedSprite2D sprite;
 
     public override void _Ready()
     {
@@ -56,7 +56,7 @@ public partial class SeahorseEnemy : CharacterBody2D
             GetNode<ProgressBar>("ProgressBar");
 
         sprite =
-            GetNode<Sprite2D>("Sprite2D");
+            GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         healthBar.MaxValue = Health;
         healthBar.Value = Health;
@@ -111,7 +111,7 @@ public partial class SeahorseEnemy : CharacterBody2D
         if (sprite != null)
         {
             sprite.FlipH =
-                swimDirection < 0;
+                swimDirection > 0;
         }
 
         if (GlobalPosition.X < 50)
@@ -119,7 +119,7 @@ public partial class SeahorseEnemy : CharacterBody2D
             swimDirection = 1;
         }
 
-        if (GlobalPosition.X > 950)
+        else if (GlobalPosition.X > 950)
         {
             swimDirection = -1;
         }
@@ -161,6 +161,8 @@ public partial class SeahorseEnemy : CharacterBody2D
 
         targetPos =
             player.GlobalPosition;
+
+        sprite.FlipH = startPos < targetPos;
     }
 
     private void UpdateJump(

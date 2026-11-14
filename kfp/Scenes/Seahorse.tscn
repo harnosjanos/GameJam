@@ -2,6 +2,29 @@
 
 [ext_resource type="Texture2D" uid="uid://dt627omurbv4p" path="res://Kepek/MobSeahorse/sh_01.png" id="1_3y12f"]
 [ext_resource type="Script" uid="uid://b2j6250r6kvme" path="res://Scripts/SeahorseEnemy.cs" id="1_77pp0"]
+[ext_resource type="Texture2D" uid="uid://nhrlf1nip86u" path="res://Kepek/MobSeahorse/sh_02.png" id="3_h6pa2"]
+[ext_resource type="Texture2D" uid="uid://n1kod711x52b" path="res://Kepek/MobSeahorse/sh_03.png" id="4_y5a4t"]
+[ext_resource type="Texture2D" uid="uid://ckb0nwpyjjurr" path="res://Kepek/MobSeahorse/sh_04.png" id="5_uxowa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0edf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3y12f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h6pa2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y5a4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uxowa")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nbpiv"]
 radius = 25.495098
@@ -10,7 +33,13 @@ radius = 25.495098
 script = ExtResource("1_77pp0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=470853658]
+visible = false
 texture = ExtResource("1_3y12f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=577738755]
+sprite_frames = SubResource("SpriteFrames_q0edf")
+autoplay = "default"
+frame_progress = 0.49004325
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1447544754]
 

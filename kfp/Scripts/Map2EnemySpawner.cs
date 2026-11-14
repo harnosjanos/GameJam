@@ -8,6 +8,7 @@ public partial class Map2EnemySpawner : Node
     private double elapsed;
 
     private PackedScene seahorseScene;
+    Player player;
 
     public override void _Ready()
     {
@@ -15,6 +16,8 @@ public partial class Map2EnemySpawner : Node
             GD.Load<PackedScene>(
                 "res://Scenes/Seahorse.tscn"
             );
+        player = GetTree()
+        .GetFirstNodeInGroup("player") as Player;
     }
 
     public override void _Process(
@@ -48,6 +51,8 @@ public partial class Map2EnemySpawner : Node
                 x,
                 500
             );
+        AnimatedSprite2D enemySprite = enemy.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        enemySprite.FlipH = enemy.Position.X < player.Position.X;
 
         GetTree()
             .CurrentScene
