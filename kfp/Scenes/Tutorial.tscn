@@ -1,38 +1,194 @@
 [gd_scene format=3 uid="uid://b0vl2ov1w4ckx"]
 
+[ext_resource type="Texture2D" uid="uid://bab3mlwiurjtp" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0000.png" id="1_7rvph"]
 [ext_resource type="Texture2D" uid="uid://lnecla1v7tjr" path="res://Kepek/tutorial/(Tutorial)Background.png" id="1_vv0ms"]
 [ext_resource type="Script" uid="uid://go5dmvi31smi" path="res://Scripts/CloudManager.cs" id="2_8q58x"]
 [ext_resource type="Texture2D" uid="uid://b5i6nutbavfux" path="res://Kepek/tutorial/(Tutorial)Cloud1.png" id="2_brn58"]
+[ext_resource type="Texture2D" uid="uid://ceyc1sanakd47" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0002.png" id="2_ef6ap"]
 [ext_resource type="Texture2D" uid="uid://qf1c4u73q7ec" path="res://Kepek/tutorial/mother_phoneix/idle_mother/PhoenixMomIdle0000.png" id="2_rlm2d"]
 [ext_resource type="Texture2D" uid="uid://bkuqwcv66daax" path="res://Kepek/tutorial/mother_phoneix/idle_mother/PhoenixMomIdle0015.png" id="3_3j26a"]
 [ext_resource type="Texture2D" uid="uid://ba6hylifcurx0" path="res://Kepek/tutorial/(Tutorial)Cloud3.png" id="3_fx2vl"]
+[ext_resource type="Texture2D" uid="uid://bph6234uqqys1" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0005.png" id="3_twx2b"]
+[ext_resource type="Texture2D" uid="uid://bttk0msikh0tl" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0008.png" id="4_5n6yi"]
 [ext_resource type="Texture2D" uid="uid://bimttoyc3jvgj" path="res://Kepek/tutorial/(Tutorial)Cloud2.png" id="4_mqud2"]
 [ext_resource type="Texture2D" uid="uid://bw8a5mhvioksj" path="res://Kepek/tutorial/mother_phoneix/idle_mother/PhoenixMomIdle0030.png" id="4_x7a1n"]
+[ext_resource type="Texture2D" uid="uid://b5vtkc5smkq7d" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0011.png" id="5_1pr6b"]
 [ext_resource type="Texture2D" uid="uid://dar8lqpela88g" path="res://Kepek/tutorial/baby_phoneix/BabyPhoenixBody.png" id="5_3j26a"]
 [ext_resource type="Texture2D" uid="uid://cce7ttyrhpbgl" path="res://Kepek/tutorial/(Tutorial)Hill.png" id="5_sswaw"]
 [ext_resource type="Script" uid="uid://cn81v4nk6o6b7" path="res://Scripts/Tutorial_ChildPhoneix.cs" id="5_x7a1n"]
+[ext_resource type="Texture2D" uid="uid://bsy718ibe3c" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0012.png" id="6_fbfqd"]
 [ext_resource type="Texture2D" uid="uid://0sxasqnvi41a" path="res://Kepek/tutorial/(Tutorial)Hill_Ground.png" id="6_kpk71"]
 [ext_resource type="Texture2D" uid="uid://dejwchhli0whl" path="res://Kepek/tutorial/baby_phoneix/BabyPhoenixHead.png" id="6_x7a1n"]
+[ext_resource type="Texture2D" uid="uid://buvc8uipqialo" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0013.png" id="7_5i0j3"]
 [ext_resource type="Texture2D" uid="uid://cwb8hhlkm6suv" path="res://Kepek/tutorial/TreeBlink/TreeBlink1.png" id="7_mqud2"]
+[ext_resource type="Texture2D" uid="uid://dam3myp2uqvym" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0014.png" id="8_6istf"]
 [ext_resource type="Texture2D" uid="uid://bqgun7a7he3an" path="res://Kepek/tutorial/TreeBlink/TreeBlink2.png" id="8_sswaw"]
+[ext_resource type="Texture2D" uid="uid://du0krymp8yjpx" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0015.png" id="9_71k5x"]
 [ext_resource type="Texture2D" uid="uid://dkxsl76vq3ct" path="res://Kepek/tutorial/TreeBlink/TreeBlink3.png" id="9_kpk71"]
+[ext_resource type="Texture2D" uid="uid://dvoxfjavrksju" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0016.png" id="10_ky4sh"]
 [ext_resource type="Script" uid="uid://btmlegg1gjm0y" path="res://Scripts/Dialog.cs" id="10_sswaw"]
+[ext_resource type="Texture2D" uid="uid://d031mjb2lnagw" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0017.png" id="11_fv17y"]
 [ext_resource type="Texture2D" uid="uid://ci7uboesmaw8i" path="res://Kepek/tutorial/(Tutorial)Nest_Inside.png" id="11_orlbv"]
 [ext_resource type="Texture2D" uid="uid://cpta554gq26n1" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttackFeather.png" id="12_anpm4"]
+[ext_resource type="Texture2D" uid="uid://towh0c68cfs7" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0018.png" id="12_i4ibp"]
+[ext_resource type="Texture2D" uid="uid://pujcv00horpp" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0021.png" id="13_722n3"]
+[ext_resource type="Texture2D" uid="uid://ci1n7c40pnl1o" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0024.png" id="14_8t24a"]
 [ext_resource type="Texture2D" uid="uid://b30j0yokv7mix" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0000.png" id="14_amhwl"]
+[ext_resource type="Texture2D" uid="uid://ckgwncsb0ru81" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0027.png" id="15_hxyb1"]
 [ext_resource type="Texture2D" uid="uid://8ad3wq0nuisa" path="res://Kepek/tutorial/(Tutorial)Nest_Outside.png" id="15_m8quk"]
 [ext_resource type="Texture2D" uid="uid://dtc4p11gcwovk" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0003.png" id="15_v6u8i"]
 [ext_resource type="Texture2D" uid="uid://lxei048i5g5i" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0006.png" id="16_8q58x"]
+[ext_resource type="Texture2D" uid="uid://dvq13elvbqmbp" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0030.png" id="16_e4yci"]
 [ext_resource type="Texture2D" uid="uid://isr03hcm1g6v" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0009.png" id="17_anpm4"]
+[ext_resource type="Texture2D" uid="uid://isg54gfgsu3m" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0031.png" id="17_slvkt"]
+[ext_resource type="Texture2D" uid="uid://ca2mpy02rfbhb" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0032.png" id="18_7guyi"]
 [ext_resource type="Texture2D" uid="uid://duv233y8s14hg" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0011.png" id="18_dut48"]
+[ext_resource type="Texture2D" uid="uid://ceqigfa7pvl7e" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0033.png" id="19_h67mq"]
 [ext_resource type="Texture2D" uid="uid://xnw1t7jl280y" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0013.png" id="19_pvfe1"]
+[ext_resource type="Texture2D" uid="uid://67dgxu4exbye" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0034.png" id="20_501mv"]
 [ext_resource type="Texture2D" uid="uid://5vqfdxrctsfk" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0015.png" id="20_mceqy"]
 [ext_resource type="Texture2D" uid="uid://bwt5t12fuijoe" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0016.png" id="21_p8xjf"]
+[ext_resource type="Texture2D" uid="uid://bybiqcqk7d15j" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0035.png" id="21_qspm2"]
 [ext_resource type="Texture2D" uid="uid://61nfn1qnbudy" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0017.png" id="22_fouuw"]
+[ext_resource type="Texture2D" uid="uid://bluf8cdsr7hs" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0036.png" id="22_uwr4s"]
+[ext_resource type="Texture2D" uid="uid://0c8luwkhxffr" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0037.png" id="23_fskxk"]
 [ext_resource type="Texture2D" uid="uid://cgjlij2pb4x31" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0020.png" id="23_ppni0"]
 [ext_resource type="Texture2D" uid="uid://c8j1e3qho2858" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0023.png" id="24_1xisj"]
+[ext_resource type="Texture2D" uid="uid://chdel5lqhxmp0" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0040.png" id="24_i1yoa"]
+[ext_resource type="Texture2D" uid="uid://do87uhxg7aht5" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0043.png" id="25_cyxee"]
 [ext_resource type="Texture2D" uid="uid://bs2j0yasn5ugg" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0026.png" id="25_ila5h"]
 [ext_resource type="Texture2D" uid="uid://cisnep5yahhmx" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttack/PhoenixMomAttack0029.png" id="26_3st2x"]
+[ext_resource type="Texture2D" uid="uid://blhof8hapu6hr" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0046.png" id="26_df3tq"]
+[ext_resource type="Texture2D" uid="uid://d2ptmysui3gwe" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0049.png" id="27_ugbyk"]
+[ext_resource type="Texture2D" uid="uid://0lmp4kx30sn3" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0050.png" id="28_h0fln"]
+[ext_resource type="Texture2D" uid="uid://blu30l2n3pytq" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0051.png" id="29_3r6o1"]
+[ext_resource type="Texture2D" uid="uid://duiig0uwm6s1m" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0052.png" id="30_t46ly"]
+[ext_resource type="Texture2D" uid="uid://bt35uwxqxk0xe" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0053.png" id="31_fhjap"]
+[ext_resource type="Texture2D" uid="uid://qn5dusk0b3jb" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0054.png" id="32_v4uoh"]
+[ext_resource type="Texture2D" uid="uid://6p0q0ibndn6j" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0055.png" id="33_l8wvp"]
+[ext_resource type="Texture2D" uid="uid://b62d7xsqf7inp" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0056.png" id="34_lggxj"]
+[ext_resource type="Texture2D" uid="uid://c4tyl05cpj7a4" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0059.png" id="35_gqq8o"]
+[ext_resource type="Texture2D" uid="uid://b03x3y1dq60xo" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0062.png" id="36_n7exn"]
+[ext_resource type="Texture2D" uid="uid://cmx1bq4nupxkb" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0065.png" id="37_dhnxe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_05qi6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7rvph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ef6ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_twx2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5n6yi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1pr6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fbfqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5i0j3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6istf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_71k5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ky4sh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fv17y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_i4ibp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_722n3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8t24a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hxyb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_e4yci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_slvkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_7guyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_h67mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_501mv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qspm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_uwr4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_fskxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_i1yoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cyxee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_df3tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ugbyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_h0fln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_3r6o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_t46ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_fhjap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_v4uoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_l8wvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_lggxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_gqq8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_n7exn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_dhnxe")
+}],
+"loop": 0,
+"name": &"EggHatch",
+"speed": 10.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o1rwj"]
 animations = [{
@@ -57,15 +213,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sswaw"]
-bg_color = Color(0.75686276, 0.32156864, 0.43137255, 0.62352943)
-
-[sub_resource type="LabelSettings" id="LabelSettings_sswaw"]
-font_size = 24
-outline_size = 3
-outline_color = Color(0.22190201, 0.22190201, 0.22190201, 1)
-shadow_size = 10
-shadow_color = Color(0, 0, 0, 0.70980394)
+[sub_resource type="LabelSettings" id="LabelSettings_8q58x"]
+font_size = 30
+outline_size = 8
+outline_color = Color(0.33090004, 0.12466174, 0.068825185, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yqegr"]
 animations = [{
@@ -132,6 +283,16 @@ animations = [{
 texture_filter = 3
 
 [node name="Hatching" type="Node2D" parent="." unique_id=155046685]
+z_index = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hatching" unique_id=1159452960]
+visible = false
+position = Vector2(481.66675, 269.75)
+scale = Vector2(5.0324078, 5.0324078)
+sprite_frames = SubResource("SpriteFrames_05qi6")
+animation = &"EggHatch"
+frame = 36
+frame_progress = 1.0
 
 [node name="TutorialBackground" type="TextureRect" parent="." unique_id=1854716081]
 texture_filter = 3
@@ -196,9 +357,18 @@ centered = false
 
 [node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("MotherPhoenixSprite", "FeatherPosition", "ChildPhoenix")]
 texture_filter = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-@ -202,64 +216,65 @@
+anchor_right = 0.5
+offset_left = 1.0
+offset_top = 485.0
+offset_right = 961.0
+offset_bottom = 545.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "sas"
+label_settings = SubResource("LabelSettings_8q58x")
+horizontal_alignment = 1
 script = ExtResource("10_sswaw")
 MotherPhoenixSprite = NodePath("../Mother_Phoneix/MotherAnimation")
 FeatherPosition = NodePath("../Mother_Phoneix/Marker2D")
@@ -213,8 +383,6 @@ scale = Vector2(3.473958, 3.473958)
 sprite_frames = SubResource("SpriteFrames_yqegr")
 animation = &"Attack"
 autoplay = "default"
-frame = 12
-frame_progress = 1.0
 
 [node name="Marker2D" type="Marker2D" parent="Mother_Phoneix" unique_id=535945555]
 position = Vector2(391, 188)

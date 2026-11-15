@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public partial class CloudManager : Control
 {
-	private const float CloudSpeed = 20.0f;
+	private const float CloudSpeed = 10.0f;
 	private const float CloudSpawnInterval = 4.0f;
 	private const float MinimumSameCloudGap = 80.0f;
 
