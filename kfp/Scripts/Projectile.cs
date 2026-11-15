@@ -72,6 +72,10 @@ public partial class Projectile : Area2D
                 );
             }
 
+            GD.Print(
+                $"Harpy Damage: {Damage}"
+            );
+
             enemy.TakeDamage(Damage);
 
             if (!Pierce)
@@ -121,6 +125,10 @@ public partial class Projectile : Area2D
                 );
             }
 
+            GD.Print(
+                $"Seahorse Damage: {Damage}"
+            );
+
             seahorse.TakeDamage(Damage);
 
             if (!Pierce)
@@ -156,6 +164,10 @@ public partial class Projectile : Area2D
                     posseidon.GetInstanceId()
                 );
             }
+
+            GD.Print(
+                $"Posseidon Damage: {Damage}"
+            );
 
             posseidon.TakeDamage(Damage);
 
@@ -193,6 +205,10 @@ public partial class Projectile : Area2D
                 );
             }
 
+            GD.Print(
+                $"Wave Damage: {Damage}"
+            );
+
             wave.TakeDamage(Damage);
 
             if (!Pierce)
@@ -228,6 +244,10 @@ public partial class Projectile : Area2D
                     cloud.GetInstanceId()
                 );
             }
+
+            GD.Print(
+                $"Cloud Damage: {Damage}"
+            );
 
             cloud.TakeDamage(Damage);
 
@@ -266,6 +286,11 @@ public partial class Projectile : Area2D
                 projectileScene.Instantiate<Projectile>();
 
             projectile.IsNovaProjectile = true;
+
+            projectile.Damage = Damage;
+            GD.Print(
+                $"Nova Damage: {projectile.Damage}"
+            );
 
             projectile.IgnoredEnemyId =
                 ignoredEnemyId;

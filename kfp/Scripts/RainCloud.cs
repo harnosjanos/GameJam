@@ -5,6 +5,8 @@ public partial class RainCloud : Area2D
     [Export]
     public int Health = 8;
 
+    public bool RemovedByBoss = false;
+
     private Timer rainTimer;
 
     private PackedScene rainDropScene;
@@ -14,6 +16,7 @@ public partial class RainCloud : Area2D
     public override void _Ready()
     {
         AddToGroup("enemy");
+        AddToGroup("rain_cloud");
 
         player =
             GetTree()
@@ -66,27 +69,21 @@ public partial class RainCloud : Area2D
             .AddChild(drop);
     }
 
-    public void TakeDamage(int damage)
+    if (Health <= 0)
     {
-        Health -= damage;
+        Posseidon boss =
+            GetTree()
+            .GetFirstNodeInGroup("boss")
+            as Posseidon;
 
-        GD.Print(
-            $"Cloud HP: {Health}/10"
-        );
-
-        if (Health <= 0)
+        if (
+            boss != null &&
+            !RemovedByBoss
+        )
         {
-            Posseidon boss =
-                GetTree()
-                .GetFirstNodeInGroup("boss")
-                as Posseidon;
-
-            if (boss != null)
-            {
-                boss.CloudDestroyed();
-            }
-
-            QueueFree();
+            boss.CloudDestroyed();
         }
+
+        QueueFree();
     }
 }

@@ -18,8 +18,6 @@ public partial class Posseidon : Node2D
 
     private bool attackInProgress = false;
 
-    private int aliveClouds = 0;
-
     public override void _Ready()
     {
         AddToGroup("boss");
@@ -233,6 +231,8 @@ public partial class Posseidon : Node2D
 
     private async Task DoRainAttack()
     {
+        DestroyAllRainClouds();
+
         Player player =
             GetTree()
             .GetFirstNodeInGroup("player")
@@ -245,8 +245,6 @@ public partial class Posseidon : Node2D
             SceneTreeTimer.SignalName.Timeout
         );
 
-        aliveClouds = 3;
-
         SpawnRainCloud();
 
         await ToSignal(
@@ -254,10 +252,7 @@ public partial class Posseidon : Node2D
             SceneTreeTimer.SignalName.Timeout
         );
 
-        if (aliveClouds > 0)
-        {
-            attackInProgress = false;
-        }
+        attackInProgress = false;
     }
 
     private void SpawnRainCloud()
@@ -299,11 +294,31 @@ public partial class Posseidon : Node2D
 
     public void CloudDestroyed()
     {
-        aliveClouds--;
+        int cloudCount =
+            GetTree()
+            .GetNodesInGroup(
+                "rain_cloud"
+            ).Count;
 
-        if (aliveClouds <= 0)
+        if (cloudCount <= 1)
         {
             attackInProgress = false;
+        }
+    }
+
+    private void DestroyAllRainClouds()
+    {
+        foreach (
+            RainCloud cloud
+            in GetTree()
+            .GetNodesInGroup(
+                "rain_cloud"
+            )
+        )
+        {
+            cloud.RemovedByBoss = true;
+
+            cloud.QueueFree();
         }
     }
 }

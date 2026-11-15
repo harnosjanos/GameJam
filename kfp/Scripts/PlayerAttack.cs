@@ -87,6 +87,9 @@ public partial class Player
         Projectile projectile =
             ProjectileScene.Instantiate<Projectile>();
         
+        projectile.Damage =
+            GetNormalDamage();
+        
         projectile.IsChargedProjectile = false;
         projectile.GlobalPosition = GlobalPosition;
 
@@ -123,6 +126,9 @@ public partial class Player
 
             Projectile projectile =
                 ProjectileScene.Instantiate<Projectile>();
+            
+            projectile.Damage =
+                GetChargedDamage();
             
             projectile.IsChargedProjectile = true;
             
@@ -174,6 +180,9 @@ public partial class Player
             Projectile projectile =
                 ProjectileScene.Instantiate<Projectile>();
                 projectile.IsChargedProjectile = true;
+
+            projectile.Damage =
+                GetChargedDamage();
 
             projectile.GlobalPosition =
                 GlobalPosition;

@@ -144,7 +144,12 @@ public partial class SkillTree : Node2D
             GetNode<Sprite2D>($"{branch}/{effects[i]}")
                 .Modulate = level >= i + 1
                 ? Colors.White
-                : Colors.Gray;
+                : new Color(
+                    0.25f,
+                    0.25f,
+                    0.25f,
+                    1f
+                );
 
             GetNode<Sprite2D>($"{branch}/{upgrades[i]}")
                 .Visible = level >= i + 1;
@@ -403,6 +408,30 @@ public partial class SkillTree : Node2D
         if (currentLevel != skillNumber - 1)
             return;
 
+        if (prefix == "ATTACK")
+        {
+            if (
+                skillNumber == 1 ||
+                skillNumber == 3 ||
+                skillNumber == 5
+            )
+            {
+                SkillManager.Instance.AttackDamageLevel++;
+            }
+        }
+
+        if (prefix == "CHARGE")
+        {
+            if (
+                skillNumber == 1 ||
+                skillNumber == 3 ||
+                skillNumber == 5
+            )
+            {
+                SkillManager.Instance.ChargedDamageLevel++;
+            }
+        }
+        
         SetBranchLevel(prefix, currentLevel + 1);
 
         SkillManager.Instance.AvailablePoints--;

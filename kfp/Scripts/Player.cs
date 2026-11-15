@@ -138,5 +138,24 @@ public partial class Player : Node2D
         head.Visible = false;
     }
 
+    private int GetNormalDamage()
+    {
+        int damage = 1;
+
+        damage += SkillManager.Instance.AttackDamageLevel;
+
+        return damage;
+    }
+
+    private int GetChargedDamage()
+    {
+        int damage = 1;
+
+        damage += SkillManager.Instance.ChargedDamageLevel;
+
+        return damage;
+    }
+
+
     public int Health { get => health; }
 }

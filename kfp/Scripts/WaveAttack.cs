@@ -70,10 +70,6 @@ public partial class WaveAttack : Area2D
     {
         Health -= damage;
 
-        GD.Print(
-            $"Wave HP: {Health}/20"
-        );
-
         if (Health <= 0)
         {
             if (IsInstanceValid(player))

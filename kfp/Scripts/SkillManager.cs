@@ -17,6 +17,9 @@ public partial class SkillManager : Node
 
     public double LastAttackNovaTime = -999;
 
+    public int AttackDamageLevel = 0;
+    public int ChargedDamageLevel = 0;
+
     public override void _Ready()
     {
         Instance = this;
@@ -33,6 +36,9 @@ public partial class SkillManager : Node
         ManaLevel = 0;
         AttackLevel = 0;
         ChargeLevel = 0;
+
+        AttackDamageLevel = 0;
+        ChargedDamageLevel = 0;
     }
 
     public void AddKill()
