@@ -15,6 +15,8 @@ public partial class SkillManager : Node
 
     public int CurrentStage = 1;
 
+    public double LastAttackNovaTime = -999;
+
     public override void _Ready()
     {
         Instance = this;

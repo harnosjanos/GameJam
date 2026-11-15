@@ -173,6 +173,7 @@ public partial class Player
 
             Projectile projectile =
                 ProjectileScene.Instantiate<Projectile>();
+                projectile.IsChargedProjectile = true;
 
             projectile.GlobalPosition =
                 GlobalPosition;

@@ -53,13 +53,17 @@ public partial class Projectile : Area2D
             if (
                 SkillManager.Instance.AttackLevel >= 6 &&
                 !IsNovaProjectile &&
+                !IsChargedProjectile &&
                 !exploded &&
-                !enemy.ChargedNovaTriggered
+                !enemy.ChargedNovaTriggered &&
+                CanSpawnNova()
             )
             {
                 enemy.ChargedNovaTriggered = true;
 
                 exploded = true;
+
+                TriggerNovaCooldown();
 
                 CallDeferred(
                     nameof(SpawnChargedNova),
@@ -98,13 +102,17 @@ public partial class Projectile : Area2D
             if (
                 SkillManager.Instance.AttackLevel >= 6 &&
                 !IsNovaProjectile &&
+                !IsChargedProjectile &&
                 !exploded &&
-                !seahorse.ChargedNovaTriggered
+                !seahorse.ChargedNovaTriggered &&
+                CanSpawnNova()
             )
             {
                 seahorse.ChargedNovaTriggered = true;
 
                 exploded = true;
+
+                TriggerNovaCooldown();
 
                 CallDeferred(
                     nameof(SpawnChargedNova),
@@ -133,10 +141,14 @@ public partial class Projectile : Area2D
             if (
                 SkillManager.Instance.AttackLevel >= 6 &&
                 !IsNovaProjectile &&
-                !exploded
+                !IsChargedProjectile &&
+                !exploded &&
+                CanSpawnNova()
             )
             {
                 exploded = true;
+
+                TriggerNovaCooldown();
 
                 CallDeferred(
                     nameof(SpawnChargedNova),
@@ -165,10 +177,14 @@ public partial class Projectile : Area2D
             if (
                 SkillManager.Instance.AttackLevel >= 6 &&
                 !IsNovaProjectile &&
-                !exploded
+                !IsChargedProjectile &&
+                !exploded &&
+                CanSpawnNova()
             )
             {
                 exploded = true;
+
+                TriggerNovaCooldown();
 
                 CallDeferred(
                     nameof(SpawnChargedNova),
@@ -197,10 +213,14 @@ public partial class Projectile : Area2D
             if (
                 SkillManager.Instance.AttackLevel >= 6 &&
                 !IsNovaProjectile &&
-                !exploded
+                !IsChargedProjectile &&
+                !exploded &&
+                CanSpawnNova()
             )
             {
                 exploded = true;
+
+                TriggerNovaCooldown();
 
                 CallDeferred(
                     nameof(SpawnChargedNova),
@@ -269,5 +289,24 @@ public partial class Projectile : Area2D
                     projectile
                 );
         }
+    }
+
+    private Player GetPlayer()
+    {
+        return GetTree()
+            .GetFirstNodeInGroup("player")
+            as Player;
+    }
+
+    private bool CanSpawnNova()
+    {
+        return Time.GetTicksMsec() / 1000.0
+            >= SkillManager.Instance.LastAttackNovaTime + 3.0;
+    }
+
+    private void TriggerNovaCooldown()
+    {
+        SkillManager.Instance.LastAttackNovaTime =
+            Time.GetTicksMsec() / 1000.0;
     }
 }
