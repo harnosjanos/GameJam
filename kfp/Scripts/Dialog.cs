@@ -8,9 +8,12 @@ public partial class Dialog : Label
 
 	List<string> dialogs = new()
 		{
+
 			"Kedvesem most hogy megszülettél megtanulunk harcolni.",
 			"Ebben a világban sok veszély vár rád",
 			"Először próbálj meg támadni ahogyan én"
+			
+			//teszt: "azz"
 		};
 	int actual = 0;
 	Tween tween;
@@ -20,6 +23,9 @@ public partial class Dialog : Label
 	[Export] private string NextAnimation = "Attack";
 
 	[Export] private Node2D FeatherPosition;
+
+	[Export] private Tutorial_ChildPhoneix ChildPhoenix;
+
 
 	private PackedScene FeatherTexture;
 
@@ -34,6 +40,17 @@ public partial class Dialog : Label
 		shooted = true;
 		MotherPhoenixSprite.FrameChanged -= OnFrameChanged;
 		Shoot();
+	}
+
+	private void OnAttackAnimationFinished()
+	{
+		if (MotherPhoenixSprite.Animation != NextAnimation)
+			return;
+
+		MotherPhoenixSprite.AnimationFinished -= OnAttackAnimationFinished;
+		ChildPhoenix.EnableShooting();
+		MotherPhoenixSprite.Play("default");
+
 	}
 
 	private void Shoot()
@@ -62,7 +79,7 @@ public partial class Dialog : Label
 		{
 			Text = dialogs[index];
 			VisibleCharacters = 0;
-			float time = 5.0f;
+			float time = 4.0f;
 			float wait_time = 3.0f;
 			tween = CreateTween();
 
@@ -76,12 +93,22 @@ public partial class Dialog : Label
 			shooted = false;
 			MotherPhoenixSprite.FrameChanged -= OnFrameChanged;
 			MotherPhoenixSprite.FrameChanged += OnFrameChanged;
+
+
+			MotherPhoenixSprite.AnimationFinished -= OnAttackAnimationFinished;
+			MotherPhoenixSprite.AnimationFinished += OnAttackAnimationFinished;
+
 			MotherPhoenixSprite.Play(NextAnimation);
 		}
 	}
 	public override void _Ready()
 	{
+
 		DialogStart(actual);
+
+	}
+	public override void _Process(double enable)
+	{
 
 	}
 }

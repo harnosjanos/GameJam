@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b0vl2ov1w4ckx"]
 
 [ext_resource type="Texture2D" uid="uid://lnecla1v7tjr" path="res://Kepek/tutorial/(Tutorial)Background.png" id="1_vv0ms"]
+[ext_resource type="Script" uid="uid://go5dmvi31smi" path="res://Scripts/CloudManager.cs" id="2_8q58x"]
 [ext_resource type="Texture2D" uid="uid://b5i6nutbavfux" path="res://Kepek/tutorial/(Tutorial)Cloud1.png" id="2_brn58"]
 [ext_resource type="Texture2D" uid="uid://qf1c4u73q7ec" path="res://Kepek/tutorial/mother_phoneix/idle_mother/PhoenixMomIdle0000.png" id="2_rlm2d"]
 [ext_resource type="Texture2D" uid="uid://bkuqwcv66daax" path="res://Kepek/tutorial/mother_phoneix/idle_mother/PhoenixMomIdle0015.png" id="3_3j26a"]
@@ -138,21 +139,34 @@ offset_right = 960.0
 offset_bottom = 540.0
 texture = ExtResource("1_vv0ms")
 
-[node name="Cloud1" type="TextureRect" parent="." unique_id=1972494037]
+[node name="CloudManager" type="Control" parent="." unique_id=910595804]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 900.0
+offset_bottom = 550.0
+script = ExtResource("2_8q58x")
+
+[node name="Cloud1" type="TextureRect" parent="CloudManager" unique_id=1972494037]
+visible = false
+layout_mode = 0
 offset_left = 59.0
 offset_top = 53.0
 offset_right = 267.0
 offset_bottom = 232.0
 texture = ExtResource("2_brn58")
 
-[node name="Cloud2" type="TextureRect" parent="." unique_id=392460134]
+[node name="Cloud2" type="TextureRect" parent="CloudManager" unique_id=392460134]
+visible = false
+layout_mode = 0
 offset_left = 171.0
 offset_top = 145.0
 offset_right = 639.0
 offset_bottom = 334.81116
 texture = ExtResource("3_fx2vl")
 
-[node name="Cloud3" type="TextureRect" parent="." unique_id=206955438]
+[node name="Cloud3" type="TextureRect" parent="CloudManager" unique_id=206955438]
+visible = false
+layout_mode = 0
 offset_left = 251.0
 offset_top = -1.0
 offset_right = 553.1958
@@ -180,7 +194,7 @@ autoplay = "default"
 frame_progress = 0.8474671
 centered = false
 
-[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("MotherPhoenixSprite", "FeatherPosition")]
+[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("MotherPhoenixSprite", "FeatherPosition", "ChildPhoenix")]
 texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -202,6 +216,7 @@ vertical_alignment = 2
 script = ExtResource("10_sswaw")
 MotherPhoenixSprite = NodePath("../Mother_Phoneix/MotherAnimation")
 FeatherPosition = NodePath("../Mother_Phoneix/Marker2D")
+ChildPhoenix = NodePath("../Child_Phoneix")
 
 [node name="Mother_Phoneix" type="Node2D" parent="." unique_id=66079362]
 texture_filter = 1

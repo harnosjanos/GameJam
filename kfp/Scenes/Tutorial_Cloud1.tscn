@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://co6n76lb3na3j"]
+
+[ext_resource type="Texture2D" uid="uid://b5i6nutbavfux" path="res://Kepek/tutorial/(Tutorial)Cloud1.png" id="1_oaajj"]
+
+[node name="Node2D" type="Node2D" unique_id=1381216063]
+
+[node name="Cloud1" type="TextureRect" parent="." unique_id=970173520]
+offset_left = 59.0
+offset_top = 53.0
+offset_right = 267.0
+offset_bottom = 232.0
+texture = ExtResource("1_oaajj")
