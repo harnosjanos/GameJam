@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c0elga3xlfow5"]
+
+[ext_resource type="Script" uid="uid://blwr64vvmcm5a" path="res://Scripts/RainCloud.cs" id="1_a78t2"]
+[ext_resource type="Texture2D" uid="uid://c1ojhpblm50xj" path="res://Kepek/dark-storm-cloud-formation-spreading-across-the-sky-symbolizing-atmospheric-movement-and-impending-weather-changes-png.webp" id="1_pxbm0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpiv"]
+size = Vector2(407, 194)
+
+[node name="RainCloud" type="Area2D" unique_id=1226864675]
+script = ExtResource("1_a78t2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=564817228]
+position = Vector2(2.0000076, 1)
+scale = Vector2(0.74857146, 0.74857146)
+texture = ExtResource("1_pxbm0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=146963749]
+position = Vector2(-6.5, 12)
+shape = SubResource("RectangleShape2D_nbpiv")
+
+[node name="RainTimer" type="Timer" parent="." unique_id=838555760]
+wait_time = 0.5

@@ -13,6 +13,8 @@ public partial class SkillManager : Node
     public int AttackLevel = 0;
     public int ChargeLevel = 0;
 
+    public int CurrentStage = 1;
+
     public override void _Ready()
     {
         Instance = this;

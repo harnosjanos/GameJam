@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dft7q3j4aqdqg"]
+
+[ext_resource type="Script" uid="uid://cpg8x7ukc3dao" path="res://Scripts/WaveAttack.cs" id="1_2bh2q"]
+[ext_resource type="Texture2D" uid="uid://x6diubb5ifq6" path="res://Kepek/abstract-ocean-wave-with-blue-tones-and-white-crest-transparent-background-png.webp" id="1_4cevb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpiv"]
+size = Vector2(339, 309)
+
+[node name="WaveAttack" type="Area2D" unique_id=108985216]
+script = ExtResource("1_2bh2q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=923588668]
+texture = ExtResource("1_4cevb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1045341002]
+position = Vector2(132.5, -4.5)
+shape = SubResource("RectangleShape2D_nbpiv")

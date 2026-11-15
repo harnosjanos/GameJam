@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bvofmn6ae6mjr"]
+
+[ext_resource type="Texture2D" uid="uid://b6eubg558vw2f" path="res://Kepek/f3db9f122578bcb2aaae945722f0b42a.jpg" id="1_g820q"]
+[ext_resource type="Script" uid="uid://c1f1fmhmisflu" path="res://Scripts/RainDrop.cs" id="1_o6oot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpiv"]
+size = Vector2(155, 130)
+
+[node name="HorseDrop" type="Area2D" unique_id=213438287]
+rotation = -1.5707964
+script = ExtResource("1_o6oot")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2140928513]
+position = Vector2(-7.6293945e-06, 3.8146973e-06)
+scale = Vector2(0.23667781, 0.23667781)
+texture = ExtResource("1_g820q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1146242725]
+position = Vector2(2.5000002, 3.9999995)
+shape = SubResource("RectangleShape2D_nbpiv")

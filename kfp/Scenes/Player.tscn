@@ -1,16 +1,32 @@
 [gd_scene format=3 uid="uid://nordr0py2gyx"]
 
 [ext_resource type="Script" uid="uid://c51w83bg6qlqh" path="res://Scripts/Player.cs" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://b3bwplo064n4l" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/Mountain.png" id="2_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://bklpbw6rsw8mt" path="res://Kepek/PhoenixBody.png" id="2_gntrk"]
 [ext_resource type="Texture2D" uid="uid://dftymblsorfa5" path="res://Kepek/PhoenixHead.png" id="2_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://djytf5fdiojr8" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/Nest.png" id="3_nn08x"]
 
 [sub_resource type="Theme" id="Theme_gntrk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nbpiv"]
+radius = 43.416588
 
 [node name="Player" type="Node2D" unique_id=502233483 node_paths=PackedStringArray("manaText", "healthText") groups=["player"]]
 position = Vector2(580, 283)
 script = ExtResource("1_kyqiw")
 manaText = NodePath("ManaBar/ManaText")
 healthText = NodePath("HealthBar/HealthText")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=154466543]
+position = Vector2(116, 2)
+
+[node name="Mountain" type="Sprite2D" parent="." unique_id=1144731804]
+position = Vector2(-37, 181)
+texture = ExtResource("2_5ixxa")
+
+[node name="Nest" type="Sprite2D" parent="." unique_id=1873664830]
+position = Vector2(0, 87)
+texture = ExtResource("3_nn08x")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1230602478]
 position = Vector2(-5, 35)
@@ -20,9 +36,6 @@ texture = ExtResource("2_gntrk")
 position = Vector2(-7, 8)
 texture = ExtResource("2_kyqiw")
 flip_h = true
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=154466543]
-position = Vector2(116, 2)
 
 [node name="ManaBar" type="ProgressBar" parent="." unique_id=1291760320]
 modulate = Color(0.6205544, 0.7483719, 1, 1)
@@ -67,3 +80,10 @@ offset_bottom = 27.0
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=385009624 groups=["player"]]
+position = Vector2(-11, 37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1255192453]
+position = Vector2(1, -2)
+shape = SubResource("CircleShape2D_nbpiv")
