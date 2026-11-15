@@ -28,45 +28,123 @@ public partial class Projectile : Area2D
 
     private void OnAreaEntered(Area2D area)
     {
+        GD.Print(area.Name);
+
         if (!area.IsInGroup("enemy"))
             return;
 
-        Enemy enemy = area.GetParent<Enemy>();
+        Node parent = area.GetParent();
 
-        if (enemy == null)
-            return;
-
-        if (
-            IgnoredEnemyId != 0 &&
-            enemy.GetInstanceId() == IgnoredEnemyId
-        )
-            return;
-
-        Vector2 hitPosition = enemy.GlobalPosition;
-        ulong hitEnemyId = enemy.GetInstanceId();
-
-        if (
-        SkillManager.Instance.AttackLevel >= 6 &&
-        !exploded &&
-        !enemy.ChargedNovaTriggered
-        )
+        // HARPY
+        if (parent is Enemy enemy)
         {
-            enemy.ChargedNovaTriggered = true;
+            if (
+                IgnoredEnemyId != 0 &&
+                enemy.GetInstanceId() == IgnoredEnemyId
+            )
+                return;
 
-            exploded = true;
+            Vector2 hitPosition =
+                enemy.GlobalPosition;
 
-            CallDeferred(
-                nameof(SpawnChargedNova),
-                hitPosition,
-                hitEnemyId
-            );
+            ulong hitEnemyId =
+                enemy.GetInstanceId();
+
+            if (
+                SkillManager.Instance.AttackLevel >= 6 &&
+                !IsChargedProjectile &&
+                !exploded &&
+                !enemy.ChargedNovaTriggered
+            )
+            {
+                enemy.ChargedNovaTriggered = true;
+
+                exploded = true;
+
+                CallDeferred(
+                    nameof(SpawnChargedNova),
+                    hitPosition,
+                    hitEnemyId
+                );
+            }
+
+            enemy.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
+
+            return;
         }
 
-        enemy.TakeDamage(Damage);
-
-        if (!Pierce)
+        // SEAHORSE
+        if (parent is SeahorseEnemy seahorse)
         {
-            QueueFree();
+            if (
+                IgnoredEnemyId != 0 &&
+                seahorse.GetInstanceId() == IgnoredEnemyId
+            )
+                return;
+
+            if (!seahorse.IsJumping)
+                return;
+
+            if (
+                SkillManager.Instance.AttackLevel >= 6 &&
+                !IsChargedProjectile &&
+                !exploded &&
+                !seahorse.ChargedNovaTriggered
+            )
+            {
+                seahorse.ChargedNovaTriggered = true;
+
+                exploded = true;
+
+                CallDeferred(
+                    nameof(SpawnChargedNova),
+                    seahorse.GlobalPosition,
+                    seahorse.GetInstanceId()
+                );
+            }
+
+            seahorse.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
+
+            return;
+        }
+
+        // POSSEIDON
+        if (parent is Posseidon posseidon)
+        {
+            posseidon.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
+
+            return;
+        }
+
+        // WAVE
+        if (area is WaveAttack wave)
+        {
+            wave.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
+
+            return;
+        }
+
+        // RAIN
+        if (area is RainCloud cloud)
+        {
+            cloud.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
+
+            return;
         }
     }
 

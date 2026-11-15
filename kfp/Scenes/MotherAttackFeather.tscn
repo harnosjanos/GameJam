@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cpqqiny4hhloe"]
+
+[ext_resource type="Texture2D" uid="uid://cpta554gq26n1" path="res://Kepek/tutorial/mother_phoneix/PhoenixMomAttackFeather.png" id="1_8735y"]
+[ext_resource type="Script" uid="uid://mt04lvsp3g4e" path="res://Scripts/TutorialFeatherAttack.cs" id="1_hplln"]
+
+[node name="MotherAttackFeather" type="Node2D" unique_id=1198642031]
+script = ExtResource("1_hplln")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1600209762]
+offset_left = 85.49371
+offset_top = -0.62742984
+offset_right = 148.32951
+offset_bottom = 83.86856
+rotation = 1.5830137
+texture = ExtResource("1_8735y")

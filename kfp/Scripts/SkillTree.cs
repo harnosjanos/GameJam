@@ -416,9 +416,38 @@ public partial class SkillTree : Node2D
     // Folytatás
     private void OnFolytatPressed()
     {
-        GetTree().ChangeSceneToFile(
-            "res://Scenes/Main.tscn"
-        );
+        switch (SkillManager.Instance.CurrentStage)
+        {
+            case 1:
+
+                GetTree().ChangeSceneToFile(
+                    "res://Scenes/Main.tscn"
+                );
+
+                break;
+
+            case 2:
+
+                GetTree().ChangeSceneToFile(
+                    "res://Scenes/Map2.tscn"
+                );
+
+                break;
+
+            case 3:
+                GetTree().ChangeSceneToFile(
+                    "res://Scenes/PosseidonMap.tscn"
+                );
+                break;
+
+            default:
+
+                GetTree().ChangeSceneToFile(
+                    "res://Scenes/Main.tscn"
+                );
+
+                break;
+        }
     }
 
 
