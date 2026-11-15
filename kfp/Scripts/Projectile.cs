@@ -8,6 +8,8 @@ public partial class Projectile : Area2D
 
     public bool IsChargedProjectile = false;
 
+    public bool IsNovaProjectile = false;
+
     public float Speed = 600f;
 
     public int Damage = 1;
@@ -28,8 +30,6 @@ public partial class Projectile : Area2D
 
     private void OnAreaEntered(Area2D area)
     {
-        GD.Print(area.Name);
-
         if (!area.IsInGroup("enemy"))
             return;
 
@@ -52,7 +52,7 @@ public partial class Projectile : Area2D
 
             if (
                 SkillManager.Instance.AttackLevel >= 6 &&
-                !IsChargedProjectile &&
+                !IsNovaProjectile &&
                 !exploded &&
                 !enemy.ChargedNovaTriggered
             )
@@ -85,12 +85,19 @@ public partial class Projectile : Area2D
             )
                 return;
 
+            // csak ez marad a speciális rész
             if (!seahorse.IsJumping)
                 return;
 
+            Vector2 hitPosition =
+                seahorse.GlobalPosition;
+
+            ulong hitEnemyId =
+                seahorse.GetInstanceId();
+
             if (
                 SkillManager.Instance.AttackLevel >= 6 &&
-                !IsChargedProjectile &&
+                !IsNovaProjectile &&
                 !exploded &&
                 !seahorse.ChargedNovaTriggered
             )
@@ -101,8 +108,8 @@ public partial class Projectile : Area2D
 
                 CallDeferred(
                     nameof(SpawnChargedNova),
-                    seahorse.GlobalPosition,
-                    seahorse.GetInstanceId()
+                    hitPosition,
+                    hitEnemyId
                 );
             }
 
@@ -117,6 +124,27 @@ public partial class Projectile : Area2D
         // POSSEIDON
         if (parent is Posseidon posseidon)
         {
+            if (
+                IgnoredEnemyId != 0 &&
+                posseidon.GetInstanceId() == IgnoredEnemyId
+            )
+                return;
+                
+            if (
+                SkillManager.Instance.AttackLevel >= 6 &&
+                !IsNovaProjectile &&
+                !exploded
+            )
+            {
+                exploded = true;
+
+                CallDeferred(
+                    nameof(SpawnChargedNova),
+                    posseidon.GlobalPosition,
+                    posseidon.GetInstanceId()
+                );
+            }
+
             posseidon.TakeDamage(Damage);
 
             if (!Pierce)
@@ -128,6 +156,27 @@ public partial class Projectile : Area2D
         // WAVE
         if (area is WaveAttack wave)
         {
+            if (
+                IgnoredEnemyId != 0 &&
+                wave.GetInstanceId() == IgnoredEnemyId
+            )
+                return;
+
+            if (
+                SkillManager.Instance.AttackLevel >= 6 &&
+                !IsNovaProjectile &&
+                !exploded
+            )
+            {
+                exploded = true;
+
+                CallDeferred(
+                    nameof(SpawnChargedNova),
+                    wave.GlobalPosition,
+                    wave.GetInstanceId()
+                );
+            }
+
             wave.TakeDamage(Damage);
 
             if (!Pierce)
@@ -139,6 +188,27 @@ public partial class Projectile : Area2D
         // RAIN
         if (area is RainCloud cloud)
         {
+            if (
+                IgnoredEnemyId != 0 &&
+                cloud.GetInstanceId() == IgnoredEnemyId
+            )
+                return;
+
+            if (
+                SkillManager.Instance.AttackLevel >= 6 &&
+                !IsNovaProjectile &&
+                !exploded
+            )
+            {
+                exploded = true;
+
+                CallDeferred(
+                    nameof(SpawnChargedNova),
+                    cloud.GlobalPosition,
+                    cloud.GetInstanceId()
+                );
+            }
+
             cloud.TakeDamage(Damage);
 
             if (!Pierce)
@@ -175,7 +245,7 @@ public partial class Projectile : Area2D
             Projectile projectile =
                 projectileScene.Instantiate<Projectile>();
 
-            projectile.IsChargedProjectile = true;
+            projectile.IsNovaProjectile = true;
 
             projectile.IgnoredEnemyId =
                 ignoredEnemyId;

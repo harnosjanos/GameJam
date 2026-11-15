@@ -13,7 +13,7 @@ public partial class Main : Node2D
 
         timer += (float)delta;
 
-        if (timer >= 10f)
+        if (timer >= 20f)
         {
             finished = true;
 

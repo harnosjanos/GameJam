@@ -15,7 +15,7 @@ public partial class Map2 : Node2D
 
         timer += (float)delta;
 
-        if (timer >= 120f)
+        if (timer >= 20f)
         {
             finished = true;
 
