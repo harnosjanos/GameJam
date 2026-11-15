@@ -28,123 +28,45 @@ public partial class Projectile : Area2D
 
     private void OnAreaEntered(Area2D area)
     {
-        GD.Print(area.Name);
-
         if (!area.IsInGroup("enemy"))
             return;
 
-        Node parent = area.GetParent();
+        Enemy enemy = area.GetParent<Enemy>();
 
-        // HARPY
-        if (parent is Enemy enemy)
-        {
-            if (
-                IgnoredEnemyId != 0 &&
-                enemy.GetInstanceId() == IgnoredEnemyId
-            )
-                return;
-
-            Vector2 hitPosition =
-                enemy.GlobalPosition;
-
-            ulong hitEnemyId =
-                enemy.GetInstanceId();
-
-            if (
-                SkillManager.Instance.AttackLevel >= 6 &&
-                !IsChargedProjectile &&
-                !exploded &&
-                !enemy.ChargedNovaTriggered
-            )
-            {
-                enemy.ChargedNovaTriggered = true;
-
-                exploded = true;
-
-                CallDeferred(
-                    nameof(SpawnChargedNova),
-                    hitPosition,
-                    hitEnemyId
-                );
-            }
-
-            enemy.TakeDamage(Damage);
-
-            if (!Pierce)
-                QueueFree();
-
+        if (enemy == null)
             return;
+
+        if (
+            IgnoredEnemyId != 0 &&
+            enemy.GetInstanceId() == IgnoredEnemyId
+        )
+            return;
+
+        Vector2 hitPosition = enemy.GlobalPosition;
+        ulong hitEnemyId = enemy.GetInstanceId();
+
+        if (
+        SkillManager.Instance.AttackLevel >= 6 &&
+        !exploded &&
+        !enemy.ChargedNovaTriggered
+        )
+        {
+            enemy.ChargedNovaTriggered = true;
+
+            exploded = true;
+
+            CallDeferred(
+                nameof(SpawnChargedNova),
+                hitPosition,
+                hitEnemyId
+            );
         }
 
-        // SEAHORSE
-        if (parent is SeahorseEnemy seahorse)
+        enemy.TakeDamage(Damage);
+
+        if (!Pierce)
         {
-            if (
-                IgnoredEnemyId != 0 &&
-                seahorse.GetInstanceId() == IgnoredEnemyId
-            )
-                return;
-
-            if (!seahorse.IsJumping)
-                return;
-
-            if (
-                SkillManager.Instance.AttackLevel >= 6 &&
-                !IsChargedProjectile &&
-                !exploded &&
-                !seahorse.ChargedNovaTriggered
-            )
-            {
-                seahorse.ChargedNovaTriggered = true;
-
-                exploded = true;
-
-                CallDeferred(
-                    nameof(SpawnChargedNova),
-                    seahorse.GlobalPosition,
-                    seahorse.GetInstanceId()
-                );
-            }
-
-            seahorse.TakeDamage(Damage);
-
-            if (!Pierce)
-                QueueFree();
-
-            return;
-        }
-
-        // POSSEIDON
-        if (parent is Posseidon posseidon)
-        {
-            posseidon.TakeDamage(Damage);
-
-            if (!Pierce)
-                QueueFree();
-
-            return;
-        }
-
-        // WAVE
-        if (area is WaveAttack wave)
-        {
-            wave.TakeDamage(Damage);
-
-            if (!Pierce)
-                QueueFree();
-
-            return;
-        }
-
-        // RAIN
-        if (area is RainCloud cloud)
-        {
-            cloud.TakeDamage(Damage);
-
-            if (!Pierce)
-                QueueFree();
-
-            return;
+            QueueFree();
         }
     }
 

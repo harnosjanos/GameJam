@@ -38,17 +38,7 @@ public partial class Player
         if (health <= 0)
         {
             GD.Print("GAME OVER");
-
-            CallDeferred(
-                nameof(OpenSkillTree)
-            );
+            GetTree().ChangeSceneToFile("res://Scenes/SkillTree.tscn");
         }
-    }
-    
-    private void OpenSkillTree()
-    {
-        GetTree().ChangeSceneToFile(
-            "res://Scenes/SkillTree.tscn"
-        );
     }
 }

@@ -24,7 +24,7 @@ public partial class Player
     {
         reloading = true;
 
-        HidePhoenix();
+        Visible = false;
 
         await ToSignal(
             GetTree().CreateTimer(3.0),
@@ -33,7 +33,7 @@ public partial class Player
 
         mana = maxMana;
 
-        ShowPhoenix();
+        Visible = true;
 
         reloading = false;
 
