@@ -23,33 +23,16 @@
 [ext_resource type="Texture2D" uid="uid://ctumlfc7ya2hs" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/NormalAttack/NA_upgrade.png" id="21_j2m1j"]
 [ext_resource type="Texture2D" uid="uid://bf1kwdcd3fbtr" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/NormalAttack/MoreATK.png" id="22_owaxu"]
 [ext_resource type="Texture2D" uid="uid://dsxrdhes2fbn3" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/NormalAttack/OneExtraFeather.png" id="23_ore2i"]
-[ext_resource type="Texture2D" uid="uid://cf62lh6nhyipf" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/NormalAttack/BouncingFeather.png" id="24_invat"]
+[ext_resource type="Texture2D" uid="uid://bp10acfaptw4i" path="res://Kepek/NA_UltimateMuffin.png" id="24_j6g2i"]
+[ext_resource type="Texture2D" uid="uid://d4nyixf6xluhf" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/Menu.png" id="25_j6g2i"]
+[ext_resource type="Texture2D" uid="uid://b5lt6b3xgmr3f" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/Continue.png" id="26_0du7f"]
+[ext_resource type="Texture2D" uid="uid://xsnad7il4g4s" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/upgrade.png" id="27_osvg7"]
 
 [node name="SkillTree" type="Node2D" unique_id=708553265]
 script = ExtResource("1_3mp7v")
 
-[node name="FOLYTAT" type="Button" parent="." unique_id=585564293]
-offset_left = 777.0
-offset_top = 490.0
-offset_right = 919.0
-offset_bottom = 521.0
-text = "Folytat"
-
-[node name="MENU" type="Button" parent="." unique_id=229223911]
-offset_left = 582.0
-offset_top = 490.0
-offset_right = 724.0
-offset_bottom = 521.0
-text = "Menü"
-
-[node name="FEJLESZT" type="Button" parent="." unique_id=1923136910]
-offset_left = 688.0
-offset_top = 307.0
-offset_right = 803.0
-offset_bottom = 349.9518
-text = "Fejlesztés"
-
 [node name="DESC" type="Label" parent="." unique_id=1933773952]
+modulate = Color(1, 0.4862745, 0.023529412, 1)
 offset_left = 635.0
 offset_top = 182.0
 offset_right = 856.0
@@ -58,6 +41,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PONTOK" type="Label" parent="." unique_id=1862954664]
+modulate = Color(1, 0.4862745, 0.023529412, 1)
 offset_left = 729.0
 offset_top = 8.0
 offset_right = 950.0
@@ -502,10 +486,10 @@ position = Vector2(485.8, 191.6)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("23_ore2i")
 
-[node name="ExplodingFeather" type="Sprite2D" parent="Attack ág" unique_id=2063012108]
-position = Vector2(485.8, 31.600006)
-scale = Vector2(1.6, 1.6)
-texture = ExtResource("24_invat")
+[node name="ExplodingFeather" type="Sprite2D" parent="Attack ág" unique_id=790717817]
+position = Vector2(486, 31)
+scale = Vector2(1.6499996, 1.6499996)
+texture = ExtResource("24_j6g2i")
 
 [node name="ATTACK1" type="Button" parent="Attack ág" unique_id=1790590589]
 offset_left = 464.0
@@ -549,9 +533,42 @@ offset_right = 509.0
 offset_bottom = 54.0
 flat = true
 
-[connection signal="pressed" from="FOLYTAT" to="." method="_on_folytat_pressed"]
-[connection signal="pressed" from="MENU" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="FEJLESZT" to="." method="_on_fejleszt_pressed"]
+[node name="Menu" type="Sprite2D" parent="." unique_id=530321713]
+position = Vector2(652.00006, 490)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("25_j6g2i")
+
+[node name="MENU" type="Button" parent="." unique_id=229223911]
+offset_left = 595.0
+offset_top = 461.0
+offset_right = 707.0
+offset_bottom = 520.0
+flat = true
+
+[node name="Continue" type="Sprite2D" parent="." unique_id=1566056736]
+position = Vector2(849.99994, 489.99997)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("26_0du7f")
+
+[node name="FOLYTAT" type="Button" parent="." unique_id=585564293]
+offset_left = 790.0
+offset_top = 461.0
+offset_right = 908.0
+offset_bottom = 521.0
+flat = true
+
+[node name="Upgrade" type="Sprite2D" parent="." unique_id=912745074]
+position = Vector2(746, 390.00003)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("27_osvg7")
+
+[node name="FEJLESZT" type="Button" parent="." unique_id=1923136910]
+offset_left = 686.0
+offset_top = 359.0
+offset_right = 806.0241
+offset_bottom = 418.9518
+flat = true
+
 [connection signal="pressed" from="Hp ág/HP1" to="." method="_on_hp_pressed"]
 [connection signal="pressed" from="Hp ág/HP2" to="." method="_on_hp_pressed"]
 [connection signal="pressed" from="Hp ág/HP3" to="." method="_on_hp_pressed"]
@@ -576,3 +593,6 @@ flat = true
 [connection signal="pressed" from="Attack ág/ATTACK4" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="Attack ág/ATTACK5" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="Attack ág/ATTACK6" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="MENU" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="FOLYTAT" to="." method="_on_folytat_pressed"]
+[connection signal="pressed" from="FEJLESZT" to="." method="_on_fejleszt_pressed"]

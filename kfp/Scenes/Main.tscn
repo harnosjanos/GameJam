@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://nordr0py2gyx" path="res://Scenes/Player.tscn" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://dsc3yb65qp2r7" path="res://Scenes/Projectile.tscn" id="2_idj7w"]
 [ext_resource type="Script" uid="uid://bb7j6uag6p7tc" path="res://Scripts/EnemySpawner.cs" id="4_pbw6q"]
+[ext_resource type="AudioStream" uid="uid://bgndxaw84uprn" path="res://Zene/Olympos.mp3" id="6_v1gob"]
 
 [node name="Main" type="Node2D" unique_id=1129610287]
 script = ExtResource("1_pbw6q")
@@ -33,3 +34,7 @@ Left Button Hold - Charge Attack"
 [node name="TextEdit" type="TextEdit" parent="." unique_id=771499035]
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1939076512]
+stream = ExtResource("6_v1gob")
+autoplay = true

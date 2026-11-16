@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://nordr0py2gyx" path="res://Scenes/Player.tscn" id="2_s73u7"]
 [ext_resource type="PackedScene" uid="uid://dlgjiwu5ummkq" path="res://Scenes/Posseidon.tscn" id="3_jp3is"]
 [ext_resource type="PackedScene" uid="uid://dsc3yb65qp2r7" path="res://Scenes/Projectile.tscn" id="3_s73u7"]
+[ext_resource type="AudioStream" uid="uid://cqoinaqt6a5eg" path="res://Zene/Boss2.mp3" id="5_jp3is"]
 
 [node name="PosseidonMap" type="Node2D" unique_id=1034329588]
 
@@ -30,3 +31,7 @@ position = Vector2(0, 428)
 
 [node name="RightWaveSpawn" type="Marker2D" parent="." unique_id=163268709]
 position = Vector2(956, 417)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1197697817]
+stream = ExtResource("5_jp3is")
+autoplay = true

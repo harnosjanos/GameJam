@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://1gut5o4siady"]
 
+[ext_resource type="Texture2D" uid="uid://dtxa0anje1afe" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/Start.png" id="1_anlgx"]
 [ext_resource type="Script" uid="uid://d3hqy6qrnsei4" path="res://Scripts/MenuActions.cs" id="1_c4tk2"]
 [ext_resource type="AudioStream" uid="uid://p5smi38ewhjh" path="res://Zene/Menu.mp3" id="2_rmbjf"]
+[ext_resource type="Texture2D" uid="uid://cm82adhe61t51" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/TutorialIncomplete.png" id="3_xvotp"]
+[ext_resource type="Texture2D" uid="uid://cgaqr54vl25qf" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/settings.png" id="4_1edw4"]
+[ext_resource type="Texture2D" uid="uid://cqv5urq6dty3v" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/Quit.png" id="5_xvotp"]
+[ext_resource type="Texture2D" uid="uid://drlcsamiiuhdy" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/credits.png" id="6_1edw4"]
 
 [node name="Menu" type="CanvasLayer" unique_id=869715182]
 
@@ -13,18 +18,44 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=982608918]
+position = Vector2(111.02883, 70.25)
+scale = Vector2(2, 2)
+texture = ExtResource("1_anlgx")
+
 [node name="Button" type="Button" parent="Control" unique_id=38307128]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -457.0
-offset_top = 22.0
-offset_right = -257.0
-offset_bottom = 122.0
+offset_left = -464.0
+offset_top = 24.0
+offset_right = -273.0
+offset_bottom = 120.0
 grow_horizontal = 2
-text = "Játék"
+text = "
+"
+flat = true
 script = ExtResource("1_c4tk2")
+
+[node name="TutorialIncomplete" type="Sprite2D" parent="Control" unique_id=234989446]
+position = Vector2(321, 70)
+scale = Vector2(2, 2)
+texture = ExtResource("3_xvotp")
+
+[node name="Button5" type="Button" parent="Control" unique_id=1965919703]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 24.0
+offset_right = 415.0
+offset_bottom = 120.0
+flat = true
+script = ExtResource("1_c4tk2")
+
+[node name="Settings" type="Sprite2D" parent="Control" unique_id=690424857]
+position = Vector2(130, 340)
+scale = Vector2(2, 2)
+texture = ExtResource("4_1edw4")
 
 [node name="Button2" type="Button" parent="Control" unique_id=194049075]
 layout_mode = 1
@@ -33,48 +64,51 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -458.0
-offset_top = 48.0
-offset_right = -258.0
-offset_bottom = 148.0
+offset_left = -448.0
+offset_top = 18.0
+offset_right = -256.0
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Beállítások"
+text = "
+"
+flat = true
 script = ExtResource("1_c4tk2")
+
+[node name="Quit" type="Sprite2D" parent="Control" unique_id=1893438582]
+position = Vector2(848.0962, 479.5)
+scale = Vector2(2, 2)
+texture = ExtResource("5_xvotp")
 
 [node name="Button3" type="Button" parent="Control" unique_id=1682314468]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.88125
-anchor_top = 1.0703703
-anchor_right = 0.88125
-anchor_bottom = 1.0703703
+anchor_left = 0.8875
+anchor_top = 1.0814815
+anchor_right = 0.87916666
+anchor_bottom = 1.074074
 offset_left = -100.0
 offset_top = -152.0
 offset_right = 100.0
 offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Kilépés"
+flat = true
 script = ExtResource("1_c4tk2")
 metadata/_edit_use_anchors_ = true
 
+[node name="Credits" type="Sprite2D" parent="Control" unique_id=569374413]
+position = Vector2(129, 448)
+scale = Vector2(2, 2)
+texture = ExtResource("6_1edw4")
+
 [node name="Button4" type="Button" parent="Control" unique_id=1305222030]
 layout_mode = 0
-offset_left = 54.0
-offset_top = 441.0
-offset_right = 187.0
-offset_bottom = 474.0
-text = "Kredit"
-
-[node name="Button5" type="Button" parent="Control" unique_id=1965919703]
-layout_mode = 0
-offset_left = 251.0
-offset_top = 40.0
-offset_right = 397.0
-offset_bottom = 109.0
-text = "Tutorial"
-script = ExtResource("1_c4tk2")
+offset_left = 32.0
+offset_top = 400.0
+offset_right = 224.0
+offset_bottom = 496.0
+flat = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1884919955]
 stream = ExtResource("2_rmbjf")
@@ -83,6 +117,6 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
+[connection signal="pressed" from="Control/Button5" to="Control/Button" method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="Control/Button2" to="Control/Button" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/Button3" to="Control/Button" method="_on_exit_button_pressed"]
-[connection signal="pressed" from="Control/Button5" to="Control/Button" method="_on_tutorial_button_pressed"]

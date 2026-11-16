@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://nordr0py2gyx" path="res://Scenes/Player.tscn" id="2_j8ect"]
 [ext_resource type="Script" uid="uid://dpjah86e1wjgb" path="res://Scripts/Map2EnemySpawner.cs" id="3_j8ect"]
 [ext_resource type="PackedScene" uid="uid://dsc3yb65qp2r7" path="res://Scenes/Projectile.tscn" id="3_n5m6n"]
+[ext_resource type="AudioStream" uid="uid://cfnfkjb1hyrca" path="res://Zene/Tenger.mp3" id="6_4ajgc"]
 
 [node name="Map2" type="Node2D" unique_id=1911509454]
 script = ExtResource("1_np7t7")
@@ -17,3 +18,7 @@ ProjectileScene = ExtResource("3_n5m6n")
 
 [node name="Map2EnemySpawner" type="Node" parent="." unique_id=197125256]
 script = ExtResource("3_j8ect")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1411815535]
+stream = ExtResource("6_4ajgc")
+autoplay = true
