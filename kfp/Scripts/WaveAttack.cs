@@ -3,7 +3,7 @@ using Godot;
 public partial class WaveAttack : Area2D
 {
     [Export]
-    public int Health = 20;
+    public int Health = 15;
 
     [Export]
     public float Speed = 75f;

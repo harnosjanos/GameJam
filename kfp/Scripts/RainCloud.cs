@@ -70,6 +70,7 @@ public partial class RainCloud : Area2D
     }
     public void TakeDamage(int damage)
     {
+        Health -= damage;
         if (Health <= 0)
         {
             Posseidon boss =

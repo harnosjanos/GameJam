@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 public partial class Posseidon : Node2D
 {
     [Export]
-    public int Health = 500;
+    public int Health = 400;
 
     private ProgressBar healthBar;
     private Timer attackTimer;
@@ -17,6 +17,8 @@ public partial class Posseidon : Node2D
     private WaveAttack currentWave;
 
     private bool attackInProgress = false;
+
+    private bool rainAttackActive = false;
 
     public override void _Ready()
     {
@@ -88,7 +90,7 @@ public partial class Posseidon : Node2D
         attackInProgress = true;
 
         int attack =
-            (int)GD.RandRange(0, 2);
+            (int)GD.RandRange(0, 3);
 
         switch (attack)
         {
@@ -102,6 +104,10 @@ public partial class Posseidon : Node2D
 
             case 2:
                 await DoRainAttack();
+                break;
+            
+            case 3:
+                await DoTentacleAttack();
                 break;
         }
     }
@@ -231,6 +237,7 @@ public partial class Posseidon : Node2D
 
     private async Task DoRainAttack()
     {
+        rainAttackActive = true;
         DestroyAllRainClouds();
 
         Player player =
@@ -251,6 +258,8 @@ public partial class Posseidon : Node2D
             GetTree().CreateTimer(8.0),
             SceneTreeTimer.SignalName.Timeout
         );
+
+        rainAttackActive = false;
 
         attackInProgress = false;
     }
@@ -294,6 +303,9 @@ public partial class Posseidon : Node2D
 
     public void CloudDestroyed()
     {
+        if (!rainAttackActive)
+            return;
+
         int cloudCount =
             GetTree()
             .GetNodesInGroup(
@@ -302,9 +314,11 @@ public partial class Posseidon : Node2D
 
         if (cloudCount <= 1)
         {
+            rainAttackActive = false;
             attackInProgress = false;
         }
     }
+
 
     private void DestroyAllRainClouds()
     {
@@ -320,5 +334,66 @@ public partial class Posseidon : Node2D
 
             cloud.QueueFree();
         }
+    }
+
+    private void SpawnTentacles()
+    {
+        PackedScene tentacleScene =
+            GD.Load<PackedScene>(
+                "res://Scenes/Tentacle.tscn"
+            );
+
+        Tentacle leftTentacle =
+            tentacleScene.Instantiate<Tentacle>();
+
+        Tentacle rightTentacle =
+            tentacleScene.Instantiate<Tentacle>();
+
+        Marker2D left =
+            GetTree()
+            .CurrentScene
+            .GetNode<Marker2D>("Center");
+
+        leftTentacle.GlobalPosition =
+            left.GlobalPosition +
+            new Vector2(-250, 120);
+        leftTentacle.RotationDegrees = 45;
+
+        rightTentacle.GlobalPosition =
+            left.GlobalPosition +
+            new Vector2(250, 120);
+        rightTentacle.Scale =
+            new Vector2(-1, 1);
+        rightTentacle.RotationDegrees = -45;
+
+        GetTree()
+            .CurrentScene
+            .AddChild(leftTentacle);
+
+        GetTree()
+            .CurrentScene
+            .AddChild(rightTentacle);
+    }
+
+    private async Task DoTentacleAttack()
+    {
+        SpawnTentacles();
+
+        await ToSignal(
+            GetTree().CreateTimer(8.0),
+            SceneTreeTimer.SignalName.Timeout
+        );
+
+        foreach (
+            Tentacle tentacle
+            in GetTree().GetNodesInGroup(
+                "tentacle"
+            )
+        )
+        {
+            tentacle.QueueFree();
+        }
+
+        attackInProgress = false;
     }
 }

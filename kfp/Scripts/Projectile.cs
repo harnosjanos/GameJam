@@ -256,6 +256,42 @@ public partial class Projectile : Area2D
 
             return;
         }
+
+        //TENTACLE
+        if (area is Tentacle tentacle)
+        {
+            if (
+                IgnoredEnemyId != 0 &&
+                tentacle.GetInstanceId() == IgnoredEnemyId
+            )
+                return;
+
+            if (
+                SkillManager.Instance.AttackLevel >= 6 &&
+                !IsNovaProjectile &&
+                !IsChargedProjectile &&
+                !exploded &&
+                CanSpawnNova()
+            )
+            {
+                exploded = true;
+
+                TriggerNovaCooldown();
+
+                CallDeferred(
+                    nameof(SpawnChargedNova),
+                    tentacle.GlobalPosition,
+                    tentacle.GetInstanceId()
+                );
+            }
+
+            tentacle.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
+
+            return;
+        }
     }
 
     private void SpawnChargedNova(

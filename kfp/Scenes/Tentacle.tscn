@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://i8rwnnx40xql"]
+
+[ext_resource type="Texture2D" uid="uid://cwdp6rh7akpe8" path="res://Kepek/a-studio-shot-of-a-spiraling-octopus-tentacle-with-suction-cups-isolated-on-transparency-png.webp" id="1_1tqjy"]
+[ext_resource type="Script" uid="uid://udypnwkfoylp" path="res://Scripts/Tentacle.cs" id="1_7kca7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpiv"]
+size = Vector2(567, 126.00001)
+
+[node name="Tentacle" type="Area2D" unique_id=1473030606]
+script = ExtResource("1_7kca7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1686502107]
+position = Vector2(-5.3432417, -136.37267)
+rotation = -1.5707964
+scale = Vector2(0.3742517, 0.18649761)
+texture = ExtResource("1_1tqjy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=853291549]
+position = Vector2(5, -133.5)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_nbpiv")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1375812245]
