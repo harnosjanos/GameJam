@@ -1,3 +1,115 @@
 [gd_scene format=3 uid="uid://q0njgc7qdpxk"]
 
+[ext_resource type="Texture2D" uid="uid://do1y55ts72873" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0000.png" id="1_fokby"]
+[ext_resource type="Texture2D" uid="uid://dvits4dbbvvgj" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0003.png" id="2_lny6k"]
+[ext_resource type="Texture2D" uid="uid://p15qasiwnpmy" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0006.png" id="3_adx6s"]
+[ext_resource type="Texture2D" uid="uid://bc6cb1jp7wo2d" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0009.png" id="4_m1t2s"]
+[ext_resource type="Texture2D" uid="uid://bo42mujh5gybr" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0012.png" id="5_13oa4"]
+[ext_resource type="Texture2D" uid="uid://u10858yqkfno" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0014.png" id="6_lrbvn"]
+[ext_resource type="Texture2D" uid="uid://eym5o84mqhmh" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0016.png" id="7_lrahg"]
+[ext_resource type="Texture2D" uid="uid://ceuev8pvfdecm" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0018.png" id="8_l8dms"]
+[ext_resource type="Texture2D" uid="uid://buog5guorrqse" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0019.png" id="9_ao8lw"]
+[ext_resource type="Texture2D" uid="uid://xksxgg6f06qg" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0020.png" id="10_1eyqc"]
+[ext_resource type="Texture2D" uid="uid://du7cb7okrb5x8" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0022.png" id="11_cep88"]
+[ext_resource type="Texture2D" uid="uid://d4kw1t44ew6d3" path="res://Kepek/Pegasus/PegasusFlying/PegasusFlying0000.png" id="12_s8boh"]
+[ext_resource type="Texture2D" uid="uid://keqmo1kd4if1" path="res://Kepek/Pegasus/PegasusFlying/PegasusFlying0003.png" id="13_llqxu"]
+[ext_resource type="Texture2D" uid="uid://cpik7vdlgm2ye" path="res://Kepek/Pegasus/PegasusFlying/PegasusFlying0006.png" id="14_1pikb"]
+[ext_resource type="Texture2D" uid="uid://cjseu7yxejlta" path="res://Kepek/Pegasus/PegasusFlying/PegasusFlying0009.png" id="15_xbqo1"]
+[ext_resource type="Texture2D" uid="uid://d2bwey8k8kivj" path="res://Kepek/Pegasus/PegasusFlying/PegasusFlying0012.png" id="16_1tgye"]
+[ext_resource type="Texture2D" uid="uid://cpusfvwl3kvch" path="res://Kepek/Pegasus/PegasusFlying/PegasusFlying0013.png" id="17_i8kma"]
+[ext_resource type="Texture2D" uid="uid://bhwkyxnox11h2" path="res://Kepek/Pegasus/PegasusFlying/PegasusFlying0014.png" id="18_hg4aj"]
+[ext_resource type="Texture2D" uid="uid://do630v8vk18ii" path="res://Kepek/Pegasus/PegasusFlying/PegasusFlying0015.png" id="19_tn70g"]
+[ext_resource type="Texture2D" uid="uid://cu3frkde545jf" path="res://Kepek/Pegasus/PegasusFlying/PegasusFlying0018.png" id="20_04cvg"]
+[ext_resource type="Texture2D" uid="uid://8qr262tvd3gr" path="res://Kepek/Pegasus/PegasusFlying/PegasusFlying0021.png" id="21_wp6b4"]
+[ext_resource type="Texture2D" uid="uid://cabjyu6tjyyv2" path="res://Kepek/Pegasus/PegasusFlying/PegasusFlying0024.png" id="22_3s8sw"]
+[ext_resource type="Texture2D" uid="uid://dpwyp4tuo022u" path="res://Kepek/Pegasus/PegasusFlying/PegasusFlying0027.png" id="23_snj12"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o1rwj"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_fokby")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_lny6k")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_adx6s")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_m1t2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_13oa4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lrbvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lrahg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l8dms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ao8lw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1eyqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cep88")
+}],
+"loop": 1,
+"name": &"Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_s8boh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_llqxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1pikb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xbqo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1tgye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_i8kma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hg4aj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_tn70g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_04cvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wp6b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3s8sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_snj12")
+}],
+"loop": 1,
+"name": &"Flying",
+"speed": 12.0
+}]
+
 [node name="Pegasus" type="Node2D" unique_id=428109781]
+
+[node name="Pegasus" type="AnimatedSprite2D" parent="." unique_id=1521784630]
+position = Vector2(65, 64)
+sprite_frames = SubResource("SpriteFrames_o1rwj")
+animation = &"Attack"
+frame_progress = 0.56513757
