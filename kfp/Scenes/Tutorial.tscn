@@ -184,6 +184,21 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("37_dhnxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_dhnxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_dhnxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_dhnxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_dhnxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_dhnxe")
 }],
 "loop": 0,
 "name": &"EggHatch",
@@ -355,7 +370,7 @@ autoplay = "default"
 frame_progress = 0.8474671
 centered = false
 
-[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("MotherPhoenixSprite", "FeatherPosition", "ChildPhoenix")]
+[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("MotherPhoenixSprite", "EggHatching", "FeatherPosition", "ChildPhoenix")]
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -371,6 +386,7 @@ label_settings = SubResource("LabelSettings_8q58x")
 horizontal_alignment = 1
 script = ExtResource("10_sswaw")
 MotherPhoenixSprite = NodePath("../Mother_Phoneix/MotherAnimation")
+EggHatching = NodePath("../Hatching/AnimatedSprite2D")
 FeatherPosition = NodePath("../Mother_Phoneix/Marker2D")
 ChildPhoenix = NodePath("../Child_Phoneix")
 

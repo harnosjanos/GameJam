@@ -22,6 +22,8 @@ public partial class Dialog : Label
 
 	[Export] private string NextAnimation = "Attack";
 
+	[Export] private AnimatedSprite2D EggHatching;
+
 	[Export] private Node2D FeatherPosition;
 
 	[Export] private Tutorial_ChildPhoneix ChildPhoenix;
@@ -73,6 +75,27 @@ public partial class Dialog : Label
 		actual++;
 		DialogStart(actual);
 	}
+
+	void OnHatchingFinished()
+	{
+		if (EggHatching.Animation != "EggHatch")
+		{
+			return;
+		}
+
+		EggHatching.Visible = false;
+
+		float wait_time = 2.0f;
+		tween = CreateTween();
+		tween.TweenInterval(wait_time);
+
+		tween.TweenCallback(Callable.From(() =>
+		{
+			Visible = true;
+			DialogStart(actual);
+		}));
+
+	}
 	void DialogStart(int index)
 	{
 		if (index < dialogs.Count)
@@ -103,8 +126,13 @@ public partial class Dialog : Label
 	}
 	public override void _Ready()
 	{
+		Text = "";
+		Visible = false;
 
-		DialogStart(actual);
+		EggHatching.AnimationFinished += OnHatchingFinished;
+		EggHatching.Visible = true;
+		EggHatching.Frame = 0;
+		EggHatching.Play("EggHatch");
 
 	}
 	public override void _Process(double enable)

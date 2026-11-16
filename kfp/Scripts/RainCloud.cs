@@ -68,22 +68,24 @@ public partial class RainCloud : Area2D
             .CurrentScene
             .AddChild(drop);
     }
-
-    if (Health <= 0)
+    public void TakeDamage(int damage)
     {
-        Posseidon boss =
-            GetTree()
-            .GetFirstNodeInGroup("boss")
-            as Posseidon;
-
-        if (
-            boss != null &&
-            !RemovedByBoss
-        )
+        if (Health <= 0)
         {
-            boss.CloudDestroyed();
-        }
+            Posseidon boss =
+                GetTree()
+                .GetFirstNodeInGroup("boss")
+                as Posseidon;
 
-        QueueFree();
+            if (
+                boss != null &&
+                !RemovedByBoss
+            )
+            {
+                boss.CloudDestroyed();
+            }
+
+            QueueFree();
+        }
     }
 }
