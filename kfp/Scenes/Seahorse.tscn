@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://0x3i84dn6m6q"]
 
-[ext_resource type="Texture2D" uid="uid://dt627omurbv4p" path="res://Kepek/MobSeahorse/sh_01.png" id="1_3y12f"]
+[ext_resource type="Texture2D" uid="uid://dt627omurbv4p" path="res://Kepek/Map2Mobok/MobSeahorse/sh_01.png" id="1_3y12f"]
 [ext_resource type="Script" uid="uid://b2j6250r6kvme" path="res://Scripts/SeahorseEnemy.cs" id="1_77pp0"]
-[ext_resource type="Texture2D" uid="uid://nhrlf1nip86u" path="res://Kepek/MobSeahorse/sh_02.png" id="3_h6pa2"]
-[ext_resource type="Texture2D" uid="uid://n1kod711x52b" path="res://Kepek/MobSeahorse/sh_03.png" id="4_y5a4t"]
-[ext_resource type="Texture2D" uid="uid://ckb0nwpyjjurr" path="res://Kepek/MobSeahorse/sh_04.png" id="5_uxowa"]
+[ext_resource type="Texture2D" uid="uid://nhrlf1nip86u" path="res://Kepek/Map2Mobok/MobSeahorse/sh_02.png" id="3_h6pa2"]
+[ext_resource type="Texture2D" uid="uid://n1kod711x52b" path="res://Kepek/Map2Mobok/MobSeahorse/sh_03.png" id="4_y5a4t"]
+[ext_resource type="Texture2D" uid="uid://ckb0nwpyjjurr" path="res://Kepek/Map2Mobok/MobSeahorse/sh_04.png" id="5_uxowa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q0edf"]
 animations = [{

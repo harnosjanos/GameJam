@@ -6,6 +6,23 @@ public partial class Map2 : Node2D
 
     private bool finished;
 
+    public override void _Ready()
+    {
+        Player player =
+            GetTree()
+            .GetFirstNodeInGroup("player")
+            as Player;
+
+        player.SetMountainTexture(
+            GD.Load<Texture2D>(
+                "res://Kepek/Stage2Map/SandHill.png"
+            )
+        );
+
+        player.GetNode<Sprite2D>("Mountain")
+            .Position += new Vector2(50, 0);
+    }
+
     public override void _Process(
         double delta
     )
@@ -15,7 +32,7 @@ public partial class Map2 : Node2D
 
         timer += (float)delta;
 
-        if (timer >= 20f)
+        if (timer >= 120f)
         {
             finished = true;
 

@@ -1,4 +1,5 @@
 using Godot;
+using System;
 
 public partial class Map2EnemySpawner : Node
 {
@@ -8,6 +9,8 @@ public partial class Map2EnemySpawner : Node
     private double elapsed;
 
     private PackedScene seahorseScene;
+    private PackedScene rayScene;
+
     Player player;
 
     public override void _Ready()
@@ -16,8 +19,16 @@ public partial class Map2EnemySpawner : Node
             GD.Load<PackedScene>(
                 "res://Scenes/Seahorse.tscn"
             );
-        player = GetTree()
-        .GetFirstNodeInGroup("player") as Player;
+
+        rayScene =
+            GD.Load<PackedScene>(
+                "res://Scenes/Ray.tscn"
+            );
+
+        player =
+            GetTree()
+            .GetFirstNodeInGroup("player")
+            as Player;
     }
 
     public override void _Process(
@@ -30,7 +41,24 @@ public partial class Map2EnemySpawner : Node
         {
             elapsed -= SpawnInterval;
 
-            SpawnSeahorse();
+            SpawnEnemy();
+        }
+    }
+
+    private void SpawnEnemy()
+    {
+        int type =
+            (int)GD.RandRange(0, 1);
+
+        switch (type)
+        {
+            case 0:
+                SpawnSeahorse();
+                break;
+
+            case 1:
+                SpawnRay();
+                break;
         }
     }
 
@@ -53,6 +81,53 @@ public partial class Map2EnemySpawner : Node
             );
         AnimatedSprite2D enemySprite = enemy.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         enemySprite.FlipH = enemy.Position.X < player.Position.X;
+
+        GetTree()
+            .CurrentScene
+            .AddChild(enemy);
+    }
+
+    private void SpawnRay()
+    {
+        Ray enemy =
+            rayScene
+            .Instantiate<Ray>();
+
+        Random rand = new();
+
+        int x = rand.Next(0, 1920);
+        int y = rand.Next(0, 1080);
+
+        bool spawned = false;
+
+        while (!spawned)
+        {
+            if (
+                player.GlobalPosition.DistanceTo(
+                    new Vector2(x, y)
+                ) < 300
+            )
+            {
+                x = rand.Next(0, 1920);
+                y = rand.Next(50, 350);
+            }
+            else
+            {
+                spawned = true;
+            }
+        }
+
+        enemy.GlobalPosition =
+            new Vector2(x, y);
+
+        AnimatedSprite2D sprite =
+            enemy.GetNode<AnimatedSprite2D>(
+                "AnimatedSprite2D"
+            );
+
+        sprite.FlipH =
+            player.GlobalPosition.X >
+            enemy.GlobalPosition.X;
 
         GetTree()
             .CurrentScene

@@ -1,16 +1,11 @@
 [gd_scene format=3 uid="uid://dndmxtqhf52xo"]
 
 [ext_resource type="Script" uid="uid://bayg165l6a8jb" path="res://Scripts/Map2.cs" id="1_np7t7"]
-[ext_resource type="Texture2D" uid="uid://m4stvd53fp3x" path="res://Kepek/Stage2Map/Background(Stage2).png" id="2_0uwms"]
 [ext_resource type="PackedScene" uid="uid://nordr0py2gyx" path="res://Scenes/Player.tscn" id="2_j8ect"]
+[ext_resource type="PackedScene" uid="uid://dnb5ijnf4pp5f" path="res://Scenes/Tenger.tscn" id="2_sgv1u"]
 [ext_resource type="Script" uid="uid://dpjah86e1wjgb" path="res://Scripts/Map2EnemySpawner.cs" id="3_j8ect"]
 [ext_resource type="PackedScene" uid="uid://dsc3yb65qp2r7" path="res://Scenes/Projectile.tscn" id="3_n5m6n"]
-[ext_resource type="Texture2D" uid="uid://c4m3fah043020" path="res://Kepek/Stage2Map/Lands.png" id="3_sre2j"]
-[ext_resource type="Texture2D" uid="uid://bwdt5y8qd8tjv" path="res://Kepek/Stage2Map/SeaBehind.png" id="4_bcx2m"]
-[ext_resource type="Texture2D" uid="uid://biaqb2ykehr0r" path="res://Kepek/Stage2Map/SandHill.png" id="5_l8cts"]
 [ext_resource type="AudioStream" uid="uid://cfnfkjb1hyrca" path="res://Zene/Tenger.mp3" id="6_4ajgc"]
-[ext_resource type="Texture2D" uid="uid://dmg3ntcucj7ck" path="res://Kepek/Stage2Map/NestInside(Stage2).png" id="6_w8ie1"]
-[ext_resource type="Texture2D" uid="uid://dps7a7w4umnbo" path="res://Kepek/Stage2Map/NestOutside(Stage2).png" id="7_2ipxq"]
 [ext_resource type="Texture2D" uid="uid://c5h4bysc3wjxn" path="res://Kepek/Stage2Map/AnimatedSea/AnimatedSea0000.png" id="9_l8cts"]
 [ext_resource type="Texture2D" uid="uid://ca4uv1ylwn22x" path="res://Kepek/Stage2Map/AnimatedSea/AnimatedSea0005.png" id="10_w8ie1"]
 
@@ -32,39 +27,8 @@ animations = [{
 texture_filter = 3
 script = ExtResource("1_np7t7")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=546574058]
-position = Vector2(480.00003, 270)
-scale = Vector2(5.0000005, 5.0000005)
-texture = ExtResource("2_0uwms")
-
-[node name="Lands" type="Sprite2D" parent="." unique_id=1836649350]
-position = Vector2(480.00006, 270)
-scale = Vector2(5.0000005, 5.0000005)
-texture = ExtResource("3_sre2j")
-
-[node name="SeaBehind" type="Sprite2D" parent="." unique_id=1423734051]
-position = Vector2(480.6234, 347.74997)
-scale = Vector2(5.0064936, 5.0064936)
-texture = ExtResource("4_bcx2m")
-
-[node name="Hill" type="Sprite2D" parent="." unique_id=1198309394]
-position = Vector2(505.2265, 378.25)
-scale = Vector2(5.070312, 5.070312)
-texture = ExtResource("5_l8cts")
-
-[node name="NestInside" type="Sprite2D" parent="." unique_id=759917391]
-position = Vector2(500.32352, 314)
-scale = Vector2(5.4117646, 5.4117646)
-texture = ExtResource("6_w8ie1")
-
-[node name="NestOutside" type="Sprite2D" parent="." unique_id=1086331275]
-position = Vector2(496, 338.00003)
-scale = Vector2(5.2701607, 5.270161)
-texture = ExtResource("7_2ipxq")
-
-[node name="Player" parent="." unique_id=502233483 instance=ExtResource("2_j8ect")]
-position = Vector2(515, 296)
-ProjectileScene = ExtResource("3_n5m6n")
+[node name="Tenger" parent="." unique_id=216858625 instance=ExtResource("2_sgv1u")]
+position = Vector2(-3, -6)
 
 [node name="Map2EnemySpawner" type="Node" parent="." unique_id=197125256]
 script = ExtResource("3_j8ect")
@@ -73,8 +37,12 @@ script = ExtResource("3_j8ect")
 stream = ExtResource("6_4ajgc")
 autoplay = true
 
+[node name="Player" parent="." unique_id=502233483 instance=ExtResource("2_j8ect")]
+position = Vector2(515, 296)
+ProjectileScene = ExtResource("3_n5m6n")
+
 [node name="FrontSea" type="AnimatedSprite2D" parent="." unique_id=985927508]
-position = Vector2(481.11627, 433.75)
+position = Vector2(483.00003, 446)
 scale = Vector2(5.0116277, 5.011627)
 sprite_frames = SubResource("SpriteFrames_o1rwj")
 frame_progress = 0.34769186

@@ -32,7 +32,6 @@ public partial class Player : Node2D
     public float SlideSpeed = 600f;
 
     private Sprite2D body;
-    private Sprite2D nest;
     private Sprite2D mountain;
 
     public override void _Ready()
@@ -56,10 +55,7 @@ public partial class Player : Node2D
         InitializeHealth();
 
         body =
-            GetNode<Sprite2D>("Body");
-
-        nest =
-            GetNode<Sprite2D>("Nest");
+            GetNode<Sprite2D>("Body");  
 
         mountain =
             GetNode<Sprite2D>("Mountain");
@@ -154,6 +150,13 @@ public partial class Player : Node2D
         damage += SkillManager.Instance.ChargedDamageLevel;
 
         return damage;
+    }
+
+    public void SetMountainTexture(
+        Texture2D texture
+    )
+    {
+        mountain.Texture = texture;
     }
 
 

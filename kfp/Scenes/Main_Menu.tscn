@@ -83,8 +83,8 @@ texture = ExtResource("5_xvotp")
 [node name="Button3" type="Button" parent="Control" unique_id=1682314468]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.8875
-anchor_top = 1.0814815
+anchor_left = 0.87916666
+anchor_top = 1.074074
 anchor_right = 0.87916666
 anchor_bottom = 1.074074
 offset_left = -100.0
@@ -112,7 +112,6 @@ flat = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1884919955]
 stream = ExtResource("2_rmbjf")
-volume_db = 24.0
 autoplay = true
 bus = &"Music"
 

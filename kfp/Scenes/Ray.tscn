@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dc8dp5f5a2mfa"]
+
+[ext_resource type="Script" uid="uid://bkytqpjfrf30r" path="res://Scripts/Ray.cs" id="1_hjndn"]
+[ext_resource type="Texture2D" uid="uid://bfdl8n3r5vmd1" path="res://Kepek/Map2Mobok/MobRay/ray_03.png" id="1_qxmtv"]
+[ext_resource type="Texture2D" uid="uid://cb1g6si02u04v" path="res://Kepek/Map2Mobok/MobRay/ray_01.png" id="2_q4mid"]
+[ext_resource type="Texture2D" uid="uid://dj6fcbv8a3874" path="res://Kepek/Map2Mobok/MobRay/ray_02.png" id="3_hjndn"]
+[ext_resource type="Texture2D" uid="uid://re2pgaa8m8b5" path="res://Kepek/Map2Mobok/MobRay/ray_04.png" id="4_5d35r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_es6n3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q4mid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hjndn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_qxmtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5d35r")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpiv"]
+size = Vector2(115, 36)
+
+[node name="Ray" type="CharacterBody2D" unique_id=1663362965]
+position = Vector2(524, 209)
+script = ExtResource("1_hjndn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=362794261]
+sprite_frames = SubResource("SpriteFrames_es6n3")
+frame_progress = 0.6679615
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1246874794]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1672424765]
+position = Vector2(2.5, 8)
+shape = SubResource("RectangleShape2D_nbpiv")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=807391891]
+offset_left = -16.0
+offset_top = 27.0
+offset_right = 19.0
+offset_bottom = 54.0
+metadata/_edit_use_anchors_ = true

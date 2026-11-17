@@ -292,6 +292,45 @@ public partial class Projectile : Area2D
 
             return;
         }
+
+        //RAY
+        if (parent is Ray ray)
+        {
+            if (
+                IgnoredEnemyId != 0 &&
+                ray.GetInstanceId() == IgnoredEnemyId
+            )
+                return;
+
+            if (
+                SkillManager.Instance.AttackLevel >= 6 &&
+                !IsNovaProjectile &&
+                !IsChargedProjectile &&
+                !exploded &&
+                !ray.ChargedNovaTriggered &&
+                CanSpawnNova()
+            )
+            {
+                ray.ChargedNovaTriggered = true;
+
+                exploded = true;
+
+                TriggerNovaCooldown();
+
+                CallDeferred(
+                    nameof(SpawnChargedNova),
+                    ray.GlobalPosition,
+                    ray.GetInstanceId()
+                );
+            }
+
+            ray.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
+
+            return;
+        }
     }
 
     private void SpawnChargedNova(

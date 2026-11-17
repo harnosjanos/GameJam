@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt627omurbv4p"
-path="res://.godot/imported/sh_01.png-3792c6a6a6a3c038ce64cc67b67e1e50.ctex"
+uid="uid://dol0ogknscikh"
+path="res://.godot/imported/fsh_01.png-00c4f5b88a703bb1278c4132b33f9475.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Kepek/MobSeahorse/sh_01.png"
-dest_files=["res://.godot/imported/sh_01.png-3792c6a6a6a3c038ce64cc67b67e1e50.ctex"]
+source_file="res://Kepek/Map2Mobok/MobFish/fsh_01.png"
+dest_files=["res://.godot/imported/fsh_01.png-00c4f5b88a703bb1278c4132b33f9475.ctex"]
 
 [params]
 

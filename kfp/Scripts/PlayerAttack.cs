@@ -39,9 +39,14 @@ public partial class Player
         if (mana <= 0)
             return;
 
+        Vector2 spawnPosition =
+            GlobalPosition +
+            new Vector2(0, -50);
+
         Vector2 baseDirection =
-            (GetGlobalMousePosition() - GlobalPosition)
+            (GetGlobalMousePosition() - spawnPosition)
             .Normalized();
+
 
         int projectileCount = 1;
 
@@ -86,14 +91,17 @@ public partial class Player
     {
         Projectile projectile =
             ProjectileScene.Instantiate<Projectile>();
-        
+
         projectile.Damage =
             GetNormalDamage();
-        
-        projectile.IsChargedProjectile = false;
-        projectile.GlobalPosition = GlobalPosition;
 
-        projectile.Direction = direction;
+        projectile.IsChargedProjectile = false;
+
+        projectile.GlobalPosition =
+            GlobalPosition + new Vector2(0, -50);
+
+        projectile.Direction =
+            direction;
 
         projectile.Rotation =
             direction.Angle();
@@ -136,7 +144,7 @@ public partial class Player
                 SkillManager.Instance.ChargeLevel >= 6;
 
             projectile.GlobalPosition =
-                GlobalPosition;
+                GlobalPosition + new Vector2(0, -50);
 
             projectile.Direction =
                 direction.Normalized();
@@ -185,7 +193,7 @@ public partial class Player
                 GetChargedDamage();
 
             projectile.GlobalPosition =
-                GlobalPosition;
+                GlobalPosition + new Vector2(0, -50);
 
             projectile.Direction =
                 direction.Normalized();
