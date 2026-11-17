@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://dg74v3gy6fpc6"]
+
+[ext_resource type="Texture2D" uid="uid://c26ihbfrdx2nr" path="res://Kepek/Griff/GriffAttack/GriffAttack0000.png" id="1_7a6br"]
+[ext_resource type="Texture2D" uid="uid://cir82ejpgul23" path="res://Kepek/Griff/GriffAttack/GriffAttack0003.png" id="2_ihcnh"]
+[ext_resource type="Texture2D" uid="uid://vl6hh1r46n8n" path="res://Kepek/Griff/GriffAttack/GriffAttack0006.png" id="3_60rgd"]
+[ext_resource type="Texture2D" uid="uid://sm1ox6nj5bxt" path="res://Kepek/Griff/GriffAttack/GriffAttack0009.png" id="4_0eeae"]
+[ext_resource type="Texture2D" uid="uid://dphr2c0pde4fh" path="res://Kepek/Griff/GriffAttack/GriffAttack0010.png" id="5_7bihx"]
+[ext_resource type="Texture2D" uid="uid://cjhu268ovijli" path="res://Kepek/Griff/GriffAttack/GriffAttack0011.png" id="6_yepml"]
+[ext_resource type="Texture2D" uid="uid://qxgbhin18p4p" path="res://Kepek/Griff/GriffAttack/GriffAttack0012.png" id="7_jwcho"]
+[ext_resource type="Texture2D" uid="uid://co0jpqbrx38eq" path="res://Kepek/Griff/GriffAttack/GriffAttack0013.png" id="8_x6x8o"]
+[ext_resource type="Texture2D" uid="uid://cofxhfo3c4v00" path="res://Kepek/Griff/GriffAttack/GriffAttack0016.png" id="9_i1nhx"]
+[ext_resource type="Texture2D" uid="uid://oio078djhjud" path="res://Kepek/Griff/GriffAttack/GriffAttack0018.png" id="10_r8h8u"]
+[ext_resource type="Texture2D" uid="uid://vnofs7lj1561" path="res://Kepek/Griff/GriffAttack/GriffAttack0019.png" id="11_4yxik"]
+[ext_resource type="Texture2D" uid="uid://cwounmcuw8256" path="res://Kepek/Griff/GriffFlying/GriffFlying0000.png" id="12_w7roq"]
+[ext_resource type="Texture2D" uid="uid://hv2vy70n4qr4" path="res://Kepek/Griff/GriffFlying/GriffFlying0003.png" id="13_ec561"]
+[ext_resource type="Texture2D" uid="uid://luc6crktr5vb" path="res://Kepek/Griff/GriffFlying/GriffFlying0006.png" id="14_8lpcx"]
+[ext_resource type="Texture2D" uid="uid://40jqh80fc76b" path="res://Kepek/Griff/GriffFlying/GriffFlying0008.png" id="15_qanmj"]
+[ext_resource type="Texture2D" uid="uid://doxq8bhlwvls7" path="res://Kepek/Griff/GriffFlying/GriffFlying0010.png" id="16_36fej"]
+[ext_resource type="Texture2D" uid="uid://ca63klt3uxmye" path="res://Kepek/Griff/GriffFlying/GriffFlying0012.png" id="17_fhs2l"]
+[ext_resource type="Texture2D" uid="uid://qn36jatfwwyt" path="res://Kepek/Griff/GriffFlying/GriffFlying0015.png" id="18_nxd60"]
+[ext_resource type="Texture2D" uid="uid://cxownm5ab312s" path="res://Kepek/Griff/GriffFlying/GriffFlying0018.png" id="19_pp4in"]
+[ext_resource type="Texture2D" uid="uid://d27qo55w0qr8e" path="res://Kepek/Griff/GriffFlying/GriffFlying0021.png" id="20_32uok"]
+[ext_resource type="Texture2D" uid="uid://cbtfia8m42h6b" path="res://Kepek/Griff/GriffFlying/GriffFlying0024.png" id="21_g76dr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o1rwj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7a6br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ihcnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_60rgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0eeae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7bihx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yepml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jwcho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x6x8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i1nhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r8h8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4yxik")
+}],
+"loop": 1,
+"name": &"Attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_w7roq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ec561")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8lpcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qanmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_36fej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fhs2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nxd60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_pp4in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_32uok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_g76dr")
+}],
+"loop": 1,
+"name": &"Flying",
+"speed": 8.0
+}]
+
+[node name="Griff" type="Node2D" unique_id=113403169]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=567728092]
+sprite_frames = SubResource("SpriteFrames_o1rwj")
+animation = &"Attack"
+frame = 3
+frame_progress = 0.4399506
