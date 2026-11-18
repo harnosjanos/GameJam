@@ -503,7 +503,7 @@ autoplay = "default"
 frame_progress = 0.8474671
 centered = false
 
-[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("FadeOverlay", "MotherPhoenixSprite", "EggHatching", "FeatherPosition", "ChildPhoenix")]
+[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("FadeOverlay", "MotherPhoenixSprite", "EggHatching", "MotherGrabbed", "FeatherPosition", "ChildPhoenix")]
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -521,6 +521,7 @@ script = ExtResource("10_sswaw")
 FadeOverlay = NodePath("../CanvasLayer/ColorRect")
 MotherPhoenixSprite = NodePath("../Mother_Phoneix/MotherAnimation")
 EggHatching = NodePath("../Hatching/AnimatedSprite2D")
+MotherGrabbed = NodePath("../Mother_Phoneix/MotherPhoneixGrabbed")
 FeatherPosition = NodePath("../Mother_Phoneix/Marker2D")
 ChildPhoenix = NodePath("../Child_Phoneix")
 
