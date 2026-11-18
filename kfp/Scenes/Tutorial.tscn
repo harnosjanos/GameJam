@@ -101,6 +101,7 @@
 [ext_resource type="Texture2D" uid="uid://cmo41idda5p8f" path="res://Kepek/tutorial/Yoink/Yoink0071.png" id="93_0k1ih"]
 [ext_resource type="Texture2D" uid="uid://d2gr2bgmsj8up" path="res://Kepek/tutorial/Yoink/Yoink0073.png" id="94_bq0tg"]
 [ext_resource type="Texture2D" uid="uid://bkjjky6tl1sde" path="res://Kepek/tutorial/Yoink/Yoink0075.png" id="95_6oiwi"]
+[ext_resource type="AudioStream" uid="uid://bgmoghmfdk4w5" path="res://Zene/tutorial zaj.mp3" id="102_l8wvp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_05qi6"]
 animations = [{
@@ -502,7 +503,7 @@ autoplay = "default"
 frame_progress = 0.8474671
 centered = false
 
-[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("FadeOverlay", "MotherPhoenixSprite", "EggHatching", "MotherGrabbed", "FeatherPosition", "ChildPhoenix")]
+[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("FadeOverlay", "MotherPhoenixSprite", "EggHatching", "FeatherPosition", "ChildPhoenix")]
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -520,7 +521,6 @@ script = ExtResource("10_sswaw")
 FadeOverlay = NodePath("../CanvasLayer/ColorRect")
 MotherPhoenixSprite = NodePath("../Mother_Phoneix/MotherAnimation")
 EggHatching = NodePath("../Hatching/AnimatedSprite2D")
-MotherGrabbed = NodePath("../Mother_Phoneix/MotherPhoneixGrabbed")
 FeatherPosition = NodePath("../Mother_Phoneix/Marker2D")
 ChildPhoenix = NodePath("../Child_Phoneix")
 
@@ -599,3 +599,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=879506048]
+stream = ExtResource("102_l8wvp")
+autoplay = true

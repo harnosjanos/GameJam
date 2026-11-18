@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgmoghmfdk4w5"
+path="res://.godot/imported/tutorial zaj.mp3-b3f5d1a336dd49ef1d2219d53a196d0c.mp3str"
+
+[deps]
+
+source_file="res://Zene/tutorial zaj.mp3"
+dest_files=["res://.godot/imported/tutorial zaj.mp3-b3f5d1a336dd49ef1d2219d53a196d0c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
