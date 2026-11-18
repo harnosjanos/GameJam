@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dtxa0anje1afe" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/Start.png" id="1_anlgx"]
 [ext_resource type="Script" uid="uid://d3hqy6qrnsei4" path="res://Scripts/MenuActions.cs" id="1_c4tk2"]
+[ext_resource type="Texture2D" uid="uid://bk62sideq8lk1" path="res://Kepek/MenuBackground.png" id="1_vnflv"]
 [ext_resource type="AudioStream" uid="uid://p5smi38ewhjh" path="res://Zene/Menu.mp3" id="2_rmbjf"]
 [ext_resource type="Texture2D" uid="uid://cm82adhe61t51" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/TutorialIncomplete.png" id="3_xvotp"]
 [ext_resource type="Texture2D" uid="uid://cgaqr54vl25qf" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/settings.png" id="4_1edw4"]
@@ -9,6 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://drlcsamiiuhdy" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/credits.png" id="6_1edw4"]
 
 [node name="Menu" type="CanvasLayer" unique_id=869715182]
+
+[node name="MenuBackground" type="Sprite2D" parent="." unique_id=435105603]
+texture_filter = 1
+position = Vector2(478.22226, 272)
+scale = Vector2(5.0370383, 5.037038)
+texture = ExtResource("1_vnflv")
 
 [node name="Control" type="Control" parent="." unique_id=684185413]
 layout_mode = 3

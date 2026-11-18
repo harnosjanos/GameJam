@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bwhitr0ptl7nw"]
 
 [ext_resource type="Script" uid="uid://c46rhrsk18m5p" path="res://Scripts/SkillTree.cs" id="1_3mp7v"]
+[ext_resource type="Texture2D" uid="uid://q1136fdxcu1c" path="res://Kepek/UpgradeBackground.png" id="2_abodq"]
 [ext_resource type="AudioStream" uid="uid://cs4ajyafosktx" path="res://Zene/SkillTreeZaj.mp3" id="2_o3ipy"]
 [ext_resource type="Texture2D" uid="uid://8vvv80j16gqv" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/HP/LessDMG_Taken.png" id="4_kdu6y"]
 [ext_resource type="Texture2D" uid="uid://cn7dnnauirx3p" path="res://Kepek/SkillTree-20261111T153635Z-1-001/SkillTree/HP/hpTREE.png" id="4_n648w"]
@@ -30,6 +31,12 @@
 
 [node name="SkillTree" type="Node2D" unique_id=708553265]
 script = ExtResource("1_3mp7v")
+
+[node name="UpgradeBackground" type="Sprite2D" parent="." unique_id=19518001]
+texture_filter = 1
+position = Vector2(483.88892, 269.75)
+scale = Vector2(5.171296, 5.171296)
+texture = ExtResource("2_abodq")
 
 [node name="DESC" type="Label" parent="." unique_id=1933773952]
 modulate = Color(1, 0.4862745, 0.023529412, 1)

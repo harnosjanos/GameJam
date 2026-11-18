@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://df1aowbtnp7yj"]
 
 [ext_resource type="Script" uid="uid://dvprmrrmilldv" path="res://Scripts/Settings.cs" id="1_4hxq3"]
+[ext_resource type="Texture2D" uid="uid://q1136fdxcu1c" path="res://Kepek/UpgradeBackground.png" id="1_w1nw0"]
 [ext_resource type="Script" uid="uid://d3hqy6qrnsei4" path="res://Scripts/MenuActions.cs" id="2_flfri"]
 [ext_resource type="Texture2D" uid="uid://d4nyixf6xluhf" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/Menu.png" id="2_yrknh"]
 
 [node name="Settings" type="Node2D" unique_id=900518175]
+
+[node name="UpgradeBackground" type="Sprite2D" parent="." unique_id=652925109]
+texture_filter = 1
+position = Vector2(485.99997, 269.99997)
+scale = Vector2(5.106481, 5.106481)
+texture = ExtResource("1_w1nw0")
 
 [node name="HSlider" type="HSlider" parent="." unique_id=1961329703]
 offset_left = 35.0
