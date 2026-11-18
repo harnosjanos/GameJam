@@ -70,6 +70,37 @@
 [ext_resource type="Texture2D" uid="uid://c4tyl05cpj7a4" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0059.png" id="35_gqq8o"]
 [ext_resource type="Texture2D" uid="uid://b03x3y1dq60xo" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0062.png" id="36_n7exn"]
 [ext_resource type="Texture2D" uid="uid://cmx1bq4nupxkb" path="res://Kepek/tutorial/EggHatching/(Tutorial)Egg_Hatching0065.png" id="37_dhnxe"]
+[ext_resource type="Texture2D" uid="uid://bvfxnmb853uwo" path="res://Kepek/tutorial/Yoink/Yoink0000.png" id="65_v4uoh"]
+[ext_resource type="Texture2D" uid="uid://btvxaurb7w2gb" path="res://Kepek/tutorial/Yoink/Yoink0002.png" id="66_l8wvp"]
+[ext_resource type="Texture2D" uid="uid://cmria40aynr51" path="res://Kepek/tutorial/Yoink/Yoink0004.png" id="67_lggxj"]
+[ext_resource type="Texture2D" uid="uid://b75gspnctgj60" path="res://Kepek/tutorial/Yoink/Yoink0006.png" id="68_gqq8o"]
+[ext_resource type="Texture2D" uid="uid://dgjqybixqcetn" path="res://Kepek/tutorial/Yoink/Yoink0008.png" id="69_n7exn"]
+[ext_resource type="Texture2D" uid="uid://cjg14klc83c5y" path="res://Kepek/tutorial/Yoink/Yoink0010.png" id="70_dhnxe"]
+[ext_resource type="Texture2D" uid="uid://djup47dvp7qja" path="res://Kepek/tutorial/Yoink/Yoink0012.png" id="71_ds5td"]
+[ext_resource type="Texture2D" uid="uid://bxj2rp6x1fxb5" path="res://Kepek/tutorial/Yoink/Yoink0016.png" id="72_urhaq"]
+[ext_resource type="Texture2D" uid="uid://bhasum41sg08y" path="res://Kepek/tutorial/Yoink/Yoink0020.png" id="73_6v4g2"]
+[ext_resource type="Texture2D" uid="uid://dkndorn1ogh3q" path="res://Kepek/tutorial/Yoink/Yoink0024.png" id="74_ptfrm"]
+[ext_resource type="Texture2D" uid="uid://csd2in1dqlhn8" path="res://Kepek/tutorial/Yoink/Yoink0025.png" id="75_o00v8"]
+[ext_resource type="Texture2D" uid="uid://cdla67c0loddf" path="res://Kepek/tutorial/Yoink/Yoink0028.png" id="76_bi2ya"]
+[ext_resource type="Texture2D" uid="uid://fdyebqh85ml3" path="res://Kepek/tutorial/Yoink/Yoink0030.png" id="77_s58uk"]
+[ext_resource type="Texture2D" uid="uid://bfj42fpt70um7" path="res://Kepek/tutorial/Yoink/Yoink0031.png" id="78_k5jc2"]
+[ext_resource type="Texture2D" uid="uid://djyfl4yay0cv8" path="res://Kepek/tutorial/Yoink/Yoink0032.png" id="79_8c5pa"]
+[ext_resource type="Texture2D" uid="uid://dm68smmdcwfn1" path="res://Kepek/tutorial/Yoink/Yoink0034.png" id="80_6d5mp"]
+[ext_resource type="Texture2D" uid="uid://3p54nayjqf3v" path="res://Kepek/tutorial/Yoink/Yoink0036.png" id="81_33h66"]
+[ext_resource type="Texture2D" uid="uid://c1yxf7d2105xk" path="res://Kepek/tutorial/Yoink/Yoink0037.png" id="82_qrmj4"]
+[ext_resource type="Texture2D" uid="uid://cmwvd2ht7tpkp" path="res://Kepek/tutorial/Yoink/Yoink0038.png" id="83_esb1k"]
+[ext_resource type="Texture2D" uid="uid://wyy6w5rwfk1o" path="res://Kepek/tutorial/Yoink/Yoink0039.png" id="84_55cf6"]
+[ext_resource type="Texture2D" uid="uid://dkwro41xuwqy2" path="res://Kepek/tutorial/Yoink/Yoink0043.png" id="85_u5vnh"]
+[ext_resource type="Texture2D" uid="uid://w46s1iy8uu6y" path="res://Kepek/tutorial/Yoink/Yoink0047.png" id="86_5v3qt"]
+[ext_resource type="Texture2D" uid="uid://c7pbblicucnj1" path="res://Kepek/tutorial/Yoink/Yoink0051.png" id="87_rd451"]
+[ext_resource type="Texture2D" uid="uid://cxjyk2oayia33" path="res://Kepek/tutorial/Yoink/Yoink0055.png" id="88_s8k3s"]
+[ext_resource type="Texture2D" uid="uid://brd6me6rc36j4" path="res://Kepek/tutorial/Yoink/Yoink0059.png" id="89_hitx0"]
+[ext_resource type="Texture2D" uid="uid://7rt44agh4f7v" path="res://Kepek/tutorial/Yoink/Yoink0063.png" id="90_k2ae0"]
+[ext_resource type="Texture2D" uid="uid://bb33mluemcd5t" path="res://Kepek/tutorial/Yoink/Yoink0067.png" id="91_ifyio"]
+[ext_resource type="Texture2D" uid="uid://b62qae8jm5vqa" path="res://Kepek/tutorial/Yoink/Yoink0069.png" id="92_4lxqx"]
+[ext_resource type="Texture2D" uid="uid://cmo41idda5p8f" path="res://Kepek/tutorial/Yoink/Yoink0071.png" id="93_0k1ih"]
+[ext_resource type="Texture2D" uid="uid://d2gr2bgmsj8up" path="res://Kepek/tutorial/Yoink/Yoink0073.png" id="94_bq0tg"]
+[ext_resource type="Texture2D" uid="uid://bkjjky6tl1sde" path="res://Kepek/tutorial/Yoink/Yoink0075.png" id="95_6oiwi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_05qi6"]
 animations = [{
@@ -294,6 +325,107 @@ animations = [{
 "speed": 1.5
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ntug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_v4uoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_l8wvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_lggxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_gqq8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_n7exn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_dhnxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ds5td")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_urhaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_6v4g2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_ptfrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_o00v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_bi2ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_s58uk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_k5jc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_8c5pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_6d5mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_33h66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_qrmj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_esb1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_55cf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_u5vnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_5v3qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_rd451")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_s8k3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_hitx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_k2ae0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_ifyio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_4lxqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_0k1ih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_bq0tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_6oiwi")
+}],
+"loop": 0,
+"name": &"GrabPhoneix",
+"speed": 10.0
+}]
+
 [node name="Node2D" type="Node2D" unique_id=672353944]
 texture_filter = 3
 
@@ -370,7 +502,7 @@ autoplay = "default"
 frame_progress = 0.8474671
 centered = false
 
-[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("FadeOverlay", "MotherPhoenixSprite", "EggHatching", "FeatherPosition", "ChildPhoenix")]
+[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("FadeOverlay", "MotherPhoenixSprite", "EggHatching", "MotherGrabbed", "FeatherPosition", "ChildPhoenix")]
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -388,6 +520,7 @@ script = ExtResource("10_sswaw")
 FadeOverlay = NodePath("../CanvasLayer/ColorRect")
 MotherPhoenixSprite = NodePath("../Mother_Phoneix/MotherAnimation")
 EggHatching = NodePath("../Hatching/AnimatedSprite2D")
+MotherGrabbed = NodePath("../Mother_Phoneix/MotherPhoneixGrabbed")
 FeatherPosition = NodePath("../Mother_Phoneix/Marker2D")
 ChildPhoenix = NodePath("../Child_Phoneix")
 
@@ -400,6 +533,14 @@ scale = Vector2(3.473958, 3.473958)
 sprite_frames = SubResource("SpriteFrames_yqegr")
 animation = &"Attack"
 autoplay = "default"
+
+[node name="MotherPhoneixGrabbed" type="AnimatedSprite2D" parent="Mother_Phoneix" unique_id=1667448131]
+position = Vector2(271, 326)
+scale = Vector2(3.473958, 3.473958)
+sprite_frames = SubResource("SpriteFrames_6ntug")
+animation = &"GrabPhoneix"
+frame = 30
+frame_progress = 1.0
 
 [node name="Marker2D" type="Marker2D" parent="Mother_Phoneix" unique_id=535945555]
 position = Vector2(391, 188)

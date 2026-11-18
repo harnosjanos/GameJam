@@ -19,7 +19,7 @@ public partial class Dialog : Label
 		"Vigyázz mert nekünk sincs belőle végtelen","így jól oszd be a támadásaidkor",
 		"Kezdetben próbáld meg ezt az egyszerű támadást!"
 
-		//teszt: "azz"
+		//"azz"
 	};
 
 	List<string> playerShotDialogs = new()
@@ -39,6 +39,8 @@ public partial class Dialog : Label
 
 	[Export] private AnimatedSprite2D EggHatching;
 
+	[Export] private AnimatedSprite2D MotherGrabbed;
+
 	[Export] private Node2D FeatherPosition;
 
 	[Export] private Tutorial_ChildPhoneix ChildPhoenix;
@@ -47,6 +49,8 @@ public partial class Dialog : Label
 	private PackedScene FeatherTexture;
 
 	bool shooted;
+
+	bool motherGrabbed;
 	private void OnFrameChanged()
 	{
 
@@ -101,6 +105,8 @@ public partial class Dialog : Label
 
 		tween = CreateTween();
 		tween.TweenProperty(this, "visible_characters", Text.Length, 2.0f);
+
+
 	}
 
 	void NextSentence()
@@ -135,8 +141,8 @@ public partial class Dialog : Label
 		{
 			Text = dialogs[index];
 			VisibleCharacters = 0;
-			float time = 4.0f;
-			float wait_time = 3.0f;
+			float time = 3.0f;
+			float wait_time = 2.0f;
 			tween = CreateTween();
 
 			tween.TweenProperty(this, "visible_characters", Text.Length, time);
@@ -168,22 +174,44 @@ public partial class Dialog : Label
 
 	}
 
+	void OnMotherGrabbedFinished()
+	{
+		MotherGrabbed.AnimationFinished -= OnMotherGrabbedFinished;
+
+		tween = CreateTween();
+		tween.TweenProperty(
+			FadeOverlay, "color", new Color(0, 0, 0, 1), 2.0f
+			);
+		tween.TweenCallback(Callable.From(() =>
+		{
+			GetTree().ChangeSceneToFile("res://Scenes/Main_Menu.tscn");
+		}));
+
+	}
+	void PlayMotherGrabbed()
+	{
+		if (motherGrabbed)
+		{
+			return;
+		}
+		MotherGrabbed.Visible = true;
+
+		motherGrabbed = true;
+		MotherPhoenixSprite.Visible = false;
+		MotherGrabbed.AnimationFinished += OnMotherGrabbedFinished;
+
+		MotherGrabbed.Play("GrabPhoneix");
+	}
 	private void ShowPlayerShotSentence()
 	{
-		if (motherActual >= playerShotDialogs.Count)
-		{
-			tween = CreateTween();
-			tween.TweenProperty(
-				FadeOverlay, "color", new Color(0, 0, 0, 1), 2.0f
-				);
-			tween.TweenCallback(Callable.From(() =>
-			{
-				GetTree().ChangeSceneToFile("res://Scenes/Main.tscn");
-			}));
-		}
+
 
 		if (motherActual >= playerShotDialogs.Count)
+		{
+			PlayMotherGrabbed();
+			Text = "";
 			return;
+		}
 
 		Text = playerShotDialogs[motherActual];
 		Visible = true;
