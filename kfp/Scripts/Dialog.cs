@@ -7,16 +7,31 @@ public partial class Dialog : Label
 
 
 	List<string> dialogs = new()
-		{
+	{
 
-			"Kedvesem most hogy megszülettél megtanulunk harcolni.",
-			"Ebben a világban sok veszély vár rád",
-			"Először próbálj meg támadni ahogyan én"
-			
-			//teszt: "azz"
-		};
-	int actual = 0;
+		"Üdvözöllek a világunkban kincsem,","nagyon vártam már hogy megszüless",
+		"A főnixek igen magasztos teremtmények,","hiszen mi vagyunk a remény",
+		"Bárki próbál elpusztítani minket","mi a hamvainkból is feltámadunk",
+		"A későbbiekben meg fogod ezt tapasztalni,","mivel sok rosszakaró van a világunkban",
+		"A képességeid azonban mindig erősödni fognak ha teszel róla,","de jól gondold meg miben fejlődsz",
+		"Szeretnélek korán felkészíteni arra, hogy meg tudd magad védeni.",
+		"A szárnyaid segítségével tollakat tudsz elhajítani.",
+		"Vigyázz mert nekünk sincs belőle végtelen","így jól oszd be a támadásaidkor",
+		"Kezdetben próbáld meg ezt az egyszerű támadást!"
+
+		//teszt: "azz"
+	};
+
+	List<string> playerShotDialogs = new()
+{
+	"Nagyszerű!",
+	"Erőteljesebb támadást a hosszabb suhintással tudsz végrehajtani."
+};
+
+	int playerActual = 0;
+	int motherActual = 0;
 	Tween tween;
+	[Export] private ColorRect FadeOverlay;
 
 	[Export] private AnimatedSprite2D MotherPhoenixSprite;
 
@@ -53,6 +68,13 @@ public partial class Dialog : Label
 		ChildPhoenix.EnableShooting();
 		MotherPhoenixSprite.Play("default");
 
+		Text = "Nyomd meg a bal egérgombot a lövéshez!";
+		Visible = true;
+		VisibleCharacters = 0;
+
+		tween = CreateTween();
+		tween.TweenProperty(this, "visible_characters", Text.Length, 2.0f);
+
 	}
 
 	private void Shoot()
@@ -70,10 +92,21 @@ public partial class Dialog : Label
 
 	}
 
+
+	private void OnPlayerShotFinished()
+	{
+		Text = "Nagyszerű! Erőteljesebb támadást a hosszabb suhintással tudsz végrehajtani.";
+		Visible = true;
+		VisibleCharacters = 0;
+
+		tween = CreateTween();
+		tween.TweenProperty(this, "visible_characters", Text.Length, 2.0f);
+	}
+
 	void NextSentence()
 	{
-		actual++;
-		DialogStart(actual);
+		motherActual++;
+		DialogStart(motherActual);
 	}
 
 	void OnHatchingFinished()
@@ -92,7 +125,7 @@ public partial class Dialog : Label
 		tween.TweenCallback(Callable.From(() =>
 		{
 			Visible = true;
-			DialogStart(actual);
+			DialogStart(motherActual);
 		}));
 
 	}
@@ -121,9 +154,55 @@ public partial class Dialog : Label
 			MotherPhoenixSprite.AnimationFinished -= OnAttackAnimationFinished;
 			MotherPhoenixSprite.AnimationFinished += OnAttackAnimationFinished;
 
+			//ChildPhoenix.ShotFinished += OnPlayerShotFinished;
+			ChildPhoenix.ShotFinished += OnPlayerShot;
 			MotherPhoenixSprite.Play(NextAnimation);
 		}
 	}
+
+	private void OnPlayerShot()
+	{
+		motherActual = 0;
+		ShowPlayerShotSentence();
+
+
+	}
+
+	private void ShowPlayerShotSentence()
+	{
+		if (motherActual >= playerShotDialogs.Count)
+		{
+			tween = CreateTween();
+			tween.TweenProperty(
+				FadeOverlay, "color", new Color(0, 0, 0, 1), 2.0f
+				);
+			tween.TweenCallback(Callable.From(() =>
+			{
+				GetTree().ChangeSceneToFile("res://Scenes/Main.tscn");
+			}));
+		}
+
+		if (motherActual >= playerShotDialogs.Count)
+			return;
+
+		Text = playerShotDialogs[motherActual];
+		Visible = true;
+		VisibleCharacters = 0;
+
+		tween = CreateTween();
+		tween.TweenProperty(this, "visible_characters", Text.Length, 2.0f);
+		tween.TweenInterval(2.0f);
+		tween.TweenCallback(Callable.From(() =>
+		{
+			motherActual++;
+			ShowPlayerShotSentence();
+		}));
+
+
+
+	}
+
+
 	public override void _Ready()
 	{
 		Text = "";

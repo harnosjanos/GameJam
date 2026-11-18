@@ -1,11 +1,13 @@
+using System;
 using Godot;
 
 public partial class Tutorial_ChildPhoneix : Node2D
 {
+	public event Action ShotFinished; //ez egy event
 	private Sprite2D _head;
 	private Marker2D _frontMarker;
 
-	bool shooted;
+	bool shooted; //ez egy logikai változó
 
 	bool canShoot;
 
@@ -20,6 +22,7 @@ public partial class Tutorial_ChildPhoneix : Node2D
 
 		shooted = true;
 
+
 		Vector2 spawnPosition = _frontMarker.GlobalPosition;
 		Vector2 direction = (GetGlobalMousePosition() - spawnPosition).Normalized();
 
@@ -33,6 +36,7 @@ public partial class Tutorial_ChildPhoneix : Node2D
 		projectile.Rotation = direction.Angle();
 
 		GetTree().CurrentScene.AddChild(projectile);
+		ShotFinished?.Invoke();
 	}
 
 	public override void _Input(InputEvent @event)

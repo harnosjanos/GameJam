@@ -370,21 +370,22 @@ autoplay = "default"
 frame_progress = 0.8474671
 centered = false
 
-[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("MotherPhoenixSprite", "EggHatching", "FeatherPosition", "ChildPhoenix")]
+[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("FadeOverlay", "MotherPhoenixSprite", "EggHatching", "FeatherPosition", "ChildPhoenix")]
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 1.0
-offset_top = 485.0
+offset_top = 477.0
 offset_right = 961.0
-offset_bottom = 545.0
+offset_bottom = 539.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 24
 text = "sas"
 label_settings = SubResource("LabelSettings_8q58x")
 horizontal_alignment = 1
 script = ExtResource("10_sswaw")
+FadeOverlay = NodePath("../CanvasLayer/ColorRect")
 MotherPhoenixSprite = NodePath("../Mother_Phoneix/MotherAnimation")
 EggHatching = NodePath("../Hatching/AnimatedSprite2D")
 FeatherPosition = NodePath("../Mother_Phoneix/Marker2D")
@@ -447,3 +448,13 @@ offset_top = 312.0
 offset_right = 784.0
 offset_bottom = 502.0
 texture = ExtResource("15_m8quk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=451561549]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1028321679]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
