@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dep5qptmbr63l"]
+
+[ext_resource type="Texture2D" uid="uid://cmyc1cu2nje28" path="res://Kepek/Zeusz_boss/Zeusz.png" id="1_lumy1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqegr"]
+size = Vector2(123, 180)
+
+[node name="Zeusz" type="Node2D" unique_id=1977820320]
+texture_filter = 1
+
+[node name="Zeusz_skin" type="Sprite2D" parent="." unique_id=1995499589]
+position = Vector2(-2, 1.0000229)
+scale = Vector2(0.4918478, 0.49184784)
+texture = ExtResource("1_lumy1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=945794664]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1992763853]
+position = Vector2(2.5, 1)
+shape = SubResource("RectangleShape2D_yqegr")
