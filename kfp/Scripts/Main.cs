@@ -34,7 +34,7 @@ public partial class Main : Node2D
             SkillManager.Instance.CurrentStage = 2;
 
             GetTree().ChangeSceneToFile(
-                "res://Scenes/Map2.tscn"
+                "res://Scenes/ZeuszMap.tscn"
             );
         }
     }

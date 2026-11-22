@@ -458,12 +458,18 @@ public partial class SkillTree : Node2D
             case 2:
 
                 GetTree().ChangeSceneToFile(
-                    "res://Scenes/Map2.tscn"
+                    "res://Scenes/ZeuszMap.tscn"
                 );
 
                 break;
 
             case 3:
+                GetTree().ChangeSceneToFile(
+                    "res://Scenes/Map2.tscn"
+                );
+                break;
+
+            case 4:
                 GetTree().ChangeSceneToFile(
                     "res://Scenes/PosseidonMap.tscn"
                 );

@@ -137,6 +137,23 @@ public partial class Projectile : Area2D
             return;
         }
 
+        // ZEUSZ
+        if (parent is Zeusz zeusz)
+        {
+            if (
+                IgnoredEnemyId != 0 &&
+                zeusz.GetInstanceId() == IgnoredEnemyId
+            )
+                return;
+
+            zeusz.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
+
+            return;
+        }
+
         // POSSEIDON
         if (parent is Posseidon posseidon)
         {

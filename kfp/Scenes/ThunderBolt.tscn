@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d335qsuxruk4w"]
+
+[ext_resource type="Script" uid="uid://cmragmqllcjpc" path="res://Scripts/ThunderBolt.cs" id="1_1bp3k"]
+[ext_resource type="Texture2D" uid="uid://dvddxeim30hv3" path="res://icon.svg" id="1_3a0cj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0edf"]
+size = Vector2(22, 87)
+
+[node name="Node2D" type="Area2D" unique_id=1362944878]
+script = ExtResource("1_1bp3k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=702123111]
+scale = Vector2(0.171875, 0.67968744)
+texture = ExtResource("1_3a0cj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1881332092]
+shape = SubResource("RectangleShape2D_q0edf")

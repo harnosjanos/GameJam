@@ -36,7 +36,7 @@ public partial class Map2 : Node2D
         {
             finished = true;
 
-            SkillManager.Instance.CurrentStage = 3;
+            SkillManager.Instance.CurrentStage = 4;
 
             GetTree().ChangeSceneToFile(
                 "res://Scenes/PosseidonMap.tscn"
