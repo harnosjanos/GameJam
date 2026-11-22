@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dsc3yb65qp2r7" path="res://Scenes/Projectile.tscn" id="3_3vxvf"]
 [ext_resource type="Script" uid="uid://bb7j6uag6p7tc" path="res://Scripts/EnemySpawner.cs" id="4_82dkg"]
 [ext_resource type="PackedScene" uid="uid://dep5qptmbr63l" path="res://Scenes/Zeusz.tscn" id="4_366rw"]
+[ext_resource type="AudioStream" uid="uid://7i40wuvhknt7" path="res://Zene/Boss1.2.mp3" id="6_3vxvf"]
 
 [node name="ZeuszMap" type="Node2D" unique_id=1101208722]
 
@@ -31,3 +32,7 @@ offset_right = 960.0
 offset_bottom = 540.0
 text = "Left Button Click - Shoot feather
 Left Button Hold - Charge Attack"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=748409662]
+stream = ExtResource("6_3vxvf")
+autoplay = true

@@ -348,6 +348,102 @@ public partial class Projectile : Area2D
 
             return;
         }
+
+        //Fish
+        if (parent is Fish fish)
+        {
+            if (
+                IgnoredEnemyId != 0 &&
+                fish.GetInstanceId() == IgnoredEnemyId
+            )
+                return;
+
+            if (!fish.IsJumping)
+                return;
+
+            Vector2 hitPosition =
+                fish.GlobalPosition;
+
+            ulong hitEnemyId =
+                fish.GetInstanceId();
+
+            if (
+                SkillManager.Instance.AttackLevel >= 6 &&
+                !IsNovaProjectile &&
+                !IsChargedProjectile &&
+                !exploded &&
+                !fish.ChargedNovaTriggered &&
+                CanSpawnNova()
+            )
+            {
+                fish.ChargedNovaTriggered = true;
+
+                exploded = true;
+
+                TriggerNovaCooldown();
+
+                CallDeferred(
+                    nameof(SpawnChargedNova),
+                    hitPosition,
+                    hitEnemyId
+                );
+            }
+
+            fish.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
+
+            return;
+        }
+
+        //Hippocampus
+        if (parent is Hippocampus hippocampus)
+        {
+            if (
+                IgnoredEnemyId != 0 &&
+                hippocampus.GetInstanceId() == IgnoredEnemyId
+            )
+                return;
+
+            if (!hippocampus.IsJumping)
+                return;
+
+            Vector2 hitPosition =
+                hippocampus.GlobalPosition;
+
+            ulong hitEnemyId =
+                hippocampus.GetInstanceId();
+
+            if (
+                SkillManager.Instance.AttackLevel >= 6 &&
+                !IsNovaProjectile &&
+                !IsChargedProjectile &&
+                !exploded &&
+                !hippocampus.ChargedNovaTriggered &&
+                CanSpawnNova()
+            )
+            {
+                hippocampus.ChargedNovaTriggered = true;
+
+                exploded = true;
+
+                TriggerNovaCooldown();
+
+                CallDeferred(
+                    nameof(SpawnChargedNova),
+                    hitPosition,
+                    hitEnemyId
+                );
+            }
+
+            hippocampus.TakeDamage(Damage);
+
+            if (!Pierce)
+                QueueFree();
+
+            return;
+        }
     }
 
     private void SpawnChargedNova(
