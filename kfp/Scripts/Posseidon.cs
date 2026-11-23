@@ -166,7 +166,7 @@ public partial class Posseidon : Node2D
             Vector2.Right;
 
         wave.Scale =
-            new Vector2(-1, 1);
+            Vector2.One;
 
         currentWave = wave;
 
@@ -195,7 +195,7 @@ public partial class Posseidon : Node2D
             Vector2.Left;
 
         wave.Scale =
-            Vector2.One;
+            new Vector2(-1, 1);
 
         currentWave = wave;
 
@@ -217,6 +217,9 @@ public partial class Posseidon : Node2D
         {
             GD.Print(
                 "POSEIDON DEAD"
+            );
+            GetTree().ChangeSceneToFile(
+                "res://Scenes/Main_Menu.tscn"
             );
 
             QueueFree();
