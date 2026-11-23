@@ -7,7 +7,7 @@ public partial class Zeusz : Node2D
 	[Export] public float LightningMaxInterval = 5.0f;
 	[Export] public float TeleportMinInterval = 9.0f;
 	[Export] public float TeleportMaxInterval = 15.0f;
-	[Export] public int Health = 300;
+	[Export] public int Health = 100;
 
 	private PackedScene lightningScene;
 	private Timer lightningTimer;

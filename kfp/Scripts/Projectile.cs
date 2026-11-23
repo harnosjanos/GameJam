@@ -28,8 +28,19 @@ public partial class Projectile : Area2D
         Position += Direction * Speed * (float)delta;
     }
 
+
+
     private void OnAreaEntered(Area2D area)
     {
+
+        if (area.IsInGroup("tutorial_demon"))
+        {
+            area.GetParent().QueueFree();
+            QueueFree();
+            return;
+        }
+
+        //-----------------------------------------------------------
         if (!area.IsInGroup("enemy"))
             return;
 
@@ -162,7 +173,7 @@ public partial class Projectile : Area2D
                 posseidon.GetInstanceId() == IgnoredEnemyId
             )
                 return;
-                
+
             if (
                 SkillManager.Instance.AttackLevel >= 6 &&
                 !IsNovaProjectile &&

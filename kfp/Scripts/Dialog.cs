@@ -24,8 +24,9 @@ public partial class Dialog : Label
 
 	List<string> playerShotDialogs = new()
 {
-	"Nagyszerű!",
-	"Erőteljesebb támadást a hosszabb suhintással tudsz végrehajtani."
+	"Nagyszerűen csináltad!",
+	"Erőteljesebb támadást a hosszabb suhintással tudsz végrehajtani",
+	"Nagyon hasznos, ha sok ellenfél közelít hozzád.",
 };
 
 	int playerActual = 0;
@@ -44,6 +45,12 @@ public partial class Dialog : Label
 	[Export] private Node2D FeatherPosition;
 
 	[Export] private Tutorial_ChildPhoneix ChildPhoenix;
+
+	[Export] private AnimatedSprite2D Demon1;
+	[Export] private AnimatedSprite2D Demon2;
+
+	private Area2D Demon1Hitbox;
+	private Area2D Demon2Hitbox;
 
 
 	private PackedScene FeatherTexture;
@@ -99,7 +106,6 @@ public partial class Dialog : Label
 
 	private void OnPlayerShotFinished()
 	{
-		Text = "Nagyszerű! Erőteljesebb támadást a hosszabb suhintással tudsz végrehajtani.";
 		Visible = true;
 		VisibleCharacters = 0;
 
@@ -177,24 +183,67 @@ public partial class Dialog : Label
 	void OnMotherGrabbedFinished()
 	{
 		MotherGrabbed.AnimationFinished -= OnMotherGrabbedFinished;
+		Text = "Nyomb meg 3 másodpercig a bal egérgombot.";
+		Visible = true;
+		VisibleCharacters = Text.Length;
 
-		tween = CreateTween();
+		ChildPhoenix.EnableChargedAttack();
+
+		/*tween = CreateTween();
 		tween.TweenProperty(
 			FadeOverlay, "color", new Color(0, 0, 0, 1), 2.0f
 			);
 		tween.TweenCallback(Callable.From(() =>
 		{
 			GetTree().ChangeSceneToFile("res://Scenes/Main_Menu.tscn");
-		}));
+		}));*/
 
 	}
+
+	private void OnChargedAttackFired()
+	{
+		tween = CreateTween();
+		tween.TweenProperty(
+			FadeOverlay,
+			"color",
+			new Color(0, 0, 0, 1),
+			2.0f
+		);
+		tween.TweenCallback(Callable.From(() =>
+		{
+			GetTree().ChangeSceneToFile("res://Scenes/Main_Menu.tscn");
+		}));
+	}
+
 	void PlayMotherGrabbed()
 	{
 		if (motherGrabbed)
 		{
 			return;
 		}
+
 		MotherGrabbed.Visible = true;
+		Demon1.Visible = true;
+		Demon2.Visible = true;
+
+		Demon1Hitbox.Monitorable = true;
+		Demon2Hitbox.Monitorable = true;
+
+		Demon1.Play("default");
+		Demon2.Play("default");
+
+		Demon1.Modulate = new Color(
+			Demon1.Modulate.R, Demon1.Modulate.G, Demon1.Modulate.B, 0.0f);
+		Demon2.Modulate = new Color(
+			Demon2.Modulate.R, Demon2.Modulate.G, Demon2.Modulate.B, 0.0f);
+
+		Tween demon1Tween = CreateTween();
+		Tween demon2Tween = CreateTween();
+
+
+		demon1Tween.TweenProperty(Demon1, "modulate:a", 1.0f, 2.0f);
+
+		demon2Tween.TweenProperty(Demon2, "modulate:a", 1.0f, 2.0f);
 
 		motherGrabbed = true;
 		MotherPhoenixSprite.Visible = false;
@@ -218,7 +267,7 @@ public partial class Dialog : Label
 		VisibleCharacters = 0;
 
 		tween = CreateTween();
-		tween.TweenProperty(this, "visible_characters", Text.Length, 2.0f);
+		tween.TweenProperty(this, "visible_characters", Text.Length, 3.0f);
 		tween.TweenInterval(2.0f);
 		tween.TweenCallback(Callable.From(() =>
 		{
@@ -233,6 +282,15 @@ public partial class Dialog : Label
 
 	public override void _Ready()
 	{
+		Demon1Hitbox = GetNode<Area2D>("../Demon1/Area2D");
+		Demon2Hitbox = GetNode<Area2D>("../Demon2/Area2D");
+
+		Demon1Hitbox.AddToGroup("tutorial_demon");
+		Demon2Hitbox.AddToGroup("tutorial_demon");
+
+		Demon1Hitbox.Monitorable = false;
+		Demon2Hitbox.Monitorable = false;
+
 		Text = "";
 		Visible = false;
 
@@ -241,6 +299,7 @@ public partial class Dialog : Label
 		EggHatching.Frame = 0;
 		EggHatching.Play("EggHatch");
 
+		ChildPhoenix.ChargedAttackFired += OnChargedAttackFired;
 	}
 	public override void _Process(double enable)
 	{

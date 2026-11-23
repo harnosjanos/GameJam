@@ -4,8 +4,16 @@ using Godot;
 public partial class Tutorial_ChildPhoneix : Node2D
 {
 	public event Action ShotFinished; //ez egy event
+	public event Action ChargedAttackFired;
 	private Sprite2D _head;
 	private Marker2D _frontMarker;
+
+	private bool canUseChargedAttack;
+	private bool chargedAttackUsed;
+	private bool isCharging;
+	private float chargeTime;
+
+	private const float ChargedAttackHoldDuration = 3.0f;
 
 	bool shooted; //ez egy logikai változó
 
@@ -14,6 +22,11 @@ public partial class Tutorial_ChildPhoneix : Node2D
 	public void EnableShooting()
 	{
 		canShoot = true;
+	}
+
+	public void EnableChargedAttack()
+	{
+		canUseChargedAttack = true;
 	}
 	public void ShootOnce()
 	{
@@ -39,8 +52,64 @@ public partial class Tutorial_ChildPhoneix : Node2D
 		ShotFinished?.Invoke();
 	}
 
+	private void FireChargedAttack()
+	{
+		if (!canUseChargedAttack || chargedAttackUsed)
+			return;
+
+		chargedAttackUsed = true;
+		canUseChargedAttack = false;
+
+		const int projectileCount = 10;
+		Vector2 spawnPosition = _frontMarker.GlobalPosition;
+		PackedScene projectileScene = GD.Load<PackedScene>(
+			"res://Scenes/Projectile.tscn"
+		);
+
+		for (int i = 0; i < projectileCount; i++)
+		{
+			float angle = Mathf.Tau * i / projectileCount;
+			Vector2 direction = new Vector2(
+				Mathf.Cos(angle),
+				Mathf.Sin(angle)
+			);
+
+			Projectile projectile = projectileScene.Instantiate<Projectile>();
+			projectile.IsChargedProjectile = true;
+			projectile.GlobalPosition = spawnPosition;
+			projectile.Direction = direction;
+			projectile.Rotation = direction.Angle();
+
+			GetTree().CurrentScene.AddChild(projectile);
+		}
+
+		ChargedAttackFired?.Invoke();
+	}
+
 	public override void _Input(InputEvent @event)
 	{
+
+		if (@event is InputEventMouseButton chargedMouseButton &&
+				chargedMouseButton.ButtonIndex == MouseButton.Left &&
+				canUseChargedAttack &&
+				!chargedAttackUsed)
+		{
+			if (chargedMouseButton.Pressed)
+			{
+				isCharging = true;
+				chargeTime = 0.0f;
+			}
+			else if (isCharging)
+			{
+				isCharging = false;
+
+				if (chargeTime >= ChargedAttackHoldDuration)
+					FireChargedAttack();
+			}
+
+			return;
+		}
+
 		if (!canShoot || shooted)
 		{
 			return;
@@ -54,6 +123,8 @@ public partial class Tutorial_ChildPhoneix : Node2D
 		}
 	}
 
+
+
 	public override void _Ready()
 	{
 		_head = GetNode<Sprite2D>("Head");
@@ -63,6 +134,9 @@ public partial class Tutorial_ChildPhoneix : Node2D
 	public override void _Process(double delta)
 	{
 		UpdateHead();
+
+		if (isCharging && Input.IsMouseButtonPressed(MouseButton.Left))
+			chargeTime += (float)delta;
 	}
 
 	private void UpdateHead()

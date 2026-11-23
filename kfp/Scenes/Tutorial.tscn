@@ -102,6 +102,10 @@
 [ext_resource type="Texture2D" uid="uid://d2gr2bgmsj8up" path="res://Kepek/tutorial/Yoink/Yoink0073.png" id="94_bq0tg"]
 [ext_resource type="Texture2D" uid="uid://bkjjky6tl1sde" path="res://Kepek/tutorial/Yoink/Yoink0075.png" id="95_6oiwi"]
 [ext_resource type="AudioStream" uid="uid://bgmoghmfdk4w5" path="res://Zene/tutorial zaj.mp3" id="102_l8wvp"]
+[ext_resource type="Texture2D" uid="uid://b7kgk40gl45u1" path="res://Kepek/tutorial/Demon/demon_01.png" id="103_dhnxe"]
+[ext_resource type="Texture2D" uid="uid://bcle5lrey5ujm" path="res://Kepek/tutorial/Demon/demon_02.png" id="104_ds5td"]
+[ext_resource type="Texture2D" uid="uid://xged5tvu7k6u" path="res://Kepek/tutorial/Demon/demon_03.png" id="105_urhaq"]
+[ext_resource type="Texture2D" uid="uid://drnjikur4brqu" path="res://Kepek/tutorial/Demon/demon_04.png" id="106_6v4g2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_05qi6"]
 animations = [{
@@ -427,6 +431,34 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_b718s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("103_dhnxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_ds5td")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_urhaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_6v4g2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqegr"]
+radius = 69.0
+height = 138.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05qi6"]
+radius = 68.0
+height = 136.0
+
 [node name="Node2D" type="Node2D" unique_id=672353944]
 texture_filter = 3
 
@@ -503,7 +535,7 @@ autoplay = "default"
 frame_progress = 0.8474671
 centered = false
 
-[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("FadeOverlay", "MotherPhoenixSprite", "EggHatching", "MotherGrabbed", "FeatherPosition", "ChildPhoenix")]
+[node name="Dialog" type="Label" parent="." unique_id=1592704808 node_paths=PackedStringArray("FadeOverlay", "MotherPhoenixSprite", "EggHatching", "MotherGrabbed", "FeatherPosition", "ChildPhoenix", "Demon1", "Demon2")]
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -524,6 +556,8 @@ EggHatching = NodePath("../Hatching/AnimatedSprite2D")
 MotherGrabbed = NodePath("../Mother_Phoneix/MotherPhoneixGrabbed")
 FeatherPosition = NodePath("../Mother_Phoneix/Marker2D")
 ChildPhoenix = NodePath("../Child_Phoneix")
+Demon1 = NodePath("../Demon1/Demon1Fly")
+Demon2 = NodePath("../Demon2/Demon2Fly")
 
 [node name="Mother_Phoneix" type="Node2D" parent="." unique_id=66079362]
 texture_filter = 1
@@ -604,3 +638,38 @@ color = Color(0, 0, 0, 0)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=879506048]
 stream = ExtResource("102_l8wvp")
 autoplay = true
+
+[node name="Demon1" type="Sprite2D" parent="." unique_id=1975662284]
+
+[node name="Demon1Fly" type="AnimatedSprite2D" parent="Demon1" unique_id=336206008]
+visible = false
+texture_filter = 1
+position = Vector2(851, 288)
+scale = Vector2(2.71875, 2.71875)
+sprite_frames = SubResource("SpriteFrames_b718s")
+frame_progress = 0.4042424
+
+[node name="Area2D" type="Area2D" parent="Demon1" unique_id=2052544906]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Demon1/Area2D" unique_id=391427575]
+position = Vector2(855, 251)
+shape = SubResource("CapsuleShape2D_yqegr")
+
+[node name="Demon2" type="Sprite2D" parent="." unique_id=212347199]
+
+[node name="Demon2Fly" type="AnimatedSprite2D" parent="Demon2" unique_id=1400328544]
+visible = false
+texture_filter = 1
+position = Vector2(463.99997, 174)
+rotation = 0.765937
+scale = Vector2(2.71875, 2.71875)
+sprite_frames = SubResource("SpriteFrames_b718s")
+frame = 1
+frame_progress = 0.3884867
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Demon2" unique_id=823377101]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Demon2/Area2D" unique_id=962292251]
+position = Vector2(459, 168)
+shape = SubResource("CapsuleShape2D_05qi6")
