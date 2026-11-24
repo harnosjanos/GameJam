@@ -49,7 +49,7 @@ height = 93.0
 [node name="Enemy" type="CharacterBody2D" unique_id=1198995511]
 script = ExtResource("1_7aihx")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=44247913]
+[node name="Harpy" type="AnimatedSprite2D" parent="." unique_id=44247913]
 sprite_frames = SubResource("SpriteFrames_q0edf")
 autoplay = "default"
 frame_progress = 0.4294088

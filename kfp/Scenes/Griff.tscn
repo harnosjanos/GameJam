@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dg74v3gy6fpc6"]
 
 [ext_resource type="Texture2D" uid="uid://c26ihbfrdx2nr" path="res://Kepek/Griff/GriffAttack/GriffAttack0000.png" id="1_7a6br"]
+[ext_resource type="Script" uid="uid://bjhaa8vgoq7v2" path="res://Scripts/Enemy.cs" id="1_ihcnh"]
 [ext_resource type="Texture2D" uid="uid://cir82ejpgul23" path="res://Kepek/Griff/GriffAttack/GriffAttack0003.png" id="2_ihcnh"]
 [ext_resource type="Texture2D" uid="uid://vl6hh1r46n8n" path="res://Kepek/Griff/GriffAttack/GriffAttack0006.png" id="3_60rgd"]
 [ext_resource type="Texture2D" uid="uid://sm1ox6nj5bxt" path="res://Kepek/Griff/GriffAttack/GriffAttack0009.png" id="4_0eeae"]
@@ -98,10 +99,32 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Griff" type="Node2D" unique_id=113403169]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ihcnh"]
+radius = 44.5
+height = 93.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=567728092]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1494074649]
+script = ExtResource("1_ihcnh")
+
+[node name="Griff" type="Node2D" parent="." unique_id=113403169]
+
+[node name="Griff" type="AnimatedSprite2D" parent="Griff" unique_id=567728092]
 sprite_frames = SubResource("SpriteFrames_o1rwj")
-animation = &"Attack"
-frame = 3
-frame_progress = 0.4399506
+animation = &"Flying"
+autoplay = "Flying"
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=2134153185 groups=["enemy"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox" unique_id=1338350685]
+position = Vector2(1.5, 0.5)
+shape = SubResource("CapsuleShape2D_ihcnh")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=775463694]
+modulate = Color(0.99999994, 0.18482906, 0.109751694, 1)
+self_modulate = Color(0.87657166, 0, 0.057856396, 1)
+offset_left = -45.0
+offset_top = -93.0
+offset_right = 51.0
+offset_bottom = -66.0
+theme_override_font_sizes/font_size = 1
+show_percentage = false

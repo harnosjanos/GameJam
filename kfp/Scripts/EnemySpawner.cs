@@ -23,15 +23,23 @@ public partial class EnemySpawner : Node
 	{
 		Random random = new();
 		Enemy enemyCopy;
-		switch (random.Next(2))
+		string spritePath;
+		switch (random.Next(3))
 		{
 			case 0:
 				enemyCopy = GD.Load<PackedScene>("res://Scenes/Harpy.tscn").Instantiate<Enemy>();
-				GD.Print("harpy 0");
+				spritePath = "Harpy";
+				GD.Print("Harpy");
+				break;
+			case 1:
+				enemyCopy = GD.Load<PackedScene>("res://Scenes/Pegasus.tscn").Instantiate<Enemy>();
+				spritePath = "Pegasus";
+				GD.Print("Pegasus");
 				break;
 			default:
-				enemyCopy = GD.Load<PackedScene>("res://Scenes/Harpy.tscn").Instantiate<Enemy>();
-				GD.Print("harpy default");
+				enemyCopy = GD.Load<PackedScene>("res://Scenes/Griff.tscn").Instantiate<Enemy>();
+				spritePath = "Griff";
+				GD.Print("Griff");
 				break;
 		}
 		GetTree().CurrentScene.AddChild(enemyCopy);
@@ -68,7 +76,7 @@ public partial class EnemySpawner : Node
 			}
 		}
 
-		AnimatedSprite2D enemySprite = enemyCopy.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		AnimatedSprite2D enemySprite = enemyCopy.GetNode<AnimatedSprite2D>(spritePath);
 		enemySprite.FlipH = playerSpawnX < x;
 		enemyCopy.GlobalPosition = new Vector2(x, y);
 	}

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://q0njgc7qdpxk"]
 
 [ext_resource type="Texture2D" uid="uid://do1y55ts72873" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0000.png" id="1_fokby"]
+[ext_resource type="Script" uid="uid://bjhaa8vgoq7v2" path="res://Scripts/Enemy.cs" id="1_lny6k"]
 [ext_resource type="Texture2D" uid="uid://dvits4dbbvvgj" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0003.png" id="2_lny6k"]
 [ext_resource type="Texture2D" uid="uid://p15qasiwnpmy" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0006.png" id="3_adx6s"]
 [ext_resource type="Texture2D" uid="uid://bc6cb1jp7wo2d" path="res://Kepek/Pegasus/PegasusAttack/PegasusAttack0009.png" id="4_m1t2s"]
@@ -106,10 +107,34 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Pegasus" type="Node2D" unique_id=428109781]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lny6k"]
+radius = 44.5
+height = 93.0
 
-[node name="Pegasus" type="AnimatedSprite2D" parent="." unique_id=1521784630]
-position = Vector2(65, 64)
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=882444489]
+script = ExtResource("1_lny6k")
+
+[node name="Pegasus" type="Node2D" parent="." unique_id=428109781]
+
+[node name="Pegasus" type="AnimatedSprite2D" parent="Pegasus" unique_id=1521784630]
 sprite_frames = SubResource("SpriteFrames_o1rwj")
-animation = &"Attack"
-frame_progress = 0.56513757
+animation = &"Flying"
+autoplay = "Flying"
+frame = 6
+frame_progress = 0.50813633
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1697587809 groups=["enemy"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox" unique_id=1147544601]
+position = Vector2(1.5, 0.5)
+shape = SubResource("CapsuleShape2D_lny6k")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1394684890]
+modulate = Color(0.99999994, 0.18482906, 0.109751694, 1)
+self_modulate = Color(0.87657166, 0, 0.057856396, 1)
+offset_left = -45.0
+offset_top = -93.0
+offset_right = 51.0
+offset_bottom = -66.0
+theme_override_font_sizes/font_size = 1
+show_percentage = false
