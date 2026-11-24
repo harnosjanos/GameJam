@@ -26,6 +26,10 @@ public partial class Player
             SkillManager.Instance.HpLevel >= 6
             &&
             charging
+            &&
+            chargeTime >= 1.0f
+            &&
+            mana >= 5
         )
         {
             damage = (int)Mathf.Floor(damage / 2);

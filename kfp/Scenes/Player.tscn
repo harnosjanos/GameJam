@@ -31,6 +31,11 @@
 [ext_resource type="Texture2D" uid="uid://2ktaln6ipe21" path="res://Kepek/drive-download-20261124T203031Z-1-001/16.png" id="28_8p516"]
 [ext_resource type="Texture2D" uid="uid://domp2v7iebgkw" path="res://Kepek/drive-download-20261124T203031Z-1-001/17.png" id="29_fvoow"]
 [ext_resource type="Texture2D" uid="uid://cjjwrjq7bnmxn" path="res://Kepek/drive-download-20261124T203031Z-1-001/18.png" id="30_v5fqo"]
+[ext_resource type="Texture2D" uid="uid://f6nj8lt4c8v3" path="res://Kepek/drive-download-20261124T210030Z-1-001/Shield.5.png" id="32_wosd6"]
+[ext_resource type="Texture2D" uid="uid://c6x8ne7jx0ap4" path="res://Kepek/drive-download-20261124T210030Z-1-001/Shield.4.png" id="33_hkrn1"]
+[ext_resource type="Texture2D" uid="uid://do7pbfn4my8pf" path="res://Kepek/drive-download-20261124T210030Z-1-001/Shield.3.png" id="34_wpo1r"]
+[ext_resource type="Texture2D" uid="uid://b65yllgntv5p0" path="res://Kepek/drive-download-20261124T210030Z-1-001/Shield.2.png" id="35_pqity"]
+[ext_resource type="Texture2D" uid="uid://o1q4ps0eavue" path="res://Kepek/drive-download-20261124T210030Z-1-001/Shield.Max.png" id="36_opqna"]
 
 [sub_resource type="Theme" id="Theme_gntrk"]
 
@@ -139,6 +144,29 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_7eftd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_wosd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_hkrn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_wpo1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_pqity")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_opqna")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player" type="Node2D" unique_id=502233483 node_paths=PackedStringArray("manaText", "healthText") groups=["player"]]
 position = Vector2(580, 283)
 script = ExtResource("1_kyqiw")
@@ -221,6 +249,7 @@ position = Vector2(16, -57)
 shape = SubResource("CircleShape2D_nbpiv")
 
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=1393298054]
+texture_filter = 1
 position = Vector2(8, -27)
 scale = Vector2(1.227, 1.227)
 sprite_frames = SubResource("SpriteFrames_baxpx")
@@ -232,3 +261,9 @@ position = Vector2(11, -63)
 scale = Vector2(1.3461539, 1.3461539)
 texture = ExtResource("2_kyqiw")
 flip_h = true
+
+[node name="ShieldEffect" type="AnimatedSprite2D" parent="." unique_id=1381965597]
+texture_filter = 1
+position = Vector2(4.9999886, -28.999989)
+scale = Vector2(2.7590907, 2.7590907)
+sprite_frames = SubResource("SpriteFrames_7eftd")

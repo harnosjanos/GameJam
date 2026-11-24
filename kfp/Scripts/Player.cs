@@ -35,6 +35,9 @@ public partial class Player : Node2D
     
     protected bool attackAnimating = false;
 
+    private AnimatedSprite2D shieldEffect;
+    private bool shieldStarted = false;
+
     public override void _Ready()
     {
         targetPosition =
@@ -63,6 +66,11 @@ public partial class Player : Node2D
             GetNode<Sprite2D>("Mountain");
         
         Body.Play("idle");
+
+        shieldEffect =
+            GetNode<AnimatedSprite2D>("ShieldEffect");
+
+        shieldEffect.Visible = false;
     }
 
     public override void _Process(double delta)

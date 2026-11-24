@@ -13,11 +13,23 @@ public partial class Player
         if (Input.IsActionPressed("shoot"))
         {
             chargeTime += (float)delta;
+
+            if (
+                SkillManager.Instance.HpLevel >= 6 &&
+                mana >= 5 &&
+                chargeTime >= 1.0f &&
+                !shieldStarted
+            )
+            {
+                shieldStarted = true;
+                shieldEffect.Visible = true;
+                shieldEffect.Play("default");
+            }
         }
 
         if (Input.IsActionJustReleased("shoot"))
         {
-            if (chargeTime >= 1.0f)
+            if (chargeTime >= 1.0f && mana >= 5)
             {
                 ChargedAttack();
             }
@@ -26,8 +38,18 @@ public partial class Player
                 Shoot();
             }
 
+            if (
+                SkillManager.Instance.HpLevel >= 6
+            )
+            {
+                shieldEffect.Visible = false;
+            }
+
             charging = false;
             chargeTime = 0f;
+
+            shieldStarted = false;
+            shieldEffect.Visible = false;
         }
     }
 
