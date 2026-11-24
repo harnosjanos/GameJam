@@ -202,6 +202,16 @@ public partial class Dialog : Label
 
 	private void OnChargedAttackFired()
 	{
+		ConfigFile config = new ConfigFile();
+
+		config.SetValue(
+			"Progress",
+			"TutorialCompleted",
+			true
+		);
+
+		config.Save("user://save.cfg");
+		
 		tween = CreateTween();
 		tween.TweenProperty(
 			FadeOverlay,
