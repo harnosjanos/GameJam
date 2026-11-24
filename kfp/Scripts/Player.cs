@@ -17,7 +17,6 @@ public partial class Player : Node2D
 
     protected bool charging = false;
     protected float chargeTime = 0f;
-
     protected int maxHealth = 10;
     protected int health = 10;
     [Export] protected Label healthText;
@@ -31,8 +30,10 @@ public partial class Player : Node2D
     [Export]
     public float SlideSpeed = 600f;
 
-    private Sprite2D body;
+    private AnimatedSprite2D body;
     private Sprite2D mountain;
+    
+    protected bool attackAnimating = false;
 
     public override void _Ready()
     {
@@ -55,10 +56,13 @@ public partial class Player : Node2D
         InitializeHealth();
 
         body =
-            GetNode<Sprite2D>("Body");  
+            GetNode<AnimatedSprite2D>("Body");
+  
 
         mountain =
             GetNode<Sprite2D>("Mountain");
+        
+        Body.Play("idle");
     }
 
     public override void _Process(double delta)
@@ -128,7 +132,7 @@ public partial class Player : Node2D
         head.Visible = true;
     }
 
-    public void HidePhoenix()
+        public void HidePhoenix()
     {
         body.Visible = false;
         head.Visible = false;
@@ -159,6 +163,7 @@ public partial class Player : Node2D
         mountain.Texture = texture;
     }
 
+    public AnimatedSprite2D Body => body;
 
     public int Health { get => health; }
 }

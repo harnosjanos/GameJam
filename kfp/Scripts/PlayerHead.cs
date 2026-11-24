@@ -13,5 +13,7 @@ public partial class Player
         head.Rotation = direction.Angle();
 
         head.FlipV = direction.X < 0;
+
+        Body.FlipH = direction.X < 0;
     }
 }

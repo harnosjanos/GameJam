@@ -23,20 +23,27 @@ public partial class Player
     private async void Reload()
     {
         reloading = true;
-
-        HidePhoenix();
+        head.Visible = false;
+        Body.Play("mana_empty");
 
         await ToSignal(
-            GetTree().CreateTimer(3.0),
+            GetTree().CreateTimer(3f),
             SceneTreeTimer.SignalName.Timeout
         );
 
         mana = maxMana;
 
-        ShowPhoenix();
+        Body.PlayBackwards("mana_empty");
+
+        await ToSignal(
+            Body,
+            AnimatedSprite2D.SignalName.AnimationFinished
+        );
+
+        Body.Play("idle");
+
+        head.Visible = true;
 
         reloading = false;
-
-        GD.Print("Mana refilled!");
     }
 }

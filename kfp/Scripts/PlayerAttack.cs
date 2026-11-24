@@ -31,13 +31,27 @@ public partial class Player
         }
     }
 
-    private void Shoot()
+    private async void Shoot()
     {
         if (reloading)
             return;
 
+        if (attackAnimating)
+            return;
+
         if (mana <= 0)
             return;
+
+        attackAnimating = true;
+
+        Body.Play("attack");
+
+        await ToSignal(
+            Body,
+            AnimatedSprite2D.SignalName.AnimationFinished
+        );
+
+        Body.Play("idle");
 
         Vector2 spawnPosition =
             GlobalPosition +
@@ -46,7 +60,6 @@ public partial class Player
         Vector2 baseDirection =
             (GetGlobalMousePosition() - spawnPosition)
             .Normalized();
-
 
         int projectileCount = 1;
 
@@ -85,6 +98,7 @@ public partial class Player
 
             Reload();
         }
+        attackAnimating = false;
     }
 
     private void SpawnProjectile(Vector2 direction)

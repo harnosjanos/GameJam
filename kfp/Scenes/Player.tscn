@@ -1,15 +1,143 @@
 [gd_scene format=3 uid="uid://nordr0py2gyx"]
 
 [ext_resource type="Script" uid="uid://c51w83bg6qlqh" path="res://Scripts/Player.cs" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://bklpbw6rsw8mt" path="res://Kepek/PhoenixBody.png" id="2_gntrk"]
 [ext_resource type="Texture2D" uid="uid://dftymblsorfa5" path="res://Kepek/PhoenixHead.png" id="2_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://cbkcst57up2bo" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/Stage1MapFirstHalf/NestInside.png" id="3_52ee3"]
 [ext_resource type="Texture2D" uid="uid://baoe63no8vwte" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/Stage1MapFirstHalf/NestOutside.png" id="4_bhhdu"]
+[ext_resource type="Texture2D" uid="uid://clptytdn0qplb" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0000.png" id="4_miouo"]
+[ext_resource type="Texture2D" uid="uid://bmmf63vvonihx" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0002.png" id="5_o3h8g"]
+[ext_resource type="Texture2D" uid="uid://iqdkgnvd3s7s" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0004.png" id="6_1e7my"]
+[ext_resource type="Texture2D" uid="uid://dpehva2uelj36" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0006.png" id="7_arntx"]
+[ext_resource type="Texture2D" uid="uid://fjif6f23jqpk" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0008.png" id="8_lslt6"]
+[ext_resource type="Texture2D" uid="uid://dsbam0alsagvg" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0012.png" id="9_ulo2v"]
+[ext_resource type="Texture2D" uid="uid://r1v57ijd3aec" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0010.png" id="10_1iu4k"]
+[ext_resource type="Texture2D" uid="uid://dyuhncw7x2di8" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0014.png" id="11_m0x7a"]
+[ext_resource type="Texture2D" uid="uid://chvshy5a4spfk" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0016.png" id="12_5v66d"]
+[ext_resource type="Texture2D" uid="uid://bk0rskrvdi6y2" path="res://Kepek/drive-download-20261124T203031Z-1-001/1.png" id="13_c43xd"]
+[ext_resource type="Texture2D" uid="uid://wf1ybyn673kp" path="res://Kepek/drive-download-20261124T203031Z-1-001/2.png" id="14_avx33"]
+[ext_resource type="Texture2D" uid="uid://njx3yv4h7bpa" path="res://Kepek/drive-download-20261124T203031Z-1-001/3.png" id="15_rxg2u"]
+[ext_resource type="Texture2D" uid="uid://gd11sxv32qil" path="res://Kepek/drive-download-20261124T203031Z-1-001/4.png" id="16_xixlo"]
+[ext_resource type="Texture2D" uid="uid://csxfp2ufsf22u" path="res://Kepek/drive-download-20261124T203031Z-1-001/5.png" id="17_bfbt0"]
+[ext_resource type="Texture2D" uid="uid://cjin2vuae1y0w" path="res://Kepek/drive-download-20261124T203031Z-1-001/6.png" id="18_wosd6"]
+[ext_resource type="Texture2D" uid="uid://pe3ycsalvqyy" path="res://Kepek/drive-download-20261124T203031Z-1-001/7.png" id="19_hkrn1"]
+[ext_resource type="Texture2D" uid="uid://3ypti17gccdy" path="res://Kepek/drive-download-20261124T203031Z-1-001/8.png" id="20_wpo1r"]
+[ext_resource type="Texture2D" uid="uid://bh3gxviberqua" path="res://Kepek/drive-download-20261124T203031Z-1-001/9.png" id="21_pqity"]
+[ext_resource type="Texture2D" uid="uid://bcg0olpwa3qcu" path="res://Kepek/drive-download-20261124T203031Z-1-001/10.png" id="22_opqna"]
+[ext_resource type="Texture2D" uid="uid://g3o15damqhen" path="res://Kepek/drive-download-20261124T203031Z-1-001/11.png" id="23_00okb"]
+[ext_resource type="Texture2D" uid="uid://dddus5j4s0ads" path="res://Kepek/drive-download-20261124T203031Z-1-001/12.png" id="24_6hr71"]
+[ext_resource type="Texture2D" uid="uid://pdk5qr7ntokp" path="res://Kepek/drive-download-20261124T203031Z-1-001/13.png" id="25_y6y60"]
+[ext_resource type="Texture2D" uid="uid://ctb5inqupn2uv" path="res://Kepek/drive-download-20261124T203031Z-1-001/14.png" id="26_vmcrb"]
+[ext_resource type="Texture2D" uid="uid://bauy268qnbcg3" path="res://Kepek/drive-download-20261124T203031Z-1-001/15.png" id="27_teras"]
+[ext_resource type="Texture2D" uid="uid://2ktaln6ipe21" path="res://Kepek/drive-download-20261124T203031Z-1-001/16.png" id="28_8p516"]
+[ext_resource type="Texture2D" uid="uid://domp2v7iebgkw" path="res://Kepek/drive-download-20261124T203031Z-1-001/17.png" id="29_fvoow"]
+[ext_resource type="Texture2D" uid="uid://cjjwrjq7bnmxn" path="res://Kepek/drive-download-20261124T203031Z-1-001/18.png" id="30_v5fqo"]
 
 [sub_resource type="Theme" id="Theme_gntrk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nbpiv"]
 radius = 57.00877
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_baxpx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_miouo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o3h8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1e7my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_arntx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lslt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ulo2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1iu4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m0x7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5v66d")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_miouo")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_c43xd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_avx33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rxg2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xixlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bfbt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wosd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hkrn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_wpo1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_pqity")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_opqna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_00okb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6hr71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_y6y60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_vmcrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_teras")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_8p516")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_fvoow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_v5fqo")
+}],
+"loop": 0,
+"name": &"mana_empty",
+"speed": 20.0
+}]
 
 [node name="Player" type="Node2D" unique_id=502233483 node_paths=PackedStringArray("manaText", "healthText") groups=["player"]]
 position = Vector2(580, 283)
@@ -36,19 +164,6 @@ texture_filter = 1
 position = Vector2(22.99997, 49.999992)
 scale = Vector2(5.943, 5.943)
 texture = ExtResource("4_bhhdu")
-
-[node name="Body" type="Sprite2D" parent="." unique_id=1230602478]
-texture_filter = 1
-position = Vector2(8, -26)
-scale = Vector2(1.2265625, 1.2265625)
-texture = ExtResource("2_gntrk")
-
-[node name="Head" type="Sprite2D" parent="." unique_id=1079919328]
-texture_filter = 1
-position = Vector2(11, -63)
-scale = Vector2(1.3461539, 1.3461539)
-texture = ExtResource("2_kyqiw")
-flip_h = true
 
 [node name="ManaBar" type="ProgressBar" parent="." unique_id=1291760320]
 modulate = Color(0.6205544, 0.7483719, 1, 1)
@@ -104,3 +219,16 @@ position = Vector2(-11, 37)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1255192453]
 position = Vector2(16, -57)
 shape = SubResource("CircleShape2D_nbpiv")
+
+[node name="Body" type="AnimatedSprite2D" parent="." unique_id=1393298054]
+position = Vector2(8, -27)
+scale = Vector2(1.227, 1.227)
+sprite_frames = SubResource("SpriteFrames_baxpx")
+animation = &"mana_empty"
+
+[node name="Head" type="Sprite2D" parent="." unique_id=1079919328]
+texture_filter = 1
+position = Vector2(11, -63)
+scale = Vector2(1.3461539, 1.3461539)
+texture = ExtResource("2_kyqiw")
+flip_h = true

@@ -104,7 +104,6 @@ public partial class Projectile : Area2D
             )
                 return;
 
-            // csak ez marad a speciális rész
             if (!seahorse.IsJumping)
                 return;
 
