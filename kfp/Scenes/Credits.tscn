@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://b0u46em36e3r6"]
+
+[ext_resource type="Texture2D" uid="uid://q1136fdxcu1c" path="res://Kepek/UpgradeBackground.png" id="1_i8h6y"]
+[ext_resource type="Texture2D" uid="uid://d4nyixf6xluhf" path="res://Kepek/Buttons-20261116T164333Z-1-001/Buttons/Menu.png" id="2_7xmno"]
+[ext_resource type="Script" uid="uid://d3hqy6qrnsei4" path="res://Scripts/MenuActions.cs" id="3_uy3b0"]
+
+[sub_resource type="Gradient" id="Gradient_7xmno"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.46666667)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wgi4j"]
+gradient = SubResource("Gradient_7xmno")
+fill_from = Vector2(0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1620965741]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=100645817]
+texture_filter = 1
+offset_right = 960.0
+offset_bottom = 539.0
+texture = ExtResource("1_i8h6y")
+
+[node name="Keszitok" type="Label" parent="." unique_id=1326930914]
+offset_left = 381.0
+offset_right = 583.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 50
+text = "Készítők"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2031924768]
+position = Vector2(244.99998, 271.5)
+scale = Vector2(5.3124995, 2.9218748)
+texture = SubResource("GradientTexture2D_wgi4j")
+
+[node name="Prog" type="Label" parent="." unique_id=1656193645]
+offset_left = 83.0
+offset_top = 184.0
+offset_right = 388.0
+offset_bottom = 353.0
+theme_override_font_sizes/font_size = 24
+text = "Programozók
+	- Nagy-Szakál Eliza
+	- Harnos János
+	- Schrei Botond Koppány"
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1293344632]
+position = Vector2(714.00006, 271.50003)
+scale = Vector2(5.3124995, 2.9218748)
+texture = SubResource("GradientTexture2D_wgi4j")
+
+[node name="Graf" type="Label" parent="." unique_id=1601965153]
+offset_left = 550.99994
+offset_top = 184.0
+offset_right = 855.99994
+offset_bottom = 353.0
+theme_override_font_sizes/font_size = 24
+text = "Grafikusok
+	- Aranyosi Léna
+	- Lovász Adrienn
+	- Ördög Kiara"
+
+[node name="Button" type="Button" parent="." unique_id=292390141]
+offset_left = 30.659561
+offset_top = 431.0
+offset_right = 128.31912
+offset_bottom = 482.3418
+text = "
+"
+flat = true
+script = ExtResource("3_uy3b0")
+
+[node name="Menu" type="Sprite2D" parent="Button" unique_id=486700450]
+texture_filter = 1
+position = Vector2(82.34043, 39.5)
+scale = Vector2(1.6862745, 1.5192307)
+texture = ExtResource("2_7xmno")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_back_to_menu_button_pressed"]

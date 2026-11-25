@@ -34,4 +34,8 @@ public partial class MenuActions : Node
 	{
 		GetTree().Quit();
 	}
+	private void _on_credits_button_pressed()
+	{
+		GetTree().ChangeSceneToFile("res://Scenes/Credits.tscn");
+	}
 }
