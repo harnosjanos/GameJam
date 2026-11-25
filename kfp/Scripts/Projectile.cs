@@ -35,6 +35,7 @@ public partial class Projectile : Area2D
 
         if (area.IsInGroup("tutorial_demon"))
         {
+            GetPlayer()?.PlayHitSound();
             area.GetParent().QueueFree();
             QueueFree();
             return;
@@ -49,6 +50,7 @@ public partial class Projectile : Area2D
         // HARPY
         if (parent is Enemy enemy)
         {
+            GetPlayer()?.PlayHitSound();
             if (
                 IgnoredEnemyId != 0 &&
                 enemy.GetInstanceId() == IgnoredEnemyId
@@ -98,6 +100,7 @@ public partial class Projectile : Area2D
         // SEAHORSE
         if (parent is SeahorseEnemy seahorse)
         {
+            GetPlayer()?.PlayHitSound();
             if (
                 IgnoredEnemyId != 0 &&
                 seahorse.GetInstanceId() == IgnoredEnemyId
@@ -150,11 +153,31 @@ public partial class Projectile : Area2D
         // ZEUSZ
         if (parent is Zeusz zeusz)
         {
+            GetPlayer()?.PlayHitSound();
             if (
                 IgnoredEnemyId != 0 &&
                 zeusz.GetInstanceId() == IgnoredEnemyId
             )
                 return;
+            
+            if (
+                SkillManager.Instance.AttackLevel >= 6 &&
+                !IsNovaProjectile &&
+                !IsChargedProjectile &&
+                !exploded &&
+                CanSpawnNova()
+            )
+            {
+                exploded = true;
+
+                TriggerNovaCooldown();
+
+                CallDeferred(
+                    nameof(SpawnChargedNova),
+                    zeusz.GlobalPosition,
+                    zeusz.GetInstanceId()
+                );
+            }
 
             zeusz.TakeDamage(Damage);
 
@@ -167,6 +190,7 @@ public partial class Projectile : Area2D
         // POSSEIDON
         if (parent is Posseidon posseidon)
         {
+            GetPlayer()?.PlayHitSound();
             if (
                 IgnoredEnemyId != 0 &&
                 posseidon.GetInstanceId() == IgnoredEnemyId
@@ -207,6 +231,7 @@ public partial class Projectile : Area2D
         // WAVE
         if (area is WaveAttack wave)
         {
+            GetPlayer()?.PlayHitSound();
             if (
                 IgnoredEnemyId != 0 &&
                 wave.GetInstanceId() == IgnoredEnemyId
@@ -247,6 +272,7 @@ public partial class Projectile : Area2D
         // RAIN
         if (area is RainCloud cloud)
         {
+            GetPlayer()?.PlayHitSound();
             if (
                 IgnoredEnemyId != 0 &&
                 cloud.GetInstanceId() == IgnoredEnemyId
@@ -287,6 +313,7 @@ public partial class Projectile : Area2D
         //TENTACLE
         if (area is Tentacle tentacle)
         {
+            GetPlayer()?.PlayHitSound();
             if (
                 IgnoredEnemyId != 0 &&
                 tentacle.GetInstanceId() == IgnoredEnemyId
@@ -323,6 +350,7 @@ public partial class Projectile : Area2D
         //RAY
         if (parent is Ray ray)
         {
+            GetPlayer()?.PlayHitSound();
             if (
                 IgnoredEnemyId != 0 &&
                 ray.GetInstanceId() == IgnoredEnemyId
@@ -362,6 +390,7 @@ public partial class Projectile : Area2D
         //Fish
         if (parent is Fish fish)
         {
+            GetPlayer()?.PlayHitSound();
             if (
                 IgnoredEnemyId != 0 &&
                 fish.GetInstanceId() == IgnoredEnemyId
@@ -410,6 +439,7 @@ public partial class Projectile : Area2D
         //Hippocampus
         if (parent is Hippocampus hippocampus)
         {
+            GetPlayer()?.PlayHitSound();
             if (
                 IgnoredEnemyId != 0 &&
                 hippocampus.GetInstanceId() == IgnoredEnemyId

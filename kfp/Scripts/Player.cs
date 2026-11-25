@@ -38,6 +38,10 @@ public partial class Player : Node2D
     private AnimatedSprite2D shieldEffect;
     private bool shieldStarted = false;
 
+    protected AudioStreamPlayer2D loves;
+    protected AudioStreamPlayer2D serul;
+    protected AudioStreamPlayer2D talalat;
+
     public override void _Ready()
     {
         targetPosition =
@@ -71,6 +75,15 @@ public partial class Player : Node2D
             GetNode<AnimatedSprite2D>("ShieldEffect");
 
         shieldEffect.Visible = false;
+
+        loves =
+            GetNode<AudioStreamPlayer2D>("loves");
+
+        serul =
+            GetNode<AudioStreamPlayer2D>("serul");
+        
+        talalat =
+            GetNode<AudioStreamPlayer2D>("talalat");
     }
 
     public override void _Process(double delta)
@@ -174,4 +187,9 @@ public partial class Player : Node2D
     public AnimatedSprite2D Body => body;
 
     public int Health { get => health; }
+
+    public void PlayHitSound()
+    {
+        talalat.Play();
+    }
 }

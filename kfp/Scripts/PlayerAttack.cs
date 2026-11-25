@@ -73,6 +73,8 @@ public partial class Player
             AnimatedSprite2D.SignalName.AnimationFinished
         );
 
+        loves.Play();
+
         Body.Play("idle");
 
         Vector2 spawnPosition =
@@ -152,7 +154,8 @@ public partial class Player
 
         if (mana < 5)
             return;
-
+        
+        loves.Play();
         mana -= 5;
 
         int projectileCount = 10 + (SkillManager.Instance.ChargeLevel / 2);

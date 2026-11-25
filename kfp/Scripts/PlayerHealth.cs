@@ -32,9 +32,10 @@ public partial class Player
             mana >= 5
         )
         {
+            serul.Play();
             damage = (int)Mathf.Floor(damage / 2);
         }
-
+        serul.Play();
         health -= damage;
 
         GD.Print("Player HP: " + health);

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chcxrjtpvg1v5"
+path="res://.godot/imported/Bone crack sound effect No Copyright.mp3-056efb2a8873d936bc87511f9d9ac396.mp3str"
+
+[deps]
+
+source_file="res://Zene/Bone crack sound effect No Copyright.mp3"
+dest_files=["res://.godot/imported/Bone crack sound effect No Copyright.mp3-056efb2a8873d936bc87511f9d9ac396.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmywbjn1ttywm"
+path="res://.godot/imported/Gun shot on tree sound effect No Copyright Free Download-[AudioTrimmer.com].mp3-f88339a1d3680ded689c0ef2afcd20a8.mp3str"
+
+[deps]
+
+source_file="res://Zene/Gun shot on tree sound effect No Copyright Free Download-[AudioTrimmer.com].mp3"
+dest_files=["res://.godot/imported/Gun shot on tree sound effect No Copyright Free Download-[AudioTrimmer.com].mp3-f88339a1d3680ded689c0ef2afcd20a8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

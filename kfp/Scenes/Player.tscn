@@ -38,6 +38,9 @@
 [ext_resource type="Texture2D" uid="uid://do7pbfn4my8pf" path="res://Kepek/drive-download-20261124T210030Z-1-001/Shield.3.png" id="34_wpo1r"]
 [ext_resource type="Texture2D" uid="uid://b65yllgntv5p0" path="res://Kepek/drive-download-20261124T210030Z-1-001/Shield.2.png" id="35_pqity"]
 [ext_resource type="Texture2D" uid="uid://o1q4ps0eavue" path="res://Kepek/drive-download-20261124T210030Z-1-001/Shield.Max.png" id="36_opqna"]
+[ext_resource type="AudioStream" uid="uid://uucw1iwrxf0y" path="res://Zene/Whoosh Sound Effect No Copyright Free Download-[AudioTrimmer.com].mp3" id="39_opqna"]
+[ext_resource type="AudioStream" uid="uid://dmjsawhqsbsob" path="res://Zene/Punch Sound Effect No Copyright Free Download Tiktok-[AudioTrimmer.com].mp3" id="40_opqna"]
+[ext_resource type="AudioStream" uid="uid://dmywbjn1ttywm" path="res://Zene/Gun shot on tree sound effect No Copyright Free Download-[AudioTrimmer.com].mp3" id="41_00okb"]
 
 [sub_resource type="Theme" id="Theme_gntrk"]
 
@@ -290,3 +293,12 @@ texture_filter = 1
 position = Vector2(4.9999886, -28.999989)
 scale = Vector2(2.7590907, 2.7590907)
 sprite_frames = SubResource("SpriteFrames_7eftd")
+
+[node name="loves" type="AudioStreamPlayer2D" parent="." unique_id=855248336]
+stream = ExtResource("39_opqna")
+
+[node name="serul" type="AudioStreamPlayer2D" parent="." unique_id=1418665630]
+stream = ExtResource("40_opqna")
+
+[node name="talalat" type="AudioStreamPlayer2D" parent="." unique_id=1401659062]
+stream = ExtResource("41_00okb")
