@@ -82,10 +82,6 @@ public partial class RainCloud : Area2D
                 boss != null &&
                 !RemovedByBoss
             )
-            {
-                boss.CloudDestroyed();
-            }
-
             QueueFree();
         }
     }

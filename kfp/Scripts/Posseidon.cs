@@ -7,7 +7,6 @@ public partial class Posseidon : Node2D
     public int Health = 400;
 
     private ProgressBar healthBar;
-    private Timer attackTimer;
 
     private Vector2 centerPos;
     private float moveTime;
@@ -15,10 +14,6 @@ public partial class Posseidon : Node2D
     private PackedScene waveScene;
 
     private WaveAttack currentWave;
-
-    private bool attackInProgress = false;
-
-    private bool rainAttackActive = false;
 
     public override void _Ready()
     {
@@ -33,16 +28,6 @@ public partial class Posseidon : Node2D
                 "ProgressBar"
             );
 
-        attackTimer =
-            GetNode<Timer>(
-                "AttackTimer"
-            );
-
-        attackTimer.Timeout +=
-            OnAttackTimerTimeout;
-
-        attackTimer.Start();
-
         healthBar.MaxValue =
             Health;
 
@@ -54,10 +39,7 @@ public partial class Posseidon : Node2D
                 "res://Scenes/WaveAttack.tscn"
             );
         
-        waveScene =
-            GD.Load<PackedScene>(
-                "res://Scenes/WaveAttack.tscn"
-            );
+        _ = AttackLoop();
     }
 
     public override void _Process(
@@ -82,36 +64,6 @@ public partial class Posseidon : Node2D
             new Vector2(x, y);
     }
 
-    private async void OnAttackTimerTimeout()
-    {
-        if (attackInProgress)
-            return;
-
-        attackInProgress = true;
-
-        int attack =
-            (int)GD.RandRange(0, 3);
-
-        switch (attack)
-        {
-            case 0:
-                await DoLeftWaveAttack();
-                break;
-
-            case 1:
-                await DoRightWaveAttack();
-                break;
-
-            case 2:
-                await DoRainAttack();
-                break;
-            
-            case 3:
-                await DoTentacleAttack();
-                break;
-        }
-    }
-
     private async Task DoLeftWaveAttack()
     {
         Player player =
@@ -127,6 +79,14 @@ public partial class Posseidon : Node2D
         );
 
         SpawnWaveFromLeft();
+
+        while (currentWave != null)
+        {
+            await ToSignal(
+                GetTree(),
+                SceneTree.SignalName.ProcessFrame
+            );
+        }
     }
 
     private async Task DoRightWaveAttack()
@@ -144,6 +104,14 @@ public partial class Posseidon : Node2D
         );
 
         SpawnWaveFromRight();
+
+        while (currentWave != null)
+        {
+            await ToSignal(
+                GetTree(),
+                SceneTree.SignalName.ProcessFrame
+            );
+        }
     }
 
     private void SpawnWaveFromLeft()
@@ -226,21 +194,14 @@ public partial class Posseidon : Node2D
         }
     }
 
-    public async void EndCurrentAttack()
+    public void EndCurrentAttack()
     {
         currentWave = null;
-
-        await ToSignal(
-            GetTree().CreateTimer(3.0),
-            SceneTreeTimer.SignalName.Timeout
-        );
-
-        attackInProgress = false;
     }
 
     private async Task DoRainAttack()
     {
-        rainAttackActive = true;
+
         DestroyAllRainClouds();
 
         Player player =
@@ -262,9 +223,18 @@ public partial class Posseidon : Node2D
             SceneTreeTimer.SignalName.Timeout
         );
 
-        rainAttackActive = false;
-
-        attackInProgress = false;
+        while (
+            GetTree()
+                .GetNodesInGroup(
+                    "rain_cloud"
+                ).Count > 0
+        )
+        {
+            await ToSignal(
+                GetTree(),
+                SceneTree.SignalName.ProcessFrame
+            );
+        }
     }
 
     private void SpawnRainCloud()
@@ -301,24 +271,6 @@ public partial class Posseidon : Node2D
             GetTree()
                 .CurrentScene
                 .AddChild(cloud);
-        }
-    }
-
-    public void CloudDestroyed()
-    {
-        if (!rainAttackActive)
-            return;
-
-        int cloudCount =
-            GetTree()
-            .GetNodesInGroup(
-                "rain_cloud"
-            ).Count;
-
-        if (cloudCount <= 1)
-        {
-            rainAttackActive = false;
-            attackInProgress = false;
         }
     }
 
@@ -382,21 +334,53 @@ public partial class Posseidon : Node2D
     {
         SpawnTentacles();
 
-        await ToSignal(
-            GetTree().CreateTimer(8.0),
-            SceneTreeTimer.SignalName.Timeout
-        );
-
-        foreach (
-            Tentacle tentacle
-            in GetTree().GetNodesInGroup(
-                "tentacle"
-            )
+        while (
+            GetTree()
+                .GetNodesInGroup(
+                    "tentacle"
+                ).Count > 0
         )
         {
-            tentacle.QueueFree();
+            await ToSignal(
+                GetTree(),
+                SceneTree.SignalName.ProcessFrame
+            );
         }
+    }
 
-        attackInProgress = false;
+    private async Task AttackLoop()
+    {
+        while (
+            IsInsideTree() &&
+            Health > 0
+        )
+        {
+            int attack =
+                (int)GD.RandRange(0, 3);
+
+            switch (attack)
+            {
+                case 0:
+                    await DoLeftWaveAttack();
+                    break;
+
+                case 1:
+                    await DoRightWaveAttack();
+                    break;
+
+                case 2:
+                    await DoRainAttack();
+                    break;
+
+                case 3:
+                    await DoTentacleAttack();
+                    break;
+            }
+
+            await ToSignal(
+                GetTree().CreateTimer(2.0),
+                SceneTreeTimer.SignalName.Timeout
+            );
+        }
     }
 }

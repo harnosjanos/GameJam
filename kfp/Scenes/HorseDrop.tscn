@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://bvofmn6ae6mjr"]
 
-[ext_resource type="Texture2D" uid="uid://b6eubg558vw2f" path="res://Kepek/f3db9f122578bcb2aaae945722f0b42a.jpg" id="1_g820q"]
 [ext_resource type="Script" uid="uid://c1f1fmhmisflu" path="res://Scripts/RainDrop.cs" id="1_o6oot"]
+[ext_resource type="Texture2D" uid="uid://g55gy7xyjbly" path="res://Kepek/Fallinghorse.png" id="2_o6oot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpiv"]
-size = Vector2(155, 130)
+size = Vector2(106, 52.999992)
 
 [node name="HorseDrop" type="Area2D" unique_id=213438287]
 rotation = -1.5707964
 script = ExtResource("1_o6oot")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2140928513]
-position = Vector2(-7.6293945e-06, 3.8146973e-06)
-scale = Vector2(0.23667781, 0.23667781)
-texture = ExtResource("1_g820q")
+position = Vector2(0.9999943, 1)
+rotation = 1.5707964
+scale = Vector2(1.3515792, 1.3515793)
+texture = ExtResource("2_o6oot")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1146242725]
-position = Vector2(2.5000002, 3.9999995)
+position = Vector2(-1.5298988e-07, 3.5000005)
 shape = SubResource("RectangleShape2D_nbpiv")
