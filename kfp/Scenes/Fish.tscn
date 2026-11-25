@@ -29,10 +29,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_nbpiv"]
 radius = 25.495098
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bdn1d"]
+load_path = "res://.godot/imported/EnemyBar.png-6da68c11187ea7499c98614b144011eb.ctex"
+
 [node name="Fish" type="CharacterBody2D" unique_id=21542865]
 script = ExtResource("1_bdn1d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=577738755]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_q0edf")
 autoplay = "default"
 frame_progress = 0.49004325
@@ -43,7 +47,16 @@ frame_progress = 0.49004325
 shape = SubResource("CircleShape2D_nbpiv")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1385454237]
-offset_left = -22.0
+modulate = Color(1, 0.18431373, 0.10980392, 1)
+self_modulate = Color(0.8784314, 0, 0.05882353, 1)
+offset_left = -38.0
 offset_top = 32.0
-offset_right = 21.0
+offset_right = 58.0
 offset_bottom = 59.0
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1234311148]
+texture_filter = 1
+position = Vector2(2.999999, 50)
+scale = Vector2(1.7708334, 3.804348)
+texture = SubResource("CompressedTexture2D_bdn1d")

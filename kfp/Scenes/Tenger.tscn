@@ -7,16 +7,19 @@
 [node name="Tenger" type="Node2D" unique_id=216858625]
 
 [node name="Ocean768x512" type="Sprite2D" parent="." unique_id=588097865]
+texture_filter = 1
 position = Vector2(483.36633, 277.2686)
 scale = Vector2(5.0691013, 5.069101)
 texture = ExtResource("1_pqc2t")
 
 [node name="Lands" type="Sprite2D" parent="." unique_id=1082634764]
+texture_filter = 1
 position = Vector2(484, 275)
 scale = Vector2(5.0370374, 5.037037)
 texture = ExtResource("2_fwg65")
 
 [node name="SeaBehind" type="Sprite2D" parent="." unique_id=480100993]
+texture_filter = 1
 position = Vector2(484, 353.00003)
 scale = Vector2(5.0405846, 5.0405846)
 texture = ExtResource("3_an3yv")

@@ -11,6 +11,7 @@ texture_filter = 1
 script = ExtResource("2_zeusz")
 
 [node name="Zeusz_skin" type="Sprite2D" parent="." unique_id=1995499589]
+texture_filter = 1
 position = Vector2(-2, 1.0000229)
 scale = Vector2(0.4918478, 0.49184784)
 texture = ExtResource("1_lumy1")

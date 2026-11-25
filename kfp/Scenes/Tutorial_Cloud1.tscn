@@ -5,6 +5,7 @@
 [node name="Node2D" type="Node2D" unique_id=1381216063]
 
 [node name="Cloud1" type="TextureRect" parent="." unique_id=970173520]
+texture_filter = 1
 offset_left = 59.0
 offset_top = 53.0
 offset_right = 267.0

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dsc3yb65qp2r7"]
 
 [ext_resource type="Script" uid="uid://b8gxv0uxjskds" path="res://Scripts/Projectile.cs" id="1_k1cl8"]
-[ext_resource type="Texture2D" uid="uid://ck2dg1qoitw5y" path="res://Kepek/1791214025348.png" id="2_k1cl8"]
+[ext_resource type="Texture2D" uid="uid://ck2dg1qoitw5y" path="res://Kepek/Feather.png" id="2_k1cl8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpiv"]
 size = Vector2(52, 12)
@@ -10,6 +10,7 @@ size = Vector2(52, 12)
 script = ExtResource("1_k1cl8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1492870346]
+texture_filter = 1
 position = Vector2(3.8146973e-06, 0)
 rotation = -1.5463617
 scale = Vector2(1.5117188, 1.4203513)

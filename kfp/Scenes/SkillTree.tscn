@@ -63,71 +63,85 @@ autoplay = true
 [node name="Hp ág" type="Node" parent="." unique_id=870011899]
 
 [node name="HpTree" type="Sprite2D" parent="Hp ág" unique_id=1536311327]
+texture_filter = 1
 position = Vector2(41, 277.00003)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("4_n648w")
 
 [node name="LessDmgTaken" type="Sprite2D" parent="Hp ág" unique_id=288444549]
+texture_filter = 1
 position = Vector2(36, 31.000008)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("4_kdu6y")
 
 [node name="HpUpgraded6" type="Sprite2D" parent="Hp ág" unique_id=179222694]
+texture_filter = 1
 position = Vector2(37, 72.00001)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("6_jf1u3")
 
 [node name="MoreHp5" type="Sprite2D" parent="Hp ág" unique_id=468458917]
+texture_filter = 1
 position = Vector2(36, 111)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("7_dlyut")
 
 [node name="HpUpgraded5" type="Sprite2D" parent="Hp ág" unique_id=118592759]
+texture_filter = 1
 position = Vector2(37, 151)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("6_jf1u3")
 
 [node name="MoreHp4" type="Sprite2D" parent="Hp ág" unique_id=1566072538]
+texture_filter = 1
 position = Vector2(36, 192)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("7_dlyut")
 
 [node name="HpUpgraded4" type="Sprite2D" parent="Hp ág" unique_id=334413181]
+texture_filter = 1
 position = Vector2(37, 232)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("6_jf1u3")
 
 [node name="MoreHp3" type="Sprite2D" parent="Hp ág" unique_id=57460067]
+texture_filter = 1
 position = Vector2(36, 272)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("7_dlyut")
 
 [node name="HpUpgraded3" type="Sprite2D" parent="Hp ág" unique_id=661672845]
+texture_filter = 1
 position = Vector2(37, 311.00003)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("6_jf1u3")
 
 [node name="MoreHp2" type="Sprite2D" parent="Hp ág" unique_id=1068630873]
+texture_filter = 1
 position = Vector2(36, 351)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("7_dlyut")
 
 [node name="HpUpgraded2" type="Sprite2D" parent="Hp ág" unique_id=530518943]
+texture_filter = 1
 position = Vector2(37, 391)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("6_jf1u3")
 
 [node name="MoreHp1" type="Sprite2D" parent="Hp ág" unique_id=1257647808]
+texture_filter = 1
 position = Vector2(36, 432)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("7_dlyut")
 
 [node name="HpUpgraded1" type="Sprite2D" parent="Hp ág" unique_id=1586050723]
+texture_filter = 1
 position = Vector2(37, 472)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("6_jf1u3")
 
 [node name="HpDefault" type="Sprite2D" parent="Hp ág" unique_id=2125570191]
+texture_filter = 1
 position = Vector2(35.999996, 512)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("5_h226r")
@@ -177,71 +191,85 @@ flat = true
 [node name="Mana ág" type="Node" parent="." unique_id=913459595]
 
 [node name="ManaTree" type="Sprite2D" parent="Mana ág" unique_id=388745089]
+texture_filter = 1
 position = Vector2(184.8, 277)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("8_j6g2i")
 
 [node name="ManaDefault" type="Sprite2D" parent="Mana ág" unique_id=1109410254]
+texture_filter = 1
 position = Vector2(184, 511.99997)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("9_0du7f")
 
 [node name="ManaUpgrade1" type="Sprite2D" parent="Mana ág" unique_id=527331587]
+texture_filter = 1
 position = Vector2(185, 472.99997)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("10_osvg7")
 
 [node name="MoreMana1" type="Sprite2D" parent="Mana ág" unique_id=1123662655]
+texture_filter = 1
 position = Vector2(184, 431.99997)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("11_abodq")
 
 [node name="ManaUpgrade2" type="Sprite2D" parent="Mana ág" unique_id=935477681]
+texture_filter = 1
 position = Vector2(185, 392)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("10_osvg7")
 
 [node name="ManaUpgrade3" type="Sprite2D" parent="Mana ág" unique_id=869445947]
+texture_filter = 1
 position = Vector2(185, 312)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("10_osvg7")
 
 [node name="ManaUpgrade4" type="Sprite2D" parent="Mana ág" unique_id=341686529]
+texture_filter = 1
 position = Vector2(185, 232)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("10_osvg7")
 
 [node name="ManaUpgrade5" type="Sprite2D" parent="Mana ág" unique_id=1563588714]
+texture_filter = 1
 position = Vector2(185, 152)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("10_osvg7")
 
 [node name="ManaUpgrade6" type="Sprite2D" parent="Mana ág" unique_id=568303989]
+texture_filter = 1
 position = Vector2(185, 72)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("10_osvg7")
 
 [node name="MoreMana2" type="Sprite2D" parent="Mana ág" unique_id=1023792349]
+texture_filter = 1
 position = Vector2(184, 352)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("11_abodq")
 
 [node name="MoreMana3" type="Sprite2D" parent="Mana ág" unique_id=498779054]
+texture_filter = 1
 position = Vector2(184, 272)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("11_abodq")
 
 [node name="MoreMana4" type="Sprite2D" parent="Mana ág" unique_id=2051568611]
+texture_filter = 1
 position = Vector2(184, 192)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("11_abodq")
 
 [node name="MoreMana5" type="Sprite2D" parent="Mana ág" unique_id=1358184422]
+texture_filter = 1
 position = Vector2(184, 112)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("11_abodq")
 
 [node name="AoeAfterRevive" type="Sprite2D" parent="Mana ág" unique_id=1892596863]
+texture_filter = 1
 position = Vector2(184, 32)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("12_0bypg")
@@ -303,71 +331,85 @@ flat = true
 [node name="Charge ág" type="Node" parent="." unique_id=1871577495]
 
 [node name="CaTree" type="Sprite2D" parent="Charge ág" unique_id=1871526327]
+texture_filter = 1
 position = Vector2(335.6, 265.2)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("13_kn5jo")
 
 [node name="CaDefault" type="Sprite2D" parent="Charge ág" unique_id=1285719032]
+texture_filter = 1
 position = Vector2(332.6, 510.2)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("14_kxtgn")
 
 [node name="CaUpgrade1" type="Sprite2D" parent="Charge ág" unique_id=1478249870]
+texture_filter = 1
 position = Vector2(333.6, 470.2)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("15_eyd4w")
 
 [node name="CaUpgrade2" type="Sprite2D" parent="Charge ág" unique_id=1628358]
+texture_filter = 1
 position = Vector2(333.6, 391.2)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("15_eyd4w")
 
 [node name="MoreAtk1" type="Sprite2D" parent="Charge ág" unique_id=1295877693]
+texture_filter = 1
 position = Vector2(332.6, 431.2)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("16_3iorm")
 
 [node name="MoreFeathers1" type="Sprite2D" parent="Charge ág" unique_id=226133306]
+texture_filter = 1
 position = Vector2(332.6, 351.2)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("17_y4m2b")
 
 [node name="CaUpgrade3" type="Sprite2D" parent="Charge ág" unique_id=189654156]
+texture_filter = 1
 position = Vector2(333.2, 311.2)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("15_eyd4w")
 
 [node name="CaUpgrade4" type="Sprite2D" parent="Charge ág" unique_id=1717081840]
+texture_filter = 1
 position = Vector2(333.2, 232.20001)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("15_eyd4w")
 
 [node name="CaUpgrade5" type="Sprite2D" parent="Charge ág" unique_id=1420673818]
+texture_filter = 1
 position = Vector2(333.6, 150.20001)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("15_eyd4w")
 
 [node name="CaUpgrade6" type="Sprite2D" parent="Charge ág" unique_id=1751868123]
+texture_filter = 1
 position = Vector2(333.6, 70.20002)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("15_eyd4w")
 
 [node name="MoreAtk2" type="Sprite2D" parent="Charge ág" unique_id=1251386269]
+texture_filter = 1
 position = Vector2(332.6, 271.2)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("16_3iorm")
 
 [node name="MoreAtk3" type="Sprite2D" parent="Charge ág" unique_id=997038787]
+texture_filter = 1
 position = Vector2(332.6, 110.20003)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("16_3iorm")
 
 [node name="MoreFeathers2" type="Sprite2D" parent="Charge ág" unique_id=440863821]
+texture_filter = 1
 position = Vector2(332.6, 190.20001)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("17_y4m2b")
 
 [node name="PiercingAtk" type="Sprite2D" parent="Charge ág" unique_id=1305338981]
+texture_filter = 1
 position = Vector2(332.6, 31.200027)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("18_s6mtc")
@@ -429,71 +471,85 @@ flat = true
 [node name="Attack ág" type="Node" parent="." unique_id=1909096847]
 
 [node name="NaTree" type="Sprite2D" parent="Attack ág" unique_id=1092714309]
+texture_filter = 1
 position = Vector2(484.8, 274.6)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("19_dctan")
 
 [node name="NaDefault" type="Sprite2D" parent="Attack ág" unique_id=1601053604]
+texture_filter = 1
 position = Vector2(485.8, 510.6)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("20_qigoo")
 
 [node name="NaUpgrade1" type="Sprite2D" parent="Attack ág" unique_id=860689775]
+texture_filter = 1
 position = Vector2(485.8, 469.6)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("21_j2m1j")
 
 [node name="NaUpgrade2" type="Sprite2D" parent="Attack ág" unique_id=1978190501]
+texture_filter = 1
 position = Vector2(485.8, 389.6)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("21_j2m1j")
 
 [node name="MoreAtk1" type="Sprite2D" parent="Attack ág" unique_id=1188147351]
+texture_filter = 1
 position = Vector2(485.8, 431.6)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("22_owaxu")
 
 [node name="OneExtraFeather1" type="Sprite2D" parent="Attack ág" unique_id=217888644]
+texture_filter = 1
 position = Vector2(485.8, 351.6)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("23_ore2i")
 
 [node name="NaUpgrade3" type="Sprite2D" parent="Attack ág" unique_id=2075254092]
+texture_filter = 1
 position = Vector2(485.8, 310.6)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("21_j2m1j")
 
 [node name="NaUpgrade4" type="Sprite2D" parent="Attack ág" unique_id=2122785589]
+texture_filter = 1
 position = Vector2(485.8, 231.6)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("21_j2m1j")
 
 [node name="MoreAtk2" type="Sprite2D" parent="Attack ág" unique_id=991909881]
+texture_filter = 1
 position = Vector2(485.8, 271.6)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("22_owaxu")
 
 [node name="NaUpgrade5" type="Sprite2D" parent="Attack ág" unique_id=1920798298]
+texture_filter = 1
 position = Vector2(485.8, 150.60002)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("21_j2m1j")
 
 [node name="NaUpgrade6" type="Sprite2D" parent="Attack ág" unique_id=1483612072]
+texture_filter = 1
 position = Vector2(485.8, 70.600006)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("21_j2m1j")
 
 [node name="MoreAtk3" type="Sprite2D" parent="Attack ág" unique_id=1004479077]
+texture_filter = 1
 position = Vector2(485.8, 111.600006)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("22_owaxu")
 
 [node name="OneExtraFeather2" type="Sprite2D" parent="Attack ág" unique_id=1306825056]
+texture_filter = 1
 position = Vector2(485.8, 191.6)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("23_ore2i")
 
 [node name="ExplodingFeather" type="Sprite2D" parent="Attack ág" unique_id=790717817]
+texture_filter = 1
 position = Vector2(486, 31)
 scale = Vector2(1.6499996, 1.6499996)
 texture = ExtResource("24_j6g2i")
@@ -541,6 +597,7 @@ offset_bottom = 54.0
 flat = true
 
 [node name="Menu" type="Sprite2D" parent="." unique_id=530321713]
+texture_filter = 1
 position = Vector2(652.00006, 490)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("25_j6g2i")
@@ -553,6 +610,7 @@ offset_bottom = 520.0
 flat = true
 
 [node name="Continue" type="Sprite2D" parent="." unique_id=1566056736]
+texture_filter = 1
 position = Vector2(849.99994, 489.99997)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("26_0du7f")
@@ -565,6 +623,7 @@ offset_bottom = 521.0
 flat = true
 
 [node name="Upgrade" type="Sprite2D" parent="." unique_id=912745074]
+texture_filter = 1
 position = Vector2(746, 390.00003)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("27_osvg7")

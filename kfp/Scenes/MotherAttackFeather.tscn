@@ -7,6 +7,7 @@
 script = ExtResource("1_hplln")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1600209762]
+texture_filter = 1
 offset_left = 85.49371
 offset_top = -0.62742984
 offset_right = 148.32951

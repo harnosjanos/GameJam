@@ -53,6 +53,7 @@ load_path = "res://.godot/imported/EnemyBar.png-6da68c11187ea7499c98614b144011eb
 script = ExtResource("1_7aihx")
 
 [node name="Harpy" type="AnimatedSprite2D" parent="." unique_id=44247913]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_q0edf")
 autoplay = "default"
 frame_progress = 0.4294088

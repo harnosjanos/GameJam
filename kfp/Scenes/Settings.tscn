@@ -21,6 +21,7 @@ offset_bottom = 441.0
 script = ExtResource("1_4hxq3")
 
 [node name="Menu" type="Sprite2D" parent="." unique_id=859356476]
+texture_filter = 1
 position = Vector2(148, 133)
 texture = ExtResource("2_yrknh")
 

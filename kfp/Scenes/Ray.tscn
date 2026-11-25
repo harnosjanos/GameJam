@@ -29,11 +29,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpiv"]
 size = Vector2(115, 36)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hjndn"]
+load_path = "res://.godot/imported/EnemyBar.png-6da68c11187ea7499c98614b144011eb.ctex"
+
 [node name="Ray" type="CharacterBody2D" unique_id=1663362965]
 position = Vector2(524, 209)
 script = ExtResource("1_hjndn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=362794261]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_es6n3")
 frame_progress = 0.6679615
 
@@ -43,9 +47,17 @@ frame_progress = 0.6679615
 position = Vector2(2.5, 8)
 shape = SubResource("RectangleShape2D_nbpiv")
 
-[node name="HealthBar" type="ProgressBar" parent="." unique_id=807391891]
-offset_left = -16.0
-offset_top = 27.0
-offset_right = 19.0
-offset_bottom = 54.0
-metadata/_edit_use_anchors_ = true
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1518841074]
+modulate = Color(1, 0.18431373, 0.10980392, 1)
+self_modulate = Color(0.8784314, 0, 0.05882353, 1)
+offset_left = -38.0
+offset_top = 36.0
+offset_right = 58.0
+offset_bottom = 63.0
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=400390712]
+texture_filter = 1
+position = Vector2(3, 54.000008)
+scale = Vector2(1.7708334, 3.804348)
+texture = SubResource("CompressedTexture2D_hjndn")

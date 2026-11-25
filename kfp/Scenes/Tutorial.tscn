@@ -467,6 +467,7 @@ z_index = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hatching" unique_id=1159452960]
 visible = false
+texture_filter = 1
 position = Vector2(481.66675, 269.75)
 scale = Vector2(5.0324078, 5.0324078)
 sprite_frames = SubResource("SpriteFrames_05qi6")
@@ -528,6 +529,7 @@ offset_bottom = 540.0
 texture = ExtResource("6_kpk71")
 
 [node name="Tree" type="AnimatedSprite2D" parent="." unique_id=1978826821]
+texture_filter = 1
 position = Vector2(-7.1054274e-15, 0)
 scale = Vector2(5.0000005, 5)
 sprite_frames = SubResource("SpriteFrames_o1rwj")
@@ -563,6 +565,7 @@ Demon2 = NodePath("../Demon2/Demon2Fly")
 texture_filter = 1
 
 [node name="MotherAnimation" type="AnimatedSprite2D" parent="Mother_Phoneix" unique_id=1921304767]
+texture_filter = 1
 position = Vector2(269.25, 164.75)
 scale = Vector2(3.473958, 3.473958)
 sprite_frames = SubResource("SpriteFrames_yqegr")
@@ -570,6 +573,7 @@ animation = &"Attack"
 autoplay = "default"
 
 [node name="MotherPhoneixGrabbed" type="AnimatedSprite2D" parent="Mother_Phoneix" unique_id=1667448131]
+texture_filter = 1
 position = Vector2(271, 326)
 scale = Vector2(3.473958, 3.473958)
 sprite_frames = SubResource("SpriteFrames_6ntug")
@@ -640,6 +644,7 @@ stream = ExtResource("102_l8wvp")
 autoplay = true
 
 [node name="Demon1" type="Sprite2D" parent="." unique_id=1975662284]
+texture_filter = 1
 
 [node name="Demon1Fly" type="AnimatedSprite2D" parent="Demon1" unique_id=336206008]
 visible = false
@@ -656,6 +661,7 @@ position = Vector2(855, 251)
 shape = SubResource("CapsuleShape2D_yqegr")
 
 [node name="Demon2" type="Sprite2D" parent="." unique_id=212347199]
+texture_filter = 1
 
 [node name="Demon2Fly" type="AnimatedSprite2D" parent="Demon2" unique_id=1400328544]
 visible = false

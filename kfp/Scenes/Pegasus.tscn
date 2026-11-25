@@ -118,6 +118,7 @@ load_path = "res://.godot/imported/EnemyBar.png-6da68c11187ea7499c98614b144011eb
 script = ExtResource("1_lny6k")
 
 [node name="Pegasus" type="AnimatedSprite2D" parent="." unique_id=1521784630]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_o1rwj")
 animation = &"Flying"
 autoplay = "Flying"

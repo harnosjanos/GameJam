@@ -7,11 +7,13 @@
 texture_filter = 3
 
 [node name="Background" type="Sprite2D" parent="." unique_id=166083439]
+texture_filter = 1
 position = Vector2(0.8888593, 0.49998295)
 scale = Vector2(4.9907403, 4.9907403)
 texture = ExtResource("1_iiykg")
 
 [node name="BackgroundCLouds" type="Sprite2D" parent="." unique_id=527538782]
+texture_filter = 1
 position = Vector2(1, 155)
 scale = Vector2(5.0000014, 5.000001)
 texture = ExtResource("2_d3nxb")

@@ -29,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=982608918]
+texture_filter = 1
 position = Vector2(111.02883, 70.25)
 scale = Vector2(2, 2)
 texture = ExtResource("1_anlgx")
@@ -49,11 +50,13 @@ flat = true
 script = ExtResource("1_c4tk2")
 
 [node name="TutorialComplete" type="Sprite2D" parent="Control" unique_id=1043761366]
+texture_filter = 1
 position = Vector2(321, 70)
 scale = Vector2(2, 2)
 texture = ExtResource("6_2ey7y")
 
 [node name="TutorialIncomplete" type="Sprite2D" parent="Control" unique_id=234989446]
+texture_filter = 1
 position = Vector2(321, 70)
 scale = Vector2(2, 2)
 texture = ExtResource("3_xvotp")
@@ -68,6 +71,7 @@ flat = true
 script = ExtResource("1_c4tk2")
 
 [node name="Settings" type="Sprite2D" parent="Control" unique_id=690424857]
+texture_filter = 1
 position = Vector2(130, 340)
 scale = Vector2(2, 2)
 texture = ExtResource("4_1edw4")
@@ -91,6 +95,7 @@ flat = true
 script = ExtResource("1_c4tk2")
 
 [node name="Quit" type="Sprite2D" parent="Control" unique_id=1893438582]
+texture_filter = 1
 position = Vector2(848.0962, 479.5)
 scale = Vector2(2, 2)
 texture = ExtResource("5_xvotp")
@@ -113,6 +118,7 @@ script = ExtResource("1_c4tk2")
 metadata/_edit_use_anchors_ = true
 
 [node name="Credits" type="Sprite2D" parent="Control" unique_id=569374413]
+texture_filter = 1
 position = Vector2(129, 448)
 scale = Vector2(2, 2)
 texture = ExtResource("6_1edw4")
