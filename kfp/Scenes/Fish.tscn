@@ -29,6 +29,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_nbpiv"]
 radius = 25.495098
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpo1r"]
+bg_color = Color(0.90423733, 0, 0.07170495, 1)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bdn1d"]
 load_path = "res://.godot/imported/EnemyBar.png-6da68c11187ea7499c98614b144011eb.ctex"
 
@@ -53,6 +56,9 @@ offset_left = -38.0
 offset_top = 32.0
 offset_right = 58.0
 offset_bottom = 59.0
+theme_override_colors/font_color = Color(0.8352941, 0, 0.14509805, 1)
+theme_override_colors/font_outline_color = Color(0.8352941, 0, 0.14509805, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_wpo1r")
 show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1234311148]

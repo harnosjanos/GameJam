@@ -83,6 +83,9 @@ animations = [{
 radius = 44.5
 height = 93.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgv1u"]
+bg_color = Color(0.90588236, 0, 0.07058824, 1)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6oaqm"]
 load_path = "res://.godot/imported/EnemyBar.png-6da68c11187ea7499c98614b144011eb.ctex"
 
@@ -111,6 +114,7 @@ offset_top = -93.0
 offset_right = 51.0
 offset_bottom = -66.0
 theme_override_font_sizes/font_size = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_sgv1u")
 show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1981025328]

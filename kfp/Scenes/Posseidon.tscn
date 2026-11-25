@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dpuki1urbj610" path="res://Scripts/Posseidon.cs" id="1_lt4l2"]
 [ext_resource type="Texture2D" uid="uid://dvddxeim30hv3" path="res://icon.svg" id="1_wp3qy"]
+[ext_resource type="Texture2D" uid="uid://c62f3dodi4lga" path="res://Kepek/EnemyBar.png" id="3_yjj63"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_es6n3"]
 size = Vector2(128, 128)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02lik"]
+bg_color = Color(0.90588236, 0, 0.07058824, 1)
 
 [node name="Posseidon" type="Node2D" unique_id=949116624]
 script = ExtResource("1_lt4l2")
@@ -18,12 +22,19 @@ texture = ExtResource("1_wp3qy")
 shape = SubResource("RectangleShape2D_es6n3")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=10725435]
-offset_left = -25.0
-offset_top = 71.0
-offset_right = 27.0
-offset_bottom = 98.0
+offset_left = -57.0
+offset_top = 67.0
+offset_right = 63.0
+offset_bottom = 94.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_02lik")
+show_percentage = false
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=776042426]
 wait_time = 3.0
 
 [node name="PhaseTimer" type="Timer" parent="." unique_id=604470429]
+
+[node name="EnemyBar" type="Sprite2D" parent="." unique_id=1017255131]
+position = Vector2(-4.9999924, 84.99999)
+scale = Vector2(2.085, 2.565)
+texture = ExtResource("3_yjj63")
