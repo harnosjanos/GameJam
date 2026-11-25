@@ -1,7 +1,30 @@
 [gd_scene format=3 uid="uid://d335qsuxruk4w"]
 
 [ext_resource type="Script" uid="uid://cmragmqllcjpc" path="res://Scripts/ThunderBolt.cs" id="1_1bp3k"]
-[ext_resource type="Texture2D" uid="uid://dvddxeim30hv3" path="res://icon.svg" id="1_3a0cj"]
+[ext_resource type="Texture2D" uid="uid://bpcrdqb3tdhlm" path="res://Kepek/Zeusz_boss/ZeuszParticleAttack/ZeuszParticleAttack0000.png" id="2_lm84i"]
+[ext_resource type="Texture2D" uid="uid://c0p55ss0hp8mo" path="res://Kepek/Zeusz_boss/ZeuszParticleAttack/ZeuszParticleAttack0003.png" id="3_jgsrk"]
+[ext_resource type="Texture2D" uid="uid://b5scvm2ky17wv" path="res://Kepek/Zeusz_boss/ZeuszParticleAttack/ZeuszParticleAttack0006.png" id="4_47hdw"]
+[ext_resource type="Texture2D" uid="uid://dc341resla66a" path="res://Kepek/Zeusz_boss/ZeuszParticleAttack/ZeuszParticleAttack0009.png" id="5_gratb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqegr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lm84i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jgsrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_47hdw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gratb")
+}],
+"loop": 1,
+"name": &"lightning",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0edf"]
 size = Vector2(22, 87)
@@ -9,9 +32,13 @@ size = Vector2(22, 87)
 [node name="Node2D" type="Area2D" unique_id=1362944878]
 script = ExtResource("1_1bp3k")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=702123111]
-scale = Vector2(0.171875, 0.67968744)
-texture = ExtResource("1_3a0cj")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1811348700]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_yqegr")
+animation = &"lightning"
+frame = 1
+frame_progress = 0.14424889
+flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1881332092]
 shape = SubResource("RectangleShape2D_q0edf")

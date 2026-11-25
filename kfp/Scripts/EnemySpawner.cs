@@ -52,36 +52,32 @@ public partial class EnemySpawner : Node
 			if (playerSpawnX - radius < x && x < playerSpawnX + radius)
 			{
 				x = rand.Next(0, 1000);
-				GD.Print($"{spritePath} - x: {x} rossz");
+
 			}
 			else
 			{
 				xOk = true;
-				GD.Print($"{spritePath} - x: {x} jó");
 			}
 
 			if (playerSpawnY - radius < y && y < playerSpawnY - radius && 400 < y)
 			{
 				y = rand.Next(0, 500);
-				GD.Print($"{spritePath} - y: {y} rossz");
 			}
 			else
 			{
 				yOk = true;
-				GD.Print($"{spritePath} - y: {y} jó");
 			}
 
 			if (xOk && yOk)
 			{
 				spawned = true;
-				GD.Print("spawnolt");
 			}
 		}
 
 		AnimatedSprite2D enemySprite = enemyCopy.GetNode<AnimatedSprite2D>(spritePath);
 		enemySprite.FlipH = playerSpawnX < x;
 		enemyCopy.GlobalPosition = new Vector2(x, y);
-		GD.Print($"{spritePath} - x:{x}, y:{y}");
+
 	}
 
 	public override void _Process(double delta)

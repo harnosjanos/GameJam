@@ -61,9 +61,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_cep88")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Attack",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -120,10 +120,10 @@ script = ExtResource("1_lny6k")
 [node name="Pegasus" type="AnimatedSprite2D" parent="." unique_id=1521784630]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_o1rwj")
-animation = &"Flying"
+animation = &"Attack"
 autoplay = "Flying"
-frame = 6
-frame_progress = 0.50813633
+frame = 10
+frame_progress = 1.0
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1697587809 groups=["enemy"]]
 

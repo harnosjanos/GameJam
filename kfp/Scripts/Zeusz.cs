@@ -14,14 +14,28 @@ public partial class Zeusz : Node2D
 	private Timer teleportTimer;
 	private ColorRect flashRect;
 	private ProgressBar healthBar;
+	private AnimatedSprite2D zeuszSprite;
 	private bool teleporting;
 	private bool atLeftPosition;
 	private bool defeated;
+	private bool lightningPending;
 
+
+	private void OnZeuszAnimationFinished()
+	{
+		if (zeuszSprite.Animation == "attack")
+			zeuszSprite.Play("idle");
+	}
 	public override void _Ready()
 	{
 		AddToGroup("boss");
 		GetNode<Area2D>("Area2D").AddToGroup("enemy");
+		zeuszSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		zeuszSprite.FrameChanged += OnZeuszFrameChanged;
+		zeuszSprite.AnimationFinished += OnZeuszAnimationFinished;
+		zeuszSprite.Play("idle");
+
+
 		healthBar = GetNode<ProgressBar>("HealthBar");
 		healthBar.MaxValue = Health;
 		healthBar.Value = Health;
@@ -73,15 +87,35 @@ public partial class Zeusz : Node2D
 			ResetTimer(lightningTimer, LightningMinInterval, LightningMaxInterval);
 			return;
 		}
+		zeuszSprite.Play("attack");
+		lightningPending = true;
+
+
+		ResetTimer(lightningTimer, LightningMinInterval, LightningMaxInterval);
+
+	}
+
+	private void OnZeuszFrameChanged()
+	{
+		if (!lightningPending ||
+				zeuszSprite.Animation != "attack" ||
+				zeuszSprite.Frame != 2)
+			return;
+
+		lightningPending = false;
+
+		Player player = GetTree().GetFirstNodeInGroup("player") as Player;
+		if (player == null || lightningScene == null)
+			return;
+
 
 		ThunderBolt bolt = lightningScene.Instantiate<ThunderBolt>();
 		bolt.GlobalPosition = GlobalPosition;
 		bolt.Direction = (player.GlobalPosition - GlobalPosition).Normalized();
 		bolt.Rotation = bolt.Direction.Angle() + Mathf.Pi / 2f;
 		GetTree().CurrentScene.AddChild(bolt);
-
-		ResetTimer(lightningTimer, LightningMinInterval, LightningMaxInterval);
 	}
+
 
 	private async void OnTeleportTimerTimeout()
 	{

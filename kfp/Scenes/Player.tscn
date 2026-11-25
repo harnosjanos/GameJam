@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cbkcst57up2bo" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/Stage1MapFirstHalf/NestInside.png" id="3_52ee3"]
 [ext_resource type="Texture2D" uid="uid://baoe63no8vwte" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/Stage1MapFirstHalf/NestOutside.png" id="4_bhhdu"]
 [ext_resource type="Texture2D" uid="uid://clptytdn0qplb" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0000.png" id="4_miouo"]
+[ext_resource type="Texture2D" uid="uid://b8bd2xepetfjq" path="res://Kepek/PhoenixManaBar.png" id="4_wpo1r"]
 [ext_resource type="Texture2D" uid="uid://bmmf63vvonihx" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0002.png" id="5_o3h8g"]
+[ext_resource type="Texture2D" uid="uid://d04e8r3l67kqx" path="res://Kepek/PhoenixHealthBar.png" id="5_pqity"]
 [ext_resource type="Texture2D" uid="uid://iqdkgnvd3s7s" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0004.png" id="6_1e7my"]
 [ext_resource type="Texture2D" uid="uid://dpehva2uelj36" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0006.png" id="7_arntx"]
 [ext_resource type="Texture2D" uid="uid://fjif6f23jqpk" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0008.png" id="8_lslt6"]
@@ -197,9 +199,9 @@ texture = ExtResource("4_bhhdu")
 modulate = Color(0.6205544, 0.7483719, 1, 1)
 self_modulate = Color(1.0396242e-05, 0.90403116, 0.90403116, 1)
 offset_left = -26.0
-offset_top = 60.0
+offset_top = 47.99997
 offset_right = 39.0
-offset_bottom = 88.0
+offset_bottom = 75.99997
 theme = SubResource("Theme_gntrk")
 theme_override_colors/font_color = Color(0.33595756, 0.41583112, 0.7422103, 1)
 theme_override_colors/font_outline_color = Color(0.17030135, 0.40273145, 1, 1)
@@ -218,6 +220,12 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="ManaBarPicture" type="Sprite2D" parent="." unique_id=1422251028]
+texture_filter = 1
+position = Vector2(-3.5762787e-06, 60.99997)
+scale = Vector2(0.9583344, 2.5217388)
+texture = ExtResource("4_wpo1r")
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=552962579]
 modulate = Color(0.9764706, 0.24705882, 0.20392157, 1)
@@ -240,6 +248,12 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="HPBarPicure" type="Sprite2D" parent="." unique_id=1651089706]
+texture_filter = 1
+position = Vector2(-7.0000305, 106.99999)
+scale = Vector2(1.8749999, 2.5434785)
+texture = ExtResource("5_pqity")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=385009624 groups=["player"]]
 position = Vector2(-11, 37)

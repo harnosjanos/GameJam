@@ -15,6 +15,7 @@ public partial class ThunderBolt : Area2D
 	public override void _Ready()
 	{
 		AreaEntered += OnAreaEntered;
+		GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("lightning");
 		player = GetTree().GetFirstNodeInGroup("player") as Player;
 	}
 

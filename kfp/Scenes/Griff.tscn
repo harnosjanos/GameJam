@@ -59,9 +59,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_4yxik")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Attack",
-"speed": 15.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -112,8 +112,10 @@ script = ExtResource("1_ihcnh")
 [node name="Griff" type="AnimatedSprite2D" parent="." unique_id=567728092]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_o1rwj")
-animation = &"Flying"
+animation = &"Attack"
 autoplay = "Flying"
+frame = 10
+frame_progress = 1.0
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=2134153185 groups=["enemy"]]
 

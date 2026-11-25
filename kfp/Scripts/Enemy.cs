@@ -13,7 +13,15 @@ public partial class Enemy : CharacterBody2D
     private ProgressBar healthBar;
 
     private Player player;
+    private AnimatedSprite2D enemySprite;
+    private bool attacking;
+    private const string AttackAnimationName = "Attack";
 
+    private void OnAttackAnimationFinished()
+    {
+        if (attacking && enemySprite.Animation == AttackAnimationName)
+            QueueFree();
+    }
     public override void _Ready()
     {
         player = GetTree()
@@ -21,13 +29,27 @@ public partial class Enemy : CharacterBody2D
 
         healthBar = GetNode<ProgressBar>("HealthBar");
 
+        foreach (Node child in GetChildren())
+        {
+            if (child is AnimatedSprite2D sprite)
+            {
+                enemySprite = sprite;
+                break;
+            }
+        }
+
         healthBar.MaxValue = Health;
         healthBar.Value = Health;
+
+        enemySprite.AnimationFinished += OnAttackAnimationFinished;
+
     }
+
+
 
     public override void _PhysicsProcess(double delta)
     {
-        if (player == null)
+        if (player == null || attacking)
             return;
 
         Vector2 direction =
@@ -40,9 +62,11 @@ public partial class Enemy : CharacterBody2D
 
         if (GlobalPosition.DistanceTo(player.GlobalPosition) < 20)
         {
+            attacking = true;
+            Velocity = Vector2.Zero;
             player.TakeDamage(Health);
-
-            QueueFree();
+            enemySprite.Play(AttackAnimationName);
+            return;
         }
 
         if (healthBar != null)

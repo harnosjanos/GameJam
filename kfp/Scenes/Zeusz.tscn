@@ -1,33 +1,84 @@
 [gd_scene format=3 uid="uid://dep5qptmbr63l"]
 
-[ext_resource type="Texture2D" uid="uid://cmyc1cu2nje28" path="res://Kepek/Zeusz_boss/Zeusz.png" id="1_lumy1"]
+[ext_resource type="Texture2D" uid="uid://b8ab22brqsipn" path="res://Kepek/Zeusz_boss/ZeuszAttack/ZeuszAttack0000.png" id="2_02lik"]
+[ext_resource type="Texture2D" uid="uid://cff65kn6jfa3w" path="res://Kepek/Zeusz_boss/ZeuszIdle/ZeuszIdle0000.png" id="2_d6kt8"]
 [ext_resource type="Script" uid="uid://cedtd2mtawedu" path="res://Scripts/Zeusz.cs" id="2_zeusz"]
+[ext_resource type="Texture2D" uid="uid://baaos5dxtrra1" path="res://Kepek/Zeusz_boss/ZeuszAttack/ZeuszAttack0002.png" id="3_c4udg"]
+[ext_resource type="Texture2D" uid="uid://dtia57bgblqek" path="res://Kepek/Zeusz_boss/ZeuszIdle/ZeuszIdle0018.png" id="3_w3o45"]
+[ext_resource type="Texture2D" uid="uid://bb4h75f6uy4oo" path="res://Kepek/Zeusz_boss/ZeuszAttack/ZeuszAttack0004.png" id="4_74qve"]
+[ext_resource type="Texture2D" uid="uid://bxqjthe22tqni" path="res://Kepek/Zeusz_boss/ZeuszIdle/ZeuszIdle0036.png" id="4_g6n4k"]
+[ext_resource type="Texture2D" uid="uid://c62f3dodi4lga" path="res://Kepek/EnemyBar.png" id="5_g6n4k"]
+[ext_resource type="Texture2D" uid="uid://b6w2ve2exqu32" path="res://Kepek/Zeusz_boss/ZeuszAttack/ZeuszAttack0009.png" id="5_khu50"]
+[ext_resource type="Texture2D" uid="uid://otcqtmmalblb" path="res://Kepek/Zeusz_boss/ZeuszAttack/ZeuszAttack0011.png" id="6_5kcaf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqegr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_02lik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c4udg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_74qve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_khu50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5kcaf")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d6kt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w3o45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g6n4k")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqegr"]
-size = Vector2(123, 180)
+size = Vector2(123, 111)
 
 [node name="Zeusz" type="Node2D" unique_id=1977820320]
 texture_filter = 1
 script = ExtResource("2_zeusz")
 
-[node name="Zeusz_skin" type="Sprite2D" parent="." unique_id=1995499589]
-texture_filter = 1
-position = Vector2(-2, 1.0000229)
-scale = Vector2(0.4918478, 0.49184784)
-texture = ExtResource("1_lumy1")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1708936581]
+position = Vector2(0, 38)
+sprite_frames = SubResource("SpriteFrames_yqegr")
+animation = &"attack"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=945794664]
 disable_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1992763853]
-position = Vector2(2.5, 1)
+position = Vector2(2.5, 35.5)
 shape = SubResource("RectangleShape2D_yqegr")
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=1012345678]
-modulate = Color(0.9764706, 0.24705882, 0.20392157, 1)
-self_modulate = Color(0.9764706, 0.24705882, 0.20392157, 1)
+modulate = Color(0.5495018, 0.05316654, 0.044981785, 1)
+self_modulate = Color(0.99712294, 0.73094773, 0.6908978, 1)
 offset_left = -60.000004
 offset_top = 92.0
 offset_right = 70.0
 offset_bottom = 119.0
 scale = Vector2(0.96, 1)
+theme_override_colors/font_color = Color(0.9664095, 0.94413936, 0.93490404, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1185144672]
+texture_filter = 1
+position = Vector2(-1.0652218, 109)
+scale = Vector2(2.084692, 2.5652175)
+texture = ExtResource("5_g6n4k")

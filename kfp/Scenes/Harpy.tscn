@@ -2,16 +2,53 @@
 
 [ext_resource type="Script" uid="uid://bjhaa8vgoq7v2" path="res://Scripts/Enemy.cs" id="1_7aihx"]
 [ext_resource type="Texture2D" uid="uid://dduwgtwlk00qb" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (1).png" id="2_m76lx"]
+[ext_resource type="Texture2D" uid="uid://tkho72fb5k6w" path="res://Kepek/HarpyAttack/HarpyAttack (1).png" id="2_nbaks"]
 [ext_resource type="Texture2D" uid="uid://b4rwow8hvpfvs" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (2).png" id="3_6oaqm"]
+[ext_resource type="Texture2D" uid="uid://b8b3coyu80f18" path="res://Kepek/HarpyAttack/HarpyAttack (2).png" id="3_j4ict"]
+[ext_resource type="Texture2D" uid="uid://d043kq2ohunmi" path="res://Kepek/HarpyAttack/HarpyAttack (3).png" id="4_8cpyb"]
 [ext_resource type="Texture2D" uid="uid://ducood0ppnre3" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (3).png" id="4_vmiil"]
+[ext_resource type="Texture2D" uid="uid://lpf1d5s8b4l8" path="res://Kepek/HarpyAttack/HarpyAttack (4).png" id="5_hyh2i"]
 [ext_resource type="Texture2D" uid="uid://dbveywnit60f5" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (4).png" id="5_ni0sv"]
 [ext_resource type="Texture2D" uid="uid://cli4uleiwng4b" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (5).png" id="6_o15mg"]
+[ext_resource type="Texture2D" uid="uid://bhuox57vpfice" path="res://Kepek/HarpyAttack/HarpyAttack (5).png" id="6_odfw2"]
+[ext_resource type="Texture2D" uid="uid://vtdtleuj4cvq" path="res://Kepek/HarpyAttack/HarpyAttack (6).png" id="7_w880s"]
 [ext_resource type="Texture2D" uid="uid://bxe2inuq2uqu5" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (6).png" id="7_xaq3e"]
 [ext_resource type="Texture2D" uid="uid://cmvqscnr1hlo4" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (7).png" id="8_23slk"]
+[ext_resource type="Texture2D" uid="uid://cyfjqtbuelvmc" path="res://Kepek/HarpyAttack/HarpyAttack (7).png" id="8_w4qet"]
+[ext_resource type="Texture2D" uid="uid://cs7c7rdnn5vsr" path="res://Kepek/HarpyAttack/HarpyAttack (8).png" id="9_du84t"]
 [ext_resource type="Texture2D" uid="uid://b6x8rkn1cxrd4" path="res://Kepek/FirstMap-20261005T154640Z-1-001/FirstMap/enemy/HarpyFlying/HarpyFlying (8).png" id="9_lsj12"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q0edf"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nbaks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j4ict")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8cpyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hyh2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_odfw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w880s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w4qet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_du84t")
+}],
+"loop": 0,
+"name": &"Attack",
+"speed": 20.0
+}, {
 "frames": [{
 "duration": 0.01,
 "texture": ExtResource("2_m76lx")
@@ -55,8 +92,10 @@ script = ExtResource("1_7aihx")
 [node name="Harpy" type="AnimatedSprite2D" parent="." unique_id=44247913]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_q0edf")
+animation = &"Attack"
 autoplay = "default"
-frame_progress = 0.4294088
+frame = 7
+frame_progress = 1.0
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1595912528 groups=["enemy"]]
 
