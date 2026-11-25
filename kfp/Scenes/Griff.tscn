@@ -103,12 +103,13 @@ animations = [{
 radius = 44.5
 height = 93.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1494074649]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ihcnh"]
+load_path = "res://.godot/imported/EnemyBar.png-6da68c11187ea7499c98614b144011eb.ctex"
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1494074649]
 script = ExtResource("1_ihcnh")
 
-[node name="Griff" type="Node2D" parent="." unique_id=113403169]
-
-[node name="Griff" type="AnimatedSprite2D" parent="Griff" unique_id=567728092]
+[node name="Griff" type="AnimatedSprite2D" parent="." unique_id=567728092]
 sprite_frames = SubResource("SpriteFrames_o1rwj")
 animation = &"Flying"
 autoplay = "Flying"
@@ -128,3 +129,9 @@ offset_right = 51.0
 offset_bottom = -66.0
 theme_override_font_sizes/font_size = 1
 show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1036732682]
+texture_filter = 1
+position = Vector2(-4.0000067, -73.50001)
+scale = Vector2(1.7708334, 3.804348)
+texture = SubResource("CompressedTexture2D_ihcnh")

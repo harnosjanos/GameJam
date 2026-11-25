@@ -46,6 +46,9 @@ animations = [{
 radius = 44.5
 height = 93.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6oaqm"]
+load_path = "res://.godot/imported/EnemyBar.png-6da68c11187ea7499c98614b144011eb.ctex"
+
 [node name="Enemy" type="CharacterBody2D" unique_id=1198995511]
 script = ExtResource("1_7aihx")
 
@@ -69,3 +72,9 @@ offset_right = 51.0
 offset_bottom = -66.0
 theme_override_font_sizes/font_size = 1
 show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1981025328]
+texture_filter = 1
+position = Vector2(-4.0000067, -73.50001)
+scale = Vector2(1.7708334, 3.804348)
+texture = SubResource("CompressedTexture2D_6oaqm")

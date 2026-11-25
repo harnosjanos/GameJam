@@ -111,12 +111,13 @@ animations = [{
 radius = 44.5
 height = 93.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=882444489]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lny6k"]
+load_path = "res://.godot/imported/EnemyBar.png-6da68c11187ea7499c98614b144011eb.ctex"
+
+[node name="Enemy" type="CharacterBody2D" unique_id=882444489]
 script = ExtResource("1_lny6k")
 
-[node name="Pegasus" type="Node2D" parent="." unique_id=428109781]
-
-[node name="Pegasus" type="AnimatedSprite2D" parent="Pegasus" unique_id=1521784630]
+[node name="Pegasus" type="AnimatedSprite2D" parent="." unique_id=1521784630]
 sprite_frames = SubResource("SpriteFrames_o1rwj")
 animation = &"Flying"
 autoplay = "Flying"
@@ -138,3 +139,9 @@ offset_right = 51.0
 offset_bottom = -66.0
 theme_override_font_sizes/font_size = 1
 show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=725928862]
+texture_filter = 1
+position = Vector2(-4.0000067, -73.50001)
+scale = Vector2(1.7708334, 3.804348)
+texture = SubResource("CompressedTexture2D_lny6k")
