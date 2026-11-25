@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cir6su5150mcm" path="res://Kepek/FunnyTentacles.png" id="2_7kca7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpiv"]
-size = Vector2(563, 263)
+size = Vector2(563, 132.52603)
 
 [node name="Tentacle" type="Area2D" unique_id=1473030606]
+position = Vector2(3, -110)
 script = ExtResource("1_7kca7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1686502107]
@@ -17,8 +18,9 @@ scale = Vector2(6.3974967, 3.1880093)
 texture = ExtResource("2_7kca7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=853291549]
-position = Vector2(-63.499992, -131.5)
-rotation = -1.5707964
+position = Vector2(-39.30268, -125.68762)
+rotation = -1.9198622
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_nbpiv")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1375812245]

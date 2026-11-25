@@ -39,7 +39,9 @@ public partial class Posseidon : Node2D
                 "res://Scenes/WaveAttack.tscn"
             );
         
-        _ = AttackLoop();
+        CallDeferred(
+            nameof(StartAttackLoop)
+        );
     }
 
     public override void _Process(
@@ -57,7 +59,7 @@ public partial class Posseidon : Node2D
         float y =
             Mathf.Sin(
                 moveTime * 2f
-            ) * 60f;
+            ) * 30f;
 
         GlobalPosition =
             centerPos +
@@ -244,34 +246,21 @@ public partial class Posseidon : Node2D
                 "res://Scenes/RainCloud.tscn"
             );
 
-        string[] markers =
-        {
-            "Left",
-            "Center",
-            "Right"
-        };
+        RainCloud cloud =
+            cloudScene.Instantiate<RainCloud>();
 
-        foreach (string markerName in markers)
-        {
-            RainCloud cloud =
-                cloudScene
-                .Instantiate<RainCloud>();
-
-            Marker2D marker =
-                GetTree()
-                .CurrentScene
-                .GetNode<Marker2D>(
-                    markerName
-                );
-
-            cloud.GlobalPosition =
-                marker.GlobalPosition +
-                new Vector2(0, -250);
-
+        Marker2D center =
             GetTree()
-                .CurrentScene
-                .AddChild(cloud);
-        }
+            .CurrentScene
+            .GetNode<Marker2D>("Center");
+
+        cloud.GlobalPosition =
+            center.GlobalPosition +
+            new Vector2(0, -250);
+
+        GetTree()
+            .CurrentScene
+            .AddChild(cloud);
     }
 
 
@@ -311,28 +300,39 @@ public partial class Posseidon : Node2D
 
         leftTentacle.GlobalPosition =
             left.GlobalPosition +
-            new Vector2(-250, 120);
+            new Vector2(-260, 170);
         leftTentacle.RotationDegrees = 45;
 
         rightTentacle.GlobalPosition =
             left.GlobalPosition +
-            new Vector2(250, 120);
+            new Vector2(260, 170);
         rightTentacle.Scale =
             new Vector2(-1, 1);
         rightTentacle.RotationDegrees = -45;
 
         GetTree()
             .CurrentScene
-            .AddChild(leftTentacle);
+            .CallDeferred(
+                Node.MethodName.AddChild,
+                leftTentacle
+            );
 
         GetTree()
             .CurrentScene
-            .AddChild(rightTentacle);
+            .CallDeferred(
+                Node.MethodName.AddChild,
+                rightTentacle
+            );
     }
 
     private async Task DoTentacleAttack()
     {
         SpawnTentacles();
+
+        await ToSignal(
+            GetTree(),
+            SceneTree.SignalName.ProcessFrame
+        );
 
         while (
             GetTree()
@@ -382,5 +382,10 @@ public partial class Posseidon : Node2D
                 SceneTreeTimer.SignalName.Timeout
             );
         }
+    }
+
+    private void StartAttackLoop()
+    {
+        _ = AttackLoop();
     }
 }

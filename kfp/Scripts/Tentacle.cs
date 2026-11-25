@@ -9,6 +9,7 @@ public partial class Tentacle : Area2D
     {
         AddToGroup("enemy");
         AddToGroup("tentacle");
+        ZIndex = -1;
     }
 
     public void TakeDamage(int damage)

@@ -13,6 +13,13 @@ public partial class RainCloud : Area2D
 
     private Player player;
 
+    private float moveTimer = 0f;
+
+    [Export]
+    public float MoveSpeed = 20f;
+
+    private Vector2 startPosition;
+
     public override void _Ready()
     {
         AddToGroup("enemy");
@@ -35,6 +42,22 @@ public partial class RainCloud : Area2D
             SpawnRainDrop;
 
         rainTimer.Start();
+
+        startPosition = GlobalPosition;
+    }
+
+    public override void _Process(
+        double delta
+    )
+    {
+        moveTimer += (float)delta;
+
+        GlobalPosition =
+            startPosition +
+            new Vector2(
+                Mathf.Sin(moveTimer) * 350f,
+                0
+            );
     }
 
     private void SpawnRainDrop()
