@@ -63,8 +63,8 @@ text = "Grafikusok
 [node name="Button" type="Button" parent="." unique_id=292390141]
 offset_left = 30.659561
 offset_top = 431.0
-offset_right = 128.31912
-offset_bottom = 482.3418
+offset_right = 197.0
+offset_bottom = 509.0
 text = "
 "
 flat = true
