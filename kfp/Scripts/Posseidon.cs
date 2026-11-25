@@ -79,6 +79,8 @@ public partial class Posseidon : Node2D
             GetTree().CreateTimer(1.0),
             SceneTreeTimer.SignalName.Timeout
         );
+        if (!IsInsideTree())
+            return;
 
         SpawnWaveFromLeft();
 
@@ -88,6 +90,8 @@ public partial class Posseidon : Node2D
                 GetTree(),
                 SceneTree.SignalName.ProcessFrame
             );
+            if (!IsInsideTree())
+                return;
         }
     }
 
@@ -104,6 +108,8 @@ public partial class Posseidon : Node2D
             GetTree().CreateTimer(1.0),
             SceneTreeTimer.SignalName.Timeout
         );
+        if (!IsInsideTree())
+            return;
 
         SpawnWaveFromRight();
 
@@ -113,6 +119,8 @@ public partial class Posseidon : Node2D
                 GetTree(),
                 SceneTree.SignalName.ProcessFrame
             );
+            if (!IsInsideTree())
+                return;
         }
     }
 
@@ -217,6 +225,8 @@ public partial class Posseidon : Node2D
             GetTree().CreateTimer(1.0),
             SceneTreeTimer.SignalName.Timeout
         );
+        if (!IsInsideTree())
+            return;
 
         SpawnRainCloud();
 
@@ -224,6 +234,8 @@ public partial class Posseidon : Node2D
             GetTree().CreateTimer(8.0),
             SceneTreeTimer.SignalName.Timeout
         );
+        if (!IsInsideTree())
+            return;
 
         while (
             GetTree()
@@ -236,6 +248,8 @@ public partial class Posseidon : Node2D
                 GetTree(),
                 SceneTree.SignalName.ProcessFrame
             );
+            if (!IsInsideTree())
+                return;
         }
     }
 
@@ -333,6 +347,8 @@ public partial class Posseidon : Node2D
             GetTree(),
             SceneTree.SignalName.ProcessFrame
         );
+        if (!IsInsideTree())
+            return;
 
         while (
             GetTree()
@@ -345,6 +361,8 @@ public partial class Posseidon : Node2D
                 GetTree(),
                 SceneTree.SignalName.ProcessFrame
             );
+            if (!IsInsideTree())
+                return;
         }
     }
 
@@ -362,18 +380,26 @@ public partial class Posseidon : Node2D
             {
                 case 0:
                     await DoLeftWaveAttack();
+                    if (!IsInsideTree())
+                        return;
                     break;
 
                 case 1:
                     await DoRightWaveAttack();
+                    if (!IsInsideTree())
+                        return;
                     break;
 
                 case 2:
                     await DoRainAttack();
+                    if (!IsInsideTree())
+                        return;
                     break;
 
                 case 3:
                     await DoTentacleAttack();
+                    if (!IsInsideTree())
+                        return;
                     break;
             }
 
@@ -381,6 +407,8 @@ public partial class Posseidon : Node2D
                 GetTree().CreateTimer(2.0),
                 SceneTreeTimer.SignalName.Timeout
             );
+            if (!IsInsideTree())
+                return;
         }
     }
 

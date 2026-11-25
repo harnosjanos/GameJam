@@ -40,10 +40,10 @@ texture = ExtResource("2_abodq")
 
 [node name="DESC" type="Label" parent="." unique_id=1933773952]
 modulate = Color(1, 0.4862745, 0.023529412, 1)
-offset_left = 635.0
-offset_top = 182.0
-offset_right = 856.0
-offset_bottom = 294.0
+offset_left = 636.0
+offset_top = 146.0
+offset_right = 857.0
+offset_bottom = 258.0
 horizontal_alignment = 1
 vertical_alignment = 1
 

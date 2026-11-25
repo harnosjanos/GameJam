@@ -204,6 +204,31 @@ public partial class SkillTree : Node2D
         );
     }
 
+    private int GetUpgradeCost(
+        string prefix,
+        int level
+    )
+    {
+        if (
+            prefix == "HP" ||
+            prefix == "MANA"
+        )
+        {
+            int[] costs =
+            {
+                1, 1, 1, 2, 2, 5
+            };
+
+            return costs[level - 1];
+        }
+
+        int[] attackCosts =
+        {
+            1, 2, 1, 2, 2, 5
+        };
+
+        return attackCosts[level - 1];
+    }
 
     // Kiválasztott ág szintjének lekérése
     private int GetBranchLevel(string prefix)
@@ -342,6 +367,12 @@ public partial class SkillTree : Node2D
 
         int currentLevel = GetBranchLevel(prefix);
 
+        int cost =
+            GetUpgradeCost(
+                prefix,
+                skillNumber
+            );
+
         string status;
 
         if (currentLevel >= skillNumber)
@@ -350,7 +381,8 @@ public partial class SkillTree : Node2D
         }
         else if (currentLevel == skillNumber - 1)
         {
-            status = SkillManager.Instance.AvailablePoints > 0
+            status =
+                SkillManager.Instance.AvailablePoints >= cost
                 ? "Fejleszthető"
                 : "Nincs elég fejlesztési pontod.";
         }
@@ -364,6 +396,12 @@ public partial class SkillTree : Node2D
             GetSkillDescription(prefix, skillNumber) +
             "\n\n" +
             status;
+        
+        if (status != "Feloldva")
+        {
+            descLabel.Text +=
+                "\n\nKöltség: " + cost + " pont";
+        }
 
         fejlesztButton.Visible =
             currentLevel == skillNumber - 1 &&
@@ -432,9 +470,26 @@ public partial class SkillTree : Node2D
             }
         }
         
-        SetBranchLevel(prefix, currentLevel + 1);
+        int cost =
+            GetUpgradeCost(
+                prefix,
+                skillNumber
+            );
 
-        SkillManager.Instance.AvailablePoints--;
+        if (
+            SkillManager.Instance.AvailablePoints < cost
+        )
+        {
+            return;
+        }
+
+        SetBranchLevel(
+            prefix,
+            currentLevel + 1
+        );
+
+        SkillManager.Instance.AvailablePoints -= cost;
+
 
         selectedSkill = "";
 
