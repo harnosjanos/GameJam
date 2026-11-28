@@ -34,6 +34,7 @@ public partial class Player : Node2D
     private Sprite2D mountain;
     
     protected bool attackAnimating = false;
+    protected bool chargeAnimating = false;
 
     private AnimatedSprite2D shieldEffect;
     private bool shieldStarted = false;

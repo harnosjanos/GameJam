@@ -27,11 +27,22 @@ public partial class Main : Node2D
 
         timer += (float)delta;
 
+        if (SkillManager.Instance.BossReached)
+        {
+            if (timer >= 60f)
+            {
+                finished = true;
+
+                GetTree().ChangeSceneToFile(
+                    "res://Scenes/ZeuszMap.tscn"
+                );
+            }
+        }
         if (timer >= 120f)
         {
             finished = true;
 
-            SkillManager.Instance.CurrentStage = 2;
+            //SkillManager.Instance.CurrentStage = 2;
 
             GetTree().ChangeSceneToFile(
                 "res://Scenes/ZeuszMap.tscn"

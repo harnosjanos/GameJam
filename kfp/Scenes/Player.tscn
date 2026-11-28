@@ -17,11 +17,16 @@
 [ext_resource type="Texture2D" uid="uid://chvshy5a4spfk" path="res://Kepek/drive-download-20261124T193734Z-1-001/phoenixAttack0016.png" id="12_5v66d"]
 [ext_resource type="Texture2D" uid="uid://bk0rskrvdi6y2" path="res://Kepek/drive-download-20261124T203031Z-1-001/1.png" id="13_c43xd"]
 [ext_resource type="Texture2D" uid="uid://wf1ybyn673kp" path="res://Kepek/drive-download-20261124T203031Z-1-001/2.png" id="14_avx33"]
+[ext_resource type="Texture2D" uid="uid://dnh8kj04r4c5x" path="res://Kepek/drive-download-20261126T130617Z-1-001/PhoenixShield0009.png" id="15_fvoow"]
 [ext_resource type="Texture2D" uid="uid://njx3yv4h7bpa" path="res://Kepek/drive-download-20261124T203031Z-1-001/3.png" id="15_rxg2u"]
+[ext_resource type="Texture2D" uid="uid://do0dhurq0toen" path="res://Kepek/drive-download-20261126T130617Z-1-001/PhoenixShield0022.png" id="16_v5fqo"]
 [ext_resource type="Texture2D" uid="uid://gd11sxv32qil" path="res://Kepek/drive-download-20261124T203031Z-1-001/4.png" id="16_xixlo"]
 [ext_resource type="Texture2D" uid="uid://csxfp2ufsf22u" path="res://Kepek/drive-download-20261124T203031Z-1-001/5.png" id="17_bfbt0"]
+[ext_resource type="Texture2D" uid="uid://cg3jupx4l5l36" path="res://Kepek/drive-download-20261126T130617Z-1-001/PhoenixShield0024.png" id="17_yf17c"]
 [ext_resource type="Texture2D" uid="uid://cjin2vuae1y0w" path="res://Kepek/drive-download-20261124T203031Z-1-001/6.png" id="18_wosd6"]
 [ext_resource type="Texture2D" uid="uid://pe3ycsalvqyy" path="res://Kepek/drive-download-20261124T203031Z-1-001/7.png" id="19_hkrn1"]
+[ext_resource type="Texture2D" uid="uid://cjj2tgo432s4h" path="res://Kepek/drive-download-20261126T130617Z-1-001/PhoenixShield0003.png" id="19_o2sks"]
+[ext_resource type="Texture2D" uid="uid://csyjbchklfeuj" path="res://Kepek/drive-download-20261126T130617Z-1-001/PhoenixShield0006.png" id="20_3rw25"]
 [ext_resource type="Texture2D" uid="uid://3ypti17gccdy" path="res://Kepek/drive-download-20261124T203031Z-1-001/8.png" id="20_wpo1r"]
 [ext_resource type="Texture2D" uid="uid://bh3gxviberqua" path="res://Kepek/drive-download-20261124T203031Z-1-001/9.png" id="21_pqity"]
 [ext_resource type="Texture2D" uid="uid://bcg0olpwa3qcu" path="res://Kepek/drive-download-20261124T203031Z-1-001/10.png" id="22_opqna"]
@@ -86,6 +91,34 @@ animations = [{
 "loop": 0,
 "name": &"attack",
 "speed": 30.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("19_o2sks")
+}, {
+"duration": 0.5,
+"texture": ExtResource("20_3rw25")
+}, {
+"duration": 0.5,
+"texture": ExtResource("15_fvoow")
+}],
+"loop": 0,
+"name": &"charge_attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_fvoow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_v5fqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yf17c")
+}],
+"loop": 0,
+"name": &"charge_release",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -279,7 +312,7 @@ texture_filter = 1
 position = Vector2(8, -27)
 scale = Vector2(1.227, 1.227)
 sprite_frames = SubResource("SpriteFrames_baxpx")
-animation = &"mana_empty"
+animation = &"charge_attack"
 
 [node name="Head" type="Sprite2D" parent="." unique_id=1079919328]
 texture_filter = 1

@@ -28,6 +28,7 @@ public partial class Zeusz : Node2D
 	}
 	public override void _Ready()
 	{
+		SkillManager.Instance.BossReached = true;
 		AddToGroup("boss");
 		GetNode<Area2D>("Area2D").AddToGroup("enemy");
 		zeuszSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
@@ -177,6 +178,8 @@ public partial class Zeusz : Node2D
 		{
 			defeated = true;
 			SkillManager.Instance.AddKill();
+
+			SkillManager.Instance.BossReached = false;
 
 			SkillManager.Instance.CurrentStage = 3;
 			GetTree().ChangeSceneToFile("res://Scenes/Map2.tscn");

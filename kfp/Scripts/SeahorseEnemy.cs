@@ -5,16 +5,16 @@ public partial class SeahorseEnemy : CharacterBody2D
     private Area2D hitbox;
 
     [Export]
-    public int Health = 3;
+    public int Health = 5;
 
     [Export]
-    public float JumpDuration = 2.5f;
+    public float JumpDuration = 2f;
 
     [Export]
     public float JumpHeight = 400f;
 
     [Export]
-    public float SwimSpeed = 120f;
+    public float SwimSpeed = 180f;
 
     [Export]
     public float NoJumpRadius = 200f;

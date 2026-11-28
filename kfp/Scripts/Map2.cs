@@ -32,11 +32,23 @@ public partial class Map2 : Node2D
 
         timer += (float)delta;
 
+        if (SkillManager.Instance.BossReached)
+        {
+            if (timer >= 60f)
+            {
+                finished = true;
+
+                GetTree().ChangeSceneToFile(
+                    "res://Scenes/PosseidonMap.tscn"
+                );
+            }
+        }
+
         if (timer >= 120f)
         {
             finished = true;
 
-            SkillManager.Instance.CurrentStage = 4;
+            //SkillManager.Instance.CurrentStage = 4;
 
             GetTree().ChangeSceneToFile(
                 "res://Scenes/PosseidonMap.tscn"

@@ -20,6 +20,8 @@ public partial class SkillManager : Node
     public int AttackDamageLevel = 0;
     public int ChargedDamageLevel = 0;
 
+    public bool BossReached = false;
+
     public override void _Ready()
     {
         Instance = this;
@@ -39,6 +41,8 @@ public partial class SkillManager : Node
 
         AttackDamageLevel = 0;
         ChargedDamageLevel = 0;
+
+        BossReached = false;
     }
 
     public void AddKill()
@@ -50,8 +54,8 @@ public partial class SkillManager : Node
             AvailablePoints++;
 
             NextPointAt =
-                NextPointAt * 2 +
-                (NextPointAt / 2);
+                NextPointAt +
+                15;
         }
     }
 }

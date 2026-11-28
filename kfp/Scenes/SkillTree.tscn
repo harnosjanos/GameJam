@@ -46,6 +46,7 @@ offset_right = 857.0
 offset_bottom = 258.0
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="PONTOK" type="Label" parent="." unique_id=1862954664]
 modulate = Color(1, 0.4862745, 0.023529412, 1)
@@ -55,6 +56,7 @@ offset_right = 950.0
 offset_bottom = 120.0
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=559379751]
 stream = ExtResource("2_o3ipy")
@@ -152,6 +154,7 @@ offset_top = 409.0
 offset_right = 59.0
 offset_bottom = 454.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="HP2" type="Button" parent="Hp ág" unique_id=2009695266]
 offset_left = 13.0
@@ -159,6 +162,7 @@ offset_top = 329.0
 offset_right = 59.0
 offset_bottom = 374.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="HP3" type="Button" parent="Hp ág" unique_id=1991175166]
 offset_left = 14.0
@@ -166,6 +170,7 @@ offset_top = 249.0
 offset_right = 60.0
 offset_bottom = 294.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="HP4" type="Button" parent="Hp ág" unique_id=1806812377]
 offset_left = 14.0
@@ -173,6 +178,7 @@ offset_top = 169.0
 offset_right = 60.0
 offset_bottom = 214.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="HP5" type="Button" parent="Hp ág" unique_id=83396503]
 offset_left = 14.0
@@ -180,6 +186,7 @@ offset_top = 89.0
 offset_right = 60.0
 offset_bottom = 134.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="HP6" type="Button" parent="Hp ág" unique_id=1716830670]
 offset_left = 14.0
@@ -187,6 +194,7 @@ offset_top = 9.0
 offset_right = 60.0
 offset_bottom = 54.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Mana ág" type="Node" parent="." unique_id=913459595]
 
@@ -282,6 +290,7 @@ offset_bottom = 454.0
 text = "
 "
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="MANA2" type="Button" parent="Mana ág" unique_id=1633160309]
 offset_left = 162.0
@@ -291,6 +300,7 @@ offset_bottom = 375.0
 text = "
 "
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="MANA3" type="Button" parent="Mana ág" unique_id=1842005190]
 offset_left = 162.0
@@ -300,6 +310,7 @@ offset_bottom = 294.0
 text = "
 "
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="MANA4" type="Button" parent="Mana ág" unique_id=2007685075]
 offset_left = 162.0
@@ -309,6 +320,7 @@ offset_bottom = 215.0
 text = "
 "
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="MANA5" type="Button" parent="Mana ág" unique_id=552837915]
 offset_left = 162.0
@@ -318,6 +330,7 @@ offset_bottom = 134.0
 text = "
 "
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="MANA6" type="Button" parent="Mana ág" unique_id=365752064]
 offset_left = 162.0
@@ -327,6 +340,7 @@ offset_bottom = 55.0
 text = "
 "
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Charge ág" type="Node" parent="." unique_id=1871577495]
 
@@ -422,6 +436,7 @@ offset_bottom = 453.0
 text = "
 "
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="CHARGE2" type="Button" parent="Charge ág" unique_id=2033127331]
 offset_left = 310.0
@@ -431,6 +446,7 @@ offset_bottom = 373.0
 text = "
 "
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="CHARGE3" type="Button" parent="Charge ág" unique_id=851342985]
 offset_left = 310.0
@@ -440,6 +456,7 @@ offset_bottom = 292.0
 text = "
 "
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="CHARGE4" type="Button" parent="Charge ág" unique_id=1619080133]
 offset_left = 310.0
@@ -449,6 +466,7 @@ offset_bottom = 212.0
 text = "
 "
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="CHARGE5" type="Button" parent="Charge ág" unique_id=692606270]
 offset_left = 310.0
@@ -458,6 +476,7 @@ offset_bottom = 133.0
 text = "
 "
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="CHARGE6" type="Button" parent="Charge ág" unique_id=1534258645]
 offset_left = 310.0
@@ -467,6 +486,7 @@ offset_bottom = 53.0
 text = "
 "
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Attack ág" type="Node" parent="." unique_id=1909096847]
 
@@ -560,6 +580,7 @@ offset_top = 409.0
 offset_right = 509.0
 offset_bottom = 454.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ATTACK2" type="Button" parent="Attack ág" unique_id=12817970]
 offset_left = 463.0
@@ -567,6 +588,7 @@ offset_top = 329.0
 offset_right = 508.0
 offset_bottom = 374.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ATTACK3" type="Button" parent="Attack ág" unique_id=566088873]
 offset_left = 464.0
@@ -574,6 +596,7 @@ offset_top = 249.0
 offset_right = 509.0
 offset_bottom = 294.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ATTACK4" type="Button" parent="Attack ág" unique_id=2072056047]
 offset_left = 463.0
@@ -581,6 +604,7 @@ offset_top = 169.0
 offset_right = 508.0
 offset_bottom = 214.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ATTACK5" type="Button" parent="Attack ág" unique_id=2011188903]
 offset_left = 463.0
@@ -588,6 +612,7 @@ offset_top = 89.0
 offset_right = 508.0
 offset_bottom = 134.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ATTACK6" type="Button" parent="Attack ág" unique_id=2101276792]
 offset_left = 464.0
@@ -595,6 +620,7 @@ offset_top = 9.0
 offset_right = 509.0
 offset_bottom = 54.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Sprite2D" parent="." unique_id=530321713]
 texture_filter = 1
@@ -608,6 +634,7 @@ offset_top = 461.0
 offset_right = 707.0
 offset_bottom = 520.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Continue" type="Sprite2D" parent="." unique_id=1566056736]
 texture_filter = 1
@@ -621,6 +648,7 @@ offset_top = 461.0
 offset_right = 908.0
 offset_bottom = 521.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Upgrade" type="Sprite2D" parent="." unique_id=912745074]
 texture_filter = 1
@@ -634,6 +662,7 @@ offset_top = 359.0
 offset_right = 806.0241
 offset_bottom = 418.9518
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Hp ág/HP1" to="." method="_on_hp_pressed"]
 [connection signal="pressed" from="Hp ág/HP2" to="." method="_on_hp_pressed"]

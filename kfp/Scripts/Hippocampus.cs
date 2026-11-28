@@ -5,16 +5,16 @@ public partial class Hippocampus : CharacterBody2D
     private Area2D hitbox;
 
     [Export]
-    public int Health = 3;
+    public int Health = 7;
 
     [Export]
-    public float JumpDuration = 2.5f;
+    public float JumpDuration = 3f;
 
     [Export]
     public float JumpHeight = 400f;
 
     [Export]
-    public float SwimSpeed = 120f;
+    public float SwimSpeed = 90f;
 
     [Export]
     public float NoJumpRadius = 200f;

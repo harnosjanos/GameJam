@@ -5,7 +5,7 @@ public partial class Fish : CharacterBody2D
     private Area2D hitbox;
 
     [Export]
-    public int Health = 3;
+    public int Health = 4;
 
     [Export]
     public float JumpDuration = 2.5f;

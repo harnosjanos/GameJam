@@ -17,6 +17,7 @@ public partial class Posseidon : Node2D
 
     public override void _Ready()
     {
+        SkillManager.Instance.BossReached = true;
         AddToGroup("boss");
         GetNode<Area2D>("Hitbox")
             .AddToGroup("enemy");
@@ -193,6 +194,7 @@ public partial class Posseidon : Node2D
 
         if (Health <= 0)
         {
+            SkillManager.Instance.BossReached = false;
             GD.Print(
                 "POSEIDON DEAD"
             );

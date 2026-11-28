@@ -6,7 +6,7 @@ public partial class Ray : CharacterBody2D
     public float Speed = 100f;
 
     [Export]
-    public int Health = 3;
+    public int Health = 5;
 
     public bool ChargedNovaTriggered = false;
 
